@@ -15,9 +15,10 @@
     //background-color: red;
     //color: white;
     //text-align: center;
+    padding: 6px 24px;
 }
 
 .footer-owo {
-    text-align: right;
+    text-align: left;
     color: white;
 }
