@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url('/bg/bg2.jpg') no-repeat left center;
+    background: url('/bg/bg2.jpg') no-repeat left center;
     //min-height: 100%;
     background-size: cover;
 }
