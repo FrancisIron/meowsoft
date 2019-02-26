@@ -23,3 +23,13 @@ html {
     text-align: left;
     color: white;
 }
+
+/* Phone */
+@media (min-width:320px) {
+    
+}
+
+/* Desktop */
+@media (min-width:961px) {
+
+}
