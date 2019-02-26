@@ -12,7 +12,7 @@ $(document).ready(function() {
                     
 function checkMobile(){
   console.log("checkMobile");
-  if (/Mobi|Android/i.test(navigator.userAgent)) {
+  if (/mobi|android|ios/i.test(navigator.userAgent.toLowerCase())) {
     console.log("Is Mobile!");
     mobile = true; // mobile!
   }
