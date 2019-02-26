@@ -1,23 +1,11 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
 html {
-    background-image: url('/bg/bg1.jpg'); //no-repeat center center fixed;
-    //-webkit-background-size: cover;
-    //-moz-background-size: cover;
-    //-o-background-size: cover;
-    //background-size: cover;
-    background-repeat: no-repeat;
-    background-color: dimgrey;
-}
-
-@media (min-width: 600px) and (orientation:landscape) {
-    html {
-        background-size: 100% auto;
-    }
-}
-
-@media (min-height: 600px) and (orientation:portrait) {
-    html {
-        background-size: auto 100%; 
-    }
+    background-image: url('/bg/bg2.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;	
+    background-color: black;
 }
 
 .footer {
