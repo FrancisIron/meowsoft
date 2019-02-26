@@ -1,10 +1,19 @@
-﻿html {
+html {
     background: url('/bg/bg1.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    //-webkit-background-size: cover;
+    //-moz-background-size: cover;
+    //-o-background-size: cover;
+    //background-size: cover;
+    background-repeat: no-repeat;
     background-color: dimgrey;
+}
+
+@media (min-width: 600px) and (orientation:landscape) {
+    background-size: 100% auto; 
+}
+
+@media (min-height: 600px) and (orientation:portrait) {
+    background-size: auto 100%; 
 }
 
 .footer {
