@@ -7,7 +7,7 @@ $( document ).ready(function() {
   if (mobile) {
     $("#test").text("This is a mobile device");
   }
-}
+});
                     
 function checkMobile(){
   if (/Mobi|Android/i.test(navigator.userAgent)) {
