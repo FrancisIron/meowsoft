@@ -1,7 +1,8 @@
 // JavaScript source code
 var mobile = false;
 
-$( document ).ready(function() {
+$(document).ready(function() {
+  Console.log("DOM Ready");
   checkMobile();
   
   if (mobile) {
@@ -10,7 +11,9 @@ $( document ).ready(function() {
 });
                     
 function checkMobile(){
+  Console.log("checkMobile");
   if (/Mobi|Android/i.test(navigator.userAgent)) {
+    Console.log("Is Mobile!");
     mobile = true; // mobile!
   }
 }
