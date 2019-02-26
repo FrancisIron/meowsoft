@@ -26,7 +26,9 @@ html {
 
 /* Phone */
 @media (min-width:320px) {
-    background-position: left center;
+    html {
+        background-position: left center;
+   }
 }
 
 /* Desktop */
