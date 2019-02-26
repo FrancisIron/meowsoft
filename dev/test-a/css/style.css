@@ -25,6 +25,10 @@ html {
     text-shadow: 0 0 2px #000;
 }
 
+.footer-owo > a {
+    color:white;
+}
+
 /* Phone */
 @media (min-width:320px) {
     html {
