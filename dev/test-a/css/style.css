@@ -8,9 +8,9 @@ html {
     background-color: black;
 }
 
-login-div {
-    background: #ffffff55;
-    border-bottom-left-radius: 20px;
+#login-div {
+    background: rgba(255, 255, 255, 0.55);
+    border-bottom-left-radius: 5px;
 }
 
 #profile-image {
