@@ -1,0 +1,47 @@
+/*Colores de MyAnimeList*/
+#mal{
+	background-color: #2f52a2; 
+}
+#mal:hover{
+	background-color: #6882bb; 
+}
+
+/*Colores de Google Drive*/
+#drive{
+	background-color: #1fa463; 
+}
+#drive:hover{
+	background-color: #4bb682; 
+}
+
+/*Colores de YouTube*/
+#youtube{
+	background-color: #ff0000; 
+}
+#youtube:hover{
+	background-color: #ff3232; 
+}
+
+/*Colores de Google Mail*/
+#gmail{
+	background-color: #d84a38; 
+}
+#gmail:hover{
+	background-color: #df6e5f; 
+}
+
+/*Colores de Reddit*/
+#reddit{
+	background-color: #3366aa; 
+}
+#reddit:hover{
+	background-color: #5b84bb; 
+}
+
+/*Colores de 4Chan*/
+#chan{
+	background-color: #8BC34A; 
+}
+#chan:hover{
+	background-color: #AED581; 
+}

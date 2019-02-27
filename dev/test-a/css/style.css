@@ -1,11 +1,16 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 html {
-    background-image: url('/bg/bg3.jpg');
+    background-image: url('/resources/backgrounds/bg3.jpg');
     min-height: 100%;
     background-position: center;
     background-size: cover;	
     background-color: black;
+}
+
+login-div {
+    background: #ffffff55;
+    border-bottom-left-radius: 20px;
 }
 
 #profile-image {
@@ -35,8 +40,8 @@ html {
     text-shadow: 0 0 2px #000;
 }
 
-.footer-owo > a {
-    color:white;
+#owo-link {
+    color: white;
 }
 
 /* Phone */

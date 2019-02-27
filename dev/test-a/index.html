@@ -7,30 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="./css/style.css"/>
     <!-- CSS -->
 </head>
 <body>
     <div id="header">
-        <div class="right" style="background: #ffffff45;">
-            <div class="valign-wrapper">
-                <a id="quickstart-sign-in" class="waves-effect waves-teal btn-flat">Sign in</a>
-                <span id="profile-image"><i class="small material-icons">person</i></span>
-            </div>
+        <div class="right valign-wrapper" id="login-div">
+            <a id="quickstart-sign-in" class="waves-effect waves-teal btn-flat">Sign in</a>
+            <span id="profile-image"><i class="small material-icons">person</i></span>
         </div>
     </div>
-    
+    <div id="left-panel">
 
+    </div>
+    <div id="center-panel">
+
+    </div>
+    <div id="right-panel">
+
+    </div>
     <div class="footer footer-owo">
-        <p>Powered by <a href="https://owo.cl">OwO</a></p>
+        <p>Powered by <a href="https://owo.cl" id="owo-link">OwO</a></p>
     </div>
     <!-- Scripts -->
     <div hidden name="scripts">
         <!-- Materialize CSS -->
-        <script type="text/javascript" src="./js/materialize.min.js"></script>
+        <script type="text/javascript" src="/resources/_js/materialize.min.js"></script>
         <!-- jQuery -->
-        <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/resources/_js/jquery-3.3.1.min.js"></script>
         <!-- Firebase App -->
         <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
         <!-- Add additional Firebase services -->
@@ -56,8 +61,6 @@
             };
             firebase.initializeApp(config);
         </script>
-
-        <script></script>
     </div>
     <!-- Scripts -->
 </body>
