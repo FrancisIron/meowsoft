@@ -69,7 +69,7 @@ function initApp() {
             var providerData = user.providerData;
             // [START_EXCLUDE]
             $("#quickstart-sign-in").text("Sign out");
-            $("#profile-image").html('<img class="circle" alt="Profile Image" src="'+photoURL+'">');
+            $("#profile-image").html('<img class="circle small-profile-image" alt="Profile Image" src="' + photoURL +'">');
             // [END_EXCLUDE]
         } else {
             // User is signed out.

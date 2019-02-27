@@ -8,6 +8,16 @@ html {
     background-color: black;
 }
 
+#profile-image {
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+}
+
+.small-profile-image {
+    width:30px;
+    height:auto;
+}
+
 .footer {
     position: fixed;
     left: 0;
