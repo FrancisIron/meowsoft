@@ -68,17 +68,14 @@ function initApp() {
             var uid = user.uid;
             var providerData = user.providerData;
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            $("#quickstart-sign-in").text("Sign out");
+            $("#profile-image").html('<img class="circle" alt="Profile Image" src="'+photoURL+'">');
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign in with Google';
-            document.getElementById('quickstart-account-details').textContent = 'null';
-            document.getElementById('quickstart-oauthtoken').textContent = 'null';
+            $("#quickstart-sign-in").text("Sign in");
+            $("#profile-image").html('<i class="small material-icons">person</i>');
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]

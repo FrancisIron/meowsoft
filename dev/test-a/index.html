@@ -12,31 +12,15 @@
     <!-- CSS -->
 </head>
 <body>
-    <div style="padding: 0px 29rem;">
-        <div class="center-align" style="background: #00000080;padding: 1rem;">
-            <!-- Container for the demo -->
-            <div class="" style="color: white;">
-                <div class="">
-                    <h2 class="">Google Authentication with Popup</h2>
-                </div>
-                <div class="">
-                    <p>Sign in with your Google account below.</p>
-
-                    <!-- Button that handles sign-in/sign-out -->
-                    <button disabled="" class="" id="quickstart-sign-in">Sign in with Google</button>
-
-                    <!-- Container where we'll display the user details -->
-                    <div class="quickstart-user-details-container">
-                        Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-                        <div>Firebase auth <code>currentUser</code> object value:</div>
-                        <pre><code id="quickstart-account-details">null</code></pre>
-                        <div>Google OAuth Access Token:</div>
-                        <pre><code id="quickstart-oauthtoken">null</code></pre>
-                    </div>
-                </div>
+    <div id="header">
+        <div class="right" style="background: #ffffff45;">
+            <div class="valign-wrapper">
+                <a id="quickstart-sign-in" class="waves-effect waves-teal btn-flat">Sign in</a>
+                <span id="profile-image"><i class="small material-icons">person</i></span>
             </div>
         </div>
     </div>
+    
 
     <div class="footer footer-owo">
         <p>Powered by <a href="https://owo.cl">OwO</a></p>
