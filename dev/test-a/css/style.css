@@ -8,19 +8,58 @@ html {
     background-color: black;
 }
 
+#header {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+#left-panel,#right-panel, #left-panel >div ,#right-panel > div{
+    height: 100%;
+}
+
+#right-nav {
+    height: inherit;
+    background: #0003;
+    color: white;
+    border-width: 2px;
+    border-color: black;
+    border-style: ridge;
+    vertical-align: middle;
+    /*! width: px; */
+}
+
+#center-panel {
+    /*! width: 100%; */
+    height: 100%;
+    /*! padding: 5rem; */
+}
+
+nav {
+    /*! background-color: black; */
+}
+
 #login-div {
-    background: rgba(255, 255, 255, 0.55);
-    border-bottom-left-radius: 15px;
+    /*! background: rgba(255, 255, 255, 0.55); */
+    /*! border-bottom-left-radius: 15px; */
 }
 
 #profile-image {
-    padding-right: 0.5rem;
-    padding-top: 0.2rem;
+    padding: 0.3rem 0.5rem;
 }
 
 .small-profile-image {
-    width:30px;
+    width:48px;
     height:auto;
+}
+
+.margin-vertical-1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-bar-row {
 }
 
 .footer {
