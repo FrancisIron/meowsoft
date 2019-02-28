@@ -75,7 +75,7 @@ function initApp() {
             // User is signed out.
             // [START_EXCLUDE]
             $("#quickstart-sign-in").text("Sign in");
-            $("#profile-image").html('<i class="small material-icons">person</i>');
+            $("#profile-image").html('<img class="circle small-profile-image" alt="Profile Image" src="/resources/icons/person_icon.png">');
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
