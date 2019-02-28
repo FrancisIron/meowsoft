@@ -30,9 +30,7 @@ html {
     height: inherit;
     background: #0003;
     color: white;
-    border-width: 2px;
-    border-color: black;
-    border-style: ridge;
+    border-left: black ridge 2px;
     vertical-align: middle;
 }
 
