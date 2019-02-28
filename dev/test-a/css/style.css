@@ -19,6 +19,13 @@ html {
     height: 100%;
 }
 
+#right-panel {
+	right: 0;
+	top: 0;
+	position: fixed;
+	z-index: 50;
+}
+
 #right-nav {
     height: inherit;
     background: #0003;
@@ -27,17 +34,24 @@ html {
     border-color: black;
     border-style: ridge;
     vertical-align: middle;
-    /*! width: px; */
 }
 
 #center-panel {
-    /*! width: 100%; */
     height: 100%;
-    /*! padding: 5rem; */
+}
+
+.search-bar-row {
+    border: black inset 2px;
 }
 
 nav {
-    /*! background-color: black; */
+    height: 50px;
+    line-height: 50px;
+}
+
+nav i.material-icons {
+    height: 50px;
+    line-height: 50px;
 }
 
 #login-div {
