@@ -5,7 +5,8 @@ $(document).ready(function() {
 	//console.log("DOM Ready");
 
 	/** Initialize MaterializeCSS **/
-    $('.sidenav').sidenav();
+    var elems = $('.sidenav');
+    var instances = M.Sidenav.init(elems);
 
 	checkMobile();
   
