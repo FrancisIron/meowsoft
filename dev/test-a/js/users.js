@@ -79,11 +79,11 @@ function initApp() {
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
-        document.getElementById('quickstart-sign-in').disabled = false;
+        //document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
     });
     // [END authstatelistener]
-    document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+    //document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
     initApp();

@@ -33,12 +33,13 @@
 					<div class="nav-wrapper">
 						<form>
 							<div class="input-field">
-								<input id="search" type="search" required>
+								<input id="search" type="search" required list="commands">
 								<label class="label-icon" for="search">
 									<i class="material-icons">search</i>
 								</label>
 								<i class="material-icons">close</i>
 							</div>
+							<datalist id="commands"></datalist>
 						</form>
 					</div>
 				</nav>
@@ -66,7 +67,7 @@
 		</div>
 	</div>
 
-	<div class="right show-on-large" id="right-panel">
+	<div class="right show-on-large" id="right-panel" hidden>
 		<div id="right-nav" class="valign-wrapper">
 			<i class="medium material-icons">chevron_left</i>
 		</div>
@@ -92,6 +93,7 @@
         <!--<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-storage.js"></script>-->
         <!-- Custom Scripts -->
         <script type="text/javascript" src="./js/scripts.js"></script>
+        <script type="text/javascript" src="./js/search.js"></script>
         <script type="text/javascript" src="./js/users.js"></script>
 
         <!-- Initialize Firebase -->
