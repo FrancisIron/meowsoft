@@ -97,10 +97,14 @@ nav i.material-icons {
 }
 
 /* Phone */
-@media (min-width:320px) {
+@media (min-width:300px) {
     html {
         background-position: left center;
    }
+    
+   .search-bar-row {
+        border: black inset 1px;
+    }
 }
 
 /* Desktop */

@@ -50,15 +50,15 @@ var commands = [
 	},	
 ]
 
-shortcut.sort((a,b)=>{
+commands.sort((a,b)=>{
 	return a.command.localeCompare(b.command);
 })
 
 var searchBox = $('#search');
 var datalist = $('#commands');
 
-for(i = 0; i < shortcut.length; i++){
-	var option = $('<option></option>').attr('value',shortcut[i].command);
+for(i = 0; i < commands.length; i++){
+	var option = $('<option></option>').attr('value',commands[i].command);
 	$(datalist).append($(option));
 }
 
