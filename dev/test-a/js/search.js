@@ -62,10 +62,13 @@ for(i = 0; i < commands.length; i++){
 	$(datalist).append($(option));
 }
 
-$(searchBox).keypress(function(e) {
-	if (!e) e = window.event;
+$(searchBox).keypress(function(e) {  
+	console.log( "Handler for .keypress() called." );
+	if (!e) {e = window.event;}
+	console.log( "Step 2: Checking keyCode" );
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
+		console.log( "Step 3" );
 		var url = findUrl($(searchBox).val());
 		if (url != 0) {
 			window.location.href = url;
