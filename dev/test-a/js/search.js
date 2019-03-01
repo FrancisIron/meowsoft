@@ -62,25 +62,25 @@ for(i = 0; i < commands.length; i++){
 	$(datalist).append($(option));
 }
 
-searchBox.onkeypress = function (e) {
+$(searchBox).keypress(function(e) {
 	if (!e) e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		var url = findUrl(search.value);
-		if(url){
+		var url = findUrl($(searchBox).val());
+		if (url != 0) {
 			window.location.href = url;
-		} else if ($(search.value).startsWith('!')){
+		} else if ($(searchBox).val().startsWith('!')){
 			window.location.href = "https://duckduckgo.com/?q=" + search.value;
 		} else {
 			window.location.href = "https://www.google.com/search?q=" + search.value;
 		}
 	}
-};
+});
 
 function findUrl(command){
-	for(i = 0; i < shortcut.length; i++){
-		if(shortcut[i].command === command){
-			return shortcut[i].url;
+	for(i = 0; i < commands.length; i++){
+		if(commands[i].command === command){
+			return commands[i].url;
 		}
 	}
 	return 0;
