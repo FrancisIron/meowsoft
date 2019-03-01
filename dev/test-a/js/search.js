@@ -75,7 +75,7 @@ function searchBoxR(e) {
 			window.location.href = "https://www.google.com/search?q=" + $(searchBox).val();
 		}
 	}
-});
+};
 
 function findUrl(command){
 	for(i = 0; i < commands.length; i++){
