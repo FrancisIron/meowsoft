@@ -63,20 +63,17 @@ for(i = 0; i < commands.length; i++){
 }
 
 $(searchBox).keypress(function(e) {  
-	console.log( "Handler for .keypress() called." );
 	if (!e) {e = window.event;}
-	console.log( "Step 2: Checking keyCode" );
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		console.log( "Step 3" );
-		var url = findUrl($(searchBox).val());
-		if (url != 0) {
-			window.location.href = url;
-		} else if ($(searchBox).val().startsWith('!')){
-			window.location.href = "https://duckduckgo.com/?q=" + search.value;
-		} else {
-			window.location.href = "https://www.google.com/search?q=" + search.value;
-		}
+		//var url = findUrl($(searchBox).val());
+		//if (url != 0) {
+		//	window.location.href = url;
+		//} else if ($(searchBox).val().startsWith('!')){
+		//	window.location.href = "https://duckduckgo.com/?q=" + search.value;
+		//} else {
+			window.location.href = "https://www.google.com/search?q=";// + search.value;
+		//}
 	}
 });
 
