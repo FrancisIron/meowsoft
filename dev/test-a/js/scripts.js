@@ -5,13 +5,15 @@ $(document).ready(function() {
 	//console.log("DOM Ready");
 
 	/** Initialize MaterializeCSS **/
-    //var elems = $('.sidenav');
-    //var instances = M.Sidenav.init(elems);
-    $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 240
-        edge: 'right', // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    var elems = $('.sidenav');
+    var instances = M.Sidenav.init(elems, {
+        edge: 'left'
     });
+    //$('.button-collapse').sideNav({
+    //    menuWidth: 300, // Default is 240
+    //    edge: 'right', // Choose the horizontal origin
+    //    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    //});
 
 	checkMobile();
   
