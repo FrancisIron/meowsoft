@@ -62,8 +62,8 @@ for(i = 0; i < commands.length; i++){
 	$(datalist).append($(option));
 }
 
-function searchBoxR(e) {  
-	if (!e) {e = window.event;}
+function searchBoxR() {  
+	var e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
 		var url = findUrl($(searchBox).val());
