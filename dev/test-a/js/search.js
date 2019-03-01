@@ -62,18 +62,18 @@ for(i = 0; i < commands.length; i++){
 	$(datalist).append($(option));
 }
 
-$(searchBox).keypress(function(e) {  
+function searchBoxR(e) {  
 	if (!e) {e = window.event;}
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		//var url = findUrl($(searchBox).val());
-		//if (url != 0) {
-		//	window.location.href = url;
-		//} else if ($(searchBox).val().startsWith('!')){
-		//	window.location.href = "https://duckduckgo.com/?q=" + search.value;
-		//} else {
-			window.location.href = "https://www.google.com/search?q=";// + search.value;
-		//}
+		var url = findUrl($(searchBox).val());
+		if (url != 0) {
+			window.location.href = url;
+		} else if ($(searchBox).val().startsWith('!')){
+			window.location.href = "https://duckduckgo.com/?q=" + $(searchBox).val();
+		} else {
+			window.location.href = "https://www.google.com/search?q=" + $(searchBox).val();
+		}
 	}
 });
 
