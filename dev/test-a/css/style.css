@@ -118,10 +118,13 @@ nav, nav i.material-icons, nav a.sidenav-trigger, nav a.sidenav-trigger i {
 
 nav .sidenav-trigger {
     position: fixed;
+	float: right;
+	right: 0;
 }
 
 /* Phone Overwrite */
 @media (min-width:300px) {
+
 }
 
 /* Tablet? Overwrite */
