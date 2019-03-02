@@ -87,11 +87,11 @@ function initApp() {
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
-        $('#btn-sign-in-google').disabled = false;
+        document.getElementById('btn-sign-in-google').disabled = false;
         // [END_EXCLUDE]
     });
     // [END authstatelistener]
-    $('#btn-sign-in-google').addEventListener('click', toggleSignIn, false);
+    document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
     initApp();

@@ -93,10 +93,13 @@ html {
 }
 
 #btn-sign-in-google {
-    background-image: url('/resources/assets/google_signin_buttons/web/vector/btn_google_dark_normal_ios.svg');
+    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
     background-size: 191px 46px;
-    height: 51px;  
-    width: 195px;
+    height: 46px;  
+    width: 191px;
+    background-position: center;
+    border-radius: 5px;
+    background-color: transparent;
 }
 
 /* Phone */
@@ -135,6 +138,10 @@ nav .sidenav-trigger {
     position: fixed;
 	float: right;
 	right: 0;
+}
+
+nav, .sidenav {
+	background-color: #ee6e73;
 }
 
 /* Phone Overwrite */
