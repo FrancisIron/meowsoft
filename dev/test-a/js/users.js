@@ -69,13 +69,17 @@ function initApp() {
             var providerData = user.providerData;
             // [START_EXCLUDE]
             //$("#quickstart-sign-in").text("Sign out");
-            $("#profile-image").html('<img class="circle small-profile-image" alt="Profile Image" src="' + photoURL +'">');
+            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
+            $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
+            $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
             //$("#quickstart-sign-in").text("Sign in");
-            $("#profile-image").html('<img class="circle small-profile-image" alt="Profile Image" src="/resources/icons/person_icon.png">');
+            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="/resources/icons/person_icon.png">');
+            $("#user-profile-name").html('<span class="white-text name"></span>');
+            $("#user-profile-email").html('<span class="white-text email"></span>');
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]

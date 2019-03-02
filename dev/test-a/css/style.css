@@ -44,21 +44,17 @@ html {
     border: black inset 2px;
 }
 
-.container {
-    width: 70%
-}
-
 #login-div {
     /*! background: rgba(255, 255, 255, 0.55); */
     /*! border-bottom-left-radius: 15px; */
 }
 
-#profile-image {
-    padding: 0.3rem 0.5rem;
+#user-profile-image {
+    /*padding: 0.3rem 0.5rem;*/
 }
 
-.small-profile-image {
-    width:48px;
+.profile-image {
+    width:64px;
     height:auto;
 }
 
@@ -72,9 +68,6 @@ html {
     left: 0;
     bottom: 0;
     width: 100%;
-    //background-color: red;
-    //color: white;
-    //text-align: center;
     padding: 6px 24px;
 }
 
@@ -110,6 +103,10 @@ html {
 }
 
 /* MaterializeCSS Overwrite */
+
+.container {
+    width: 70%
+}
 
 nav, nav i.material-icons, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     height: 50px;
