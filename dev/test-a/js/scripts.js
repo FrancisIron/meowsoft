@@ -7,7 +7,9 @@ $(document).ready(function() {
 	/** Initialize MaterializeCSS **/
     var elems = $('.sidenav');
     var instances = M.Sidenav.init(elems, {
-        edge: 'left'
+        menuWidth: 300,
+		edge: 'right',
+		loseOnClick: true
     });
     //$('.button-collapse').sideNav({
     //    menuWidth: 300, // Default is 240

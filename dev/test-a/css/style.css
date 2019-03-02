@@ -46,16 +46,6 @@ html {
     width: 70%
 }
 
-nav {
-    height: 50px;
-    line-height: 50px;
-}
-
-nav i.material-icons {
-    height: 50px;
-    line-height: 50px;
-}
-
 #login-div {
     /*! background: rgba(255, 255, 255, 0.55); */
     /*! border-bottom-left-radius: 15px; */
@@ -107,7 +97,39 @@ nav i.material-icons {
     }
 }
 
-/* Desktop */
-@media (min-width:961px) {
+/* Tablet? */
+@media (min-width:601px){
 
+}
+
+/* Desktop */
+@media (min-width:993px) {
+    
+}
+
+/* MaterializeCSS Overwrite */
+
+nav, nav i.material-icons, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 50px;
+    line-height: 50px;
+}
+
+nav .sidenav-trigger {
+    position: fixed;
+}
+
+/* Phone Overwrite */
+@media (min-width:300px) {
+}
+
+/* Tablet? Overwrite */
+@media (min-width:601px){
+
+}
+
+/* Desktop Overwrite */
+@media (min-width:601px){
+	nav a.sidenav-trigger {
+        display: initial;
+    }
 }
