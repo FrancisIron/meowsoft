@@ -81,6 +81,24 @@ html {
     color: white;
 }
 
+.wrapper-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.size-100 {
+    width: 100%;
+    height: 100%;
+}
+
+#btn-sign-in-google {
+    background-image: url('/resources/assets/google_signin_buttons/web/vector/btn_google_dark_normal_ios.svg');
+    background-size: 191px 46px;
+    height: 51px;  
+    width: 195px;
+}
+
 /* Phone */
 @media (min-width:300px) {
     html {
