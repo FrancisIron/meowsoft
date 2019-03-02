@@ -92,6 +92,7 @@ function initApp() {
     });
     // [END authstatelistener]
     document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
+    document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
     initApp();

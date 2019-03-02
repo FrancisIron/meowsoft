@@ -6,6 +6,11 @@ html {
     background-position: center;
     background-size: cover;	
     background-color: black;
+	color: white;
+}
+
+input {
+	color: black;
 }
 
 #header {
@@ -42,15 +47,6 @@ html {
 
 .search-bar-row {
     border: black inset 2px;
-}
-
-#login-div {
-    /*! background: rgba(255, 255, 255, 0.55); */
-    /*! border-bottom-left-radius: 15px; */
-}
-
-#user-profile-image {
-	/*padding-left: 176px;*/
 }
 
 .profile-image {
@@ -100,6 +96,10 @@ html {
     background-position: center;
     border-radius: 5px;
     background-color: transparent;
+}
+
+# btn-log-out {
+	text-align: center;
 }
 
 /* Phone */
