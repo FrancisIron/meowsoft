@@ -35,7 +35,9 @@ html {
 }
 
 #center-panel {
-    height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .search-bar-row {
