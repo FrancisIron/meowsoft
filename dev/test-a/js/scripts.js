@@ -11,12 +11,14 @@ $(document).ready(function() {
     M.Dropdown.init($('.dropdown-trigger'));
     M.Collapsible.init($('.collapsible'));
 
-    //$('.button-collapse').sideNav({
-    //    menuWidth: 300, // Default is 240
-    //    edge: 'right', // Choose the horizontal origin
-    //    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    //});
+	/** Initialize jQuery MiniColors **/
+	$('.mini-colors').minicolors({
+		format: 'hex',
+		inline: true,
+		opacity: true
+	});
 
+	/** Other Scripts **/
 	checkMobile();
   
 	if (mobile) {

@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/resources/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/resources/css/jquery.minicolors.css"/>
     <link type="text/css" rel="stylesheet" href="./css/style.css"/>
     <!-- CSS -->
 </head>
@@ -47,7 +48,7 @@
 							</a>
 							<div class="collapsible-body">
 								<ul>
-									<li><a href="#!">First</a></li>
+									<li><a><input type="text" class="mini-colors" id="colors-text" value="#FFF"></a></li>
 									<li><a href="#!">Second</a></li>
 									<li><a href="#!">Third</a></li>
 									<li><a href="#!">Fourth</a></li>
@@ -150,11 +151,13 @@
         <script type="text/javascript" src="/resources/js/jquery-3.3.1.min.js"></script>
         <!-- Materialize CSS -- https://materializecss.com/ -->
         <script type="text/javascript" src="/resources/js/materialize.min.js"></script>
-		<!-- Disable AutoFill jQuery-Plugin -- https://github.com/terrylinooo/jquery.disableAutoFill -->
+		<!-- Disable AutoFill jQuery-- https://github.com/terrylinooo/jquery.disableAutoFill -->
         <script type="text/javascript" src="/resources/js/jquery.disableAutoFill.js"></script>
+		<!-- jQuery Mini Colors -- https://github.com/claviska/jquery-minicolors -->
+        <script type="text/javascript" src="/resources/js/jquery.minicolors.min.js"></script>
         <!-- Firebase App -- https://firebase.google.com/ -->
         <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
-        <!-- Add additional Firebase services -- https://firebase.google.com/ -->
+        <!-- Additional Firebase services -- https://firebase.google.com/ -->
         <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
         <!--<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>-->
