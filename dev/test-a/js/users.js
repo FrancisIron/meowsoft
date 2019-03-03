@@ -68,24 +68,12 @@ function initApp() {
             var uid = user.uid;
             var providerData = user.providerData;
             // [START_EXCLUDE]
-            //$("#quickstart-sign-in").text("Sign out");
-			$("#sign-in-wrapper").hide()
-            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
-            $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
-            $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
-			$("#user-data-wrapper").show();
-			$("#side-options-wrapper").show();
+			fnSignIn();
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
-            //$("#quickstart-sign-in").text("Sign in");
-			$("#user-data-wrapper").hide();
-			$("#side-options-wrapper").hide();
-            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
-            $("#user-profile-name").html('<span class="white-text name"></span>');
-            $("#user-profile-email").html('<span class="white-text email"></span>');
-			$("#sign-in-wrapper").show()
+			fnSignOut();
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -99,3 +87,36 @@ function initApp() {
 window.onload = function () {
     initApp();
 };
+
+/**
+*	Custom Scripts for Firebase buttons
+*/
+function fnSignIn() {
+			$("#sign-in-wrapper").fadeOut(500, function() {
+				$("#sign-in-wrapper").hide();
+			});
+            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
+            $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
+            $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
+			$("#user-data-wrapper").fadeIn(500, function() {
+				$("#user-data-wrapper").show();
+			});
+			$("#side-options-wrapper").fadeIn(500, function() {
+				$("#side-options-wrapper").show();
+			});
+}
+
+function fnSignOut() {
+			$("#user-data-wrapper").fadeOut(500, function() {
+				$("#user-data-wrapper").hide();
+			});
+			$("#side-options-wrapper").fadeOut(500, function() {
+				$("#side-options-wrapper").hide();
+			});
+            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
+            $("#user-profile-name").html('<span class="white-text name"></span>');
+            $("#user-profile-email").html('<span class="white-text email"></span>');
+			$("#sign-in-wrapper").fadeIn(500, function() {
+				$("#sign-in-wrapper").show();
+			});
+}
