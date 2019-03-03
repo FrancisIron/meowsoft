@@ -91,7 +91,7 @@ window.onload = function () {
 /**
 *	Custom Scripts for Firebase buttons
 */
-function fnSignIn() {
+function fnSignIn(displayName, email, emailVerified, photoURL) {
 			$("#sign-in-wrapper").fadeOut(500, function() {
 				$("#sign-in-wrapper").hide();
 			});
@@ -106,7 +106,7 @@ function fnSignIn() {
 			});
 }
 
-function fnSignOut(displayName, email, emailVerified, photoURL) {
+function fnSignOut() {
 			$("#user-data-wrapper").fadeOut(500, function() {
 				$("#user-data-wrapper").hide();
 			});
