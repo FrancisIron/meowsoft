@@ -98,12 +98,14 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
             $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
             $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
-			$("#user-data-wrapper").fadeIn(500, function() {
-				$("#user-data-wrapper").show();
-			});
-			$("#side-options-wrapper").fadeIn(500, function() {
-				$("#side-options-wrapper").show();
-			});
+			setTimeout(function() {
+				$("#user-data-wrapper").fadeIn(500, function() {
+					$("#user-data-wrapper").show();
+				});
+				$("#side-options-wrapper").fadeIn(500, function() {
+					$("#side-options-wrapper").show();
+				});
+			}, 100);
 }
 
 function fnSignOut() {
@@ -116,7 +118,9 @@ function fnSignOut() {
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
             $("#user-profile-name").html('<span class="white-text name"></span>');
             $("#user-profile-email").html('<span class="white-text email"></span>');
-			$("#sign-in-wrapper").fadeIn(500, function() {
-				$("#sign-in-wrapper").show();
-			});
+			setTimeout(function() {
+				$("#sign-in-wrapper").fadeIn(500, function() {
+					$("#sign-in-wrapper").show();
+				});
+			}, 100);
 }
