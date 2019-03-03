@@ -13,10 +13,15 @@ $(document).ready(function() {
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
+		preferredFormat: "hex3",
 		showButtons: false,
+		showInput: true,
 		showAlpha: true
 	});
-
+	$(".color-pickers").show();
+	$(".color-pickers").keyup(function(e) {
+		$(this).spectrum("set", $(this).val());
+	});
 	/** Other Scripts **/
 	checkMobile();
   
