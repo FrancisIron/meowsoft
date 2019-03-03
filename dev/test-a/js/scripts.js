@@ -39,12 +39,12 @@ $(document).ready(function() {
 });
      
 function changeBackgroundColors(color) {
-		$('nav').css("background-color",color);
+		$('nav, .sidenav, .color-picker-container').css("background-color",color);
 }
 
 function changeTextColors(color) {
 		//color.toHexString(); // #ff0000
-		$('html, body, head, nav, a, button, p, span, li, i, link, ul').css("color",color);
+		$('html, body, head, nav, a, button, p, span, li, i, link, ul, ::placeholder, .color-picker-container').css("color",color);
 }
 
 function checkMobile(){
