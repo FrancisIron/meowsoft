@@ -39,11 +39,12 @@ $(document).ready(function() {
 });
      
 function changeBackgroundColors(color) {
-		//color.toHexString(); // #ff0000
+		$('nav').css("background-color",color);
 }
 
 function changeTextColors(color) {
 		//color.toHexString(); // #ff0000
+		$('html, body, head, nav, a, button, p, span, li, i, link, ul').css("color",color);
 }
 
 function checkMobile(){
