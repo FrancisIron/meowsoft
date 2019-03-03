@@ -53,43 +53,39 @@ var commands = [
 commands.sort((a,b)=>{
 	return a.command.localeCompare(b.command);
 })
-$(document).ready(function () {
-	
-var searchBox = $('#search');
-var datalist = $('#commands');
 
-for(i = 0; i < commands.length; i++){
-	var option = $('<option></option>').attr('value',commands[i].command);
-	$(datalist).append($(option));
-} 
+$(document).ready(function () {
+	/* Uses Disable AutoFill jQuery-Plugin */
+	$('#search-form').disableAutoFill();
+
+	var datalist = $('#commands');
+
+	for(i = 0; i < commands.length; i++) {
+		var option = $('<option></option>').attr('value',commands[i].command);
+		$(datalist).append($(option));
+	} 
 
 	$('#search').keyup(function(e){
-    if(e.keyCode == 13)
-    {
-
-
-
-
-
-
-
-		var url = findUrl($(this).val());
-		if (url != 0) {
-			window.location.href = url;
-		} else if ($(this).val().startsWith('!')){
-			window.location.href = "https://duckduckgo.com/?q=" + $(this).val();
-		} else {
-			window.location.href = "https://www.google.com/search?q=" + $(this).val();
+		if(e.keyCode == 13) {
+			var value = $(this).val();
+			var url = findUrl(value);
+			if (url != 0) {
+				window.location.href = url;
+			} else if ($(this).val().startsWith('!')){
+				window.location.href = "https://duckduckgo.com/?q=" + value;
+			} else {
+				window.location.href = "https://www.google.com/search?q=" + value;
+			}
 		}
+	});
+
+	function findUrl(command){
+		for(i = 0; i < commands.length; i++){
+			if(commands[i].command === command){
+				return commands[i].url;
+			}
+		}
+		return 0;
 	}
 });
-
-function findUrl(command){
-	for(i = 0; i < commands.length; i++){
-		if(commands[i].command === command){
-			return commands[i].url;
-		}
-	}
-	return 0;
-}});
 	
