@@ -74,12 +74,14 @@ function initApp() {
             $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
             $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
 			$("#user-data-wrapper").show();
+			$("#side-options-wrapper").show();
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
             //$("#quickstart-sign-in").text("Sign in");
 			$("#user-data-wrapper").hide();
+			$("#side-options-wrapper").hide();
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
             $("#user-profile-name").html('<span class="white-text name"></span>');
             $("#user-profile-email").html('<span class="white-text email"></span>');
