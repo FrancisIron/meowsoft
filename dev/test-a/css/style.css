@@ -143,6 +143,8 @@ input {
 }
 
 /* MaterializeCSS Overwrite */
+/* MaterializeCSS Overwrite */
+/* MaterializeCSS Overwrite */
 
 .container {
     width: 70%
@@ -169,7 +171,7 @@ nav, .sidenav {
     border-color: white;
 }
 
-.sidenav .collapsible-header, .sidenav.fixed .collapsible-header {
+.sidenav .collapsible-header, .sidenav.fixed .collapsible-header, .sidenav .collapsible-body li a, .sidenav.fixed .collapsible-body li a {
     padding: 0 32px;
 }
 
@@ -180,6 +182,10 @@ nav, .sidenav {
     background-color: #fff2;
 }
 
+.sidenav .collapsible-body.inner-collapsible-body-1, .sidenav.fixed .collapsible-body.inner-collapsible-body-1 {
+	padding-left: 30px;
+	padding-right: 32px;
+}
 /* Phone Overwrite */
 @media (min-width:300px) {
 
@@ -195,4 +201,36 @@ nav, .sidenav {
 	nav a.sidenav-trigger {
         display: initial;
     }
+}
+
+/* Spectrum Overwrite */
+/* Spectrum Overwrite */
+/* Spectrum Overwrite */
+
+.sp-replacer {
+    border: none;
+    background: none;
+}
+
+.sp-preview {
+    margin: 5px;
+}
+
+.sp-dd {
+    display: none;
+}
+
+/* Phone Overwrite */
+@media (min-width:300px) {
+
+}
+
+/* Tablet? Overwrite */
+@media (min-width:601px){
+
+}
+
+/* Desktop Overwrite */
+@media (min-width:601px){
+    
 }

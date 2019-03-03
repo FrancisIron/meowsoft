@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
+		containerClassName: 'color-picker-container',
 		preferredFormat: "hex3",
 		showButtons: false,
 		showInput: true,
