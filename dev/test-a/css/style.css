@@ -163,6 +163,10 @@ nav, .sidenav {
 	background-color: #ee6e73;
 }
 
+.sidenav .collapsible-header, .sidenav.fixed .collapsible-header {
+    padding: 0 32px;
+}
+
 /* Phone Overwrite */
 @media (min-width:300px) {
 
