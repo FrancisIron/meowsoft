@@ -163,8 +163,21 @@ nav, .sidenav {
 	background-color: #ee6e73;
 }
 
+.user-view {
+    border-bottom-style: outset;
+    border-width: 1px;
+    border-color: white;
+}
+
 .sidenav .collapsible-header, .sidenav.fixed .collapsible-header {
     padding: 0 32px;
+}
+
+.sidenav .collapsible-body, .sidenav.fixed .collapsible-body {
+    border-style: inset none;
+    border-width: 1px;
+    border-color: #fff5;
+    background-color: #fff2;
 }
 
 /* Phone Overwrite */
