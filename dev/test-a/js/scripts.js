@@ -44,7 +44,7 @@ function changeBackgroundColors(color) {
 
 function changeTextColors(color) {
 		//color.toHexString(); // #ff0000
-		$('html, body, head, nav, a, button, p, span, li, i, link, ul, ::placeholder, .color-picker-container').css("color",color);
+		$('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container').css("color",color);
 }
 
 function checkMobile(){
