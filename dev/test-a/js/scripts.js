@@ -18,10 +18,17 @@ $(document).ready(function() {
 		showInput: true,
 		showAlpha: true
 	});
-	$(".color-pickers").show();
-	$(".color-pickers").keyup(function(e) {
-		$(this).spectrum("set", $(this).val());
-	});
+	//$(".color-pickers").show();
+	//$(".color-pickers").keyup(function(e) {
+	//	$(this).spectrum("set", $(this).val());
+	//});
+	$('#color-backs').on("dragstop.spectrum"): function(e, color) {
+		changeBackgroundColors(color);
+	}
+	$('#color-texts').on("dragstop.spectrum"): function(e, color) {
+		changeTextColors(color);
+	}
+
 	/** Other Scripts **/
 	checkMobile();
   
@@ -29,7 +36,15 @@ $(document).ready(function() {
 		//$("#test").text("This is a mobile device");
 	}
 });
-                    
+     
+function changeBackgroundColors(color) {
+		//color.toHexString(); // #ff0000
+}
+
+function changeTextColors(color) {
+		//color.toHexString(); // #ff0000
+}
+
 function checkMobile(){
 	//console.log("checkMobile");
 	if (/mobi|android|ios/i.test(navigator.userAgent.toLowerCase())) {
