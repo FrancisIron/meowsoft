@@ -45,7 +45,7 @@ function toggleSignIn() {
         // [END signout]
     }
     // [START_EXCLUDE]
-    document.getElementById('quickstart-sign-in').disabled = true;
+    document.getElementById('btn-sign-in-google').disabled = true;
     // [END_EXCLUDE]
 }
 // [END buttoncallback]

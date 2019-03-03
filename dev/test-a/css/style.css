@@ -6,6 +6,9 @@ html {
     background-position: center;
     background-size: cover;	
     background-color: black;
+}
+
+html, body, head, nav, a, button, p, span, li, i, link, ul, .sidenav li  > a, .sidenav li > a > i, .sidenav li > a, .sidenav li > a > i.material-icons, .sidenav .subheader, .sidenav li > a.btn-flat {
 	color: white;
 }
 
