@@ -97,8 +97,20 @@ input {
     height: 46px;  
     width: 191px;
     background-position: center;
-    border-radius: 5px;
     background-color: transparent;
+    border-style: none;
+}
+
+#btn-sign-in-google:hover {
+    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_focus_web.png');
+}
+
+#btn-sign-in-google:active {
+    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_pressed_web.png');
+}
+
+#btn-sign-in-google:disabled {
+    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png');
 }
 
 # btn-log-out {
