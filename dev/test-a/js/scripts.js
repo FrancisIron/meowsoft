@@ -11,11 +11,10 @@ $(document).ready(function() {
     M.Dropdown.init($('.dropdown-trigger'));
     M.Collapsible.init($('.collapsible'));
 
-	/** Initialize jQuery MiniColors **/
-	$('.mini-colors').minicolors({
-		format: 'hex',
-		inline: true,
-		opacity: true
+	/** Initialize Spectrum **/
+	$(".color-pickers").spectrum({
+		showButtons: false,
+		showAlpha: true
 	});
 
 	/** Other Scripts **/
