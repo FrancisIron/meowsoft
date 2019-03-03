@@ -8,7 +8,7 @@ html {
     background-color: black;
 }
 
-html, body, head, nav, a, button, p, span, li, i, link, ul, .sidenav li  > a, .sidenav li > a > i, .sidenav li > a, .sidenav li > a > i.material-icons, .sidenav .subheader, .sidenav li > a.btn-flat {
+html, body, head, nav, a, button, p, span, li, i, link, ul, ::placeholder {
 	color: white;
 }
 
@@ -121,6 +121,10 @@ input {
     margin: 0px;
 }
 
+.color-picker-container {
+	background-color: #ee6e73;
+}
+
 /* Phone */
 @media (min-width:300px) {
     html {
@@ -145,6 +149,10 @@ input {
 /* MaterializeCSS Overwrite */
 /* MaterializeCSS Overwrite */
 /* MaterializeCSS Overwrite */
+
+.sidenav li  > a, .sidenav li > a > i, .sidenav li > a, .sidenav li > a > i.material-icons, .sidenav .subheader, .sidenav li > a.btn-flat {
+	color: white;
+}
 
 .container {
     width: 70%
@@ -218,6 +226,10 @@ nav, .sidenav {
 
 .sp-dd {
     display: none;
+}
+
+.sp-input {
+	color: white;
 }
 
 /* Phone Overwrite */
