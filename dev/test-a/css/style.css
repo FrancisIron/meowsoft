@@ -164,7 +164,7 @@ nav, .sidenav {
 }
 
 .user-view {
-    border-bottom-style: outset;
+    border-bottom-style: none;
     border-width: 1px;
     border-color: white;
 }

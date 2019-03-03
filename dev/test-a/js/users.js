@@ -95,6 +95,7 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
 			$("#sign-in-wrapper").fadeOut(500, function() {
 				$("#sign-in-wrapper").hide();
 			});
+			$(".user-view").css("border-bottom-style","outset");
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
             $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
             $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
@@ -115,6 +116,7 @@ function fnSignOut() {
 			$("#side-options-wrapper").fadeOut(500, function() {
 				$("#side-options-wrapper").hide();
 			});
+			$(".user-view").css("border-bottom-style","none");
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
             $("#user-profile-name").html('<span class="white-text name"></span>');
             $("#user-profile-email").html('<span class="white-text email"></span>');

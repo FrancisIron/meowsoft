@@ -22,12 +22,12 @@ $(document).ready(function() {
 	//$(".color-pickers").keyup(function(e) {
 	//	$(this).spectrum("set", $(this).val());
 	//});
-	$('#color-backs').on("dragstop.spectrum"): function(e, color) {
+	$('#color-backs').on("dragstop.spectrum", function(e, color) {
 		changeBackgroundColors(color);
-	}
-	$('#color-texts').on("dragstop.spectrum"): function(e, color) {
+	});
+	$('#color-texts').on("dragstop.spectrum", function(e, color) {
 		changeTextColors(color);
-	}
+	});
 
 	/** Other Scripts **/
 	checkMobile();
