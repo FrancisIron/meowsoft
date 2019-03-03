@@ -64,11 +64,11 @@ function initApp() {
             var email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
+            //var isAnonymous = user.isAnonymous;
+            //var uid = user.uid;
+            //var providerData = user.providerData;
             // [START_EXCLUDE]
-			fnSignIn();
+			fnSignIn(displayName, email, emailVerified, photoURL);
             // [END_EXCLUDE]
         } else {
             // User is signed out.
@@ -106,7 +106,7 @@ function fnSignIn() {
 			});
 }
 
-function fnSignOut() {
+function fnSignOut(displayName, email, emailVerified, photoURL) {
 			$("#user-data-wrapper").fadeOut(500, function() {
 				$("#user-data-wrapper").hide();
 			});
