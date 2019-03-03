@@ -2,19 +2,14 @@
 var mobile = false;
 
 $(document).ready(function() {
-	//console.log("DOM Ready");
-
 	/** Initialize MaterializeCSS **/
-    var elems = $('.sidenav');
-    var instances = M.Sidenav.init(elems, {
+    M.Sidenav.init($('.sidenav'), {
         menuWidth: 300,
 		edge: 'right',
 		loseOnClick: true
     });
-
-    var elems = $('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems);
-
+    M.Dropdown.init($('.dropdown-trigger'));
+    M.Collapsible.init($('.collapsible'));
 
     //$('.button-collapse').sideNav({
     //    menuWidth: 300, // Default is 240
