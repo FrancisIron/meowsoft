@@ -11,6 +11,11 @@ $(document).ready(function() {
 		edge: 'right',
 		loseOnClick: true
     });
+
+    var elems = $('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+
+
     //$('.button-collapse').sideNav({
     //    menuWidth: 300, // Default is 240
     //    edge: 'right', // Choose the horizontal origin
