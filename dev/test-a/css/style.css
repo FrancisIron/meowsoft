@@ -117,6 +117,10 @@ input {
 	text-align: center;
 }
 
+.margin-none, i.material-icons.margin-none, .sidenav li > a > i.material-icons.margin-none{
+    margin: 0px;
+}
+
 /* Phone */
 @media (min-width:300px) {
     html {
