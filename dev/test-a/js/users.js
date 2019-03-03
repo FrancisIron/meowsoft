@@ -97,8 +97,8 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
 			});
 			$(".user-view").css("border-bottom-style","outset");
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
-            $("#user-profile-name").html('<span class="white-text name">' + displayName + '</span>');
-            $("#user-profile-email").html('<span class="white-text email">' + email + '</span>');
+            $("#user-profile-name").html('<span class="name">' + displayName + '</span>');
+            $("#user-profile-email").html('<span class="email">' + email + '</span>');
 			setTimeout(function() {
 				$("#user-data-wrapper").fadeIn(500, function() {
 					$("#user-data-wrapper").show();
@@ -118,8 +118,8 @@ function fnSignOut() {
 			});
 			$(".user-view").css("border-bottom-style","none");
             $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
-            $("#user-profile-name").html('<span class="white-text name"></span>');
-            $("#user-profile-email").html('<span class="white-text email"></span>');
+            $("#user-profile-name").html('<span class="name"></span>');
+            $("#user-profile-email").html('<span class="email"></span>');
 			setTimeout(function() {
 				$("#sign-in-wrapper").fadeIn(500, function() {
 					$("#sign-in-wrapper").show();
