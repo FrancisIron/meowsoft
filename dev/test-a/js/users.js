@@ -122,7 +122,7 @@ function fnSaveUserSettings() {
 	}, { merge: true });
 }
 
-function fnSaveUserSettings-BackgroundColor(value) {
+function fnSaveUserSettingsBackgroundColor(value) {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
@@ -130,7 +130,7 @@ function fnSaveUserSettings-BackgroundColor(value) {
 	}, { merge: true });
 }
 
-function fnSaveUserSettings-TextColor(value) {
+function fnSaveUserSettingsTextColor(value) {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
