@@ -1,5 +1,6 @@
 // JavaScript source code
 var mobile = false;
+var sideNavCollapsible;
 
 $(document).ready(function() {
 	/** Initialize MaterializeCSS **/
@@ -26,7 +27,7 @@ $(document).ready(function() {
 		}
 	};
 	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
-    var sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
+    sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
 	function closeSideNavCollapsible() {
 		sideNavCollapsible.close();
 	}
