@@ -12,8 +12,15 @@ html, .background{
     opacity: 0.4;
 }
 
+/* App default color */
+nav, .sidenav, .color-picker-container {
+	/* background-color: #ee6e73; */
+	background-color: rgb(90, 15, 15, 0.9);
+}
+
 .name, .email {
-    text-shadow: 0 0 2px #ee6e73;
+    /* text-shadow: 0 0 2px #ee6e73; */
+	text-shadow: 0 0 2px rgb(90, 15, 15, 0.9);
 }
 
 html, body, head, nav, a, button, p, span, li, i, link, ul {
@@ -26,8 +33,9 @@ input {
 
 input::placeholder {
 	color: #999;
-    /*text-shadow: 2px 2px 2px #333;*/
+    /* text-shadow: 2px 2px 2px #333; */
 }
+/* --- --- */
 
 #header {
     width: 100%;
@@ -134,10 +142,6 @@ input::placeholder {
     margin: 0px;
 }
 
-.color-picker-container {
-	background-color: #ee6e73;
-}
-
 /* Phone */
 @media (min-width:300px) {
     html {
@@ -180,10 +184,6 @@ nav .sidenav-trigger {
     position: fixed;
 	float: right;
 	right: 0;
-}
-
-nav, .sidenav {
-	background-color: #ee6e73;
 }
 
 .user-view {
