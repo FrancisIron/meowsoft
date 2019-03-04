@@ -1,6 +1,5 @@
 // JavaScript source code
 var mobile = false;
-var sideNavCollapsible = null;
 
 $(document).ready(function() {
 	/** Initialize MaterializeCSS **/
@@ -23,16 +22,16 @@ $(document).ready(function() {
 		}
 	};
 	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
-    sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
-	function closeSideNavCollapsible() {
-		sideNavCollapsible.close();
-	}
+    M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
 	// Sidenav
     M.Sidenav.init($('.sidenav'), {
         menuWidth: 300,
 		edge: 'right',
 		loseOnClick: true,
-		onCloseStart: closeSideNavCollapsible()
+		onCloseStart: function() {
+			var collapsible = M.Collapsible.getInstance($(this).find(".collapsible"));
+			collapsible.close();
+		}
     });
 
 	/** Initialize Spectrum **/
