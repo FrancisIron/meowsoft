@@ -20,18 +20,18 @@ $(document).ready(function() {
 	// Collapsible
 	var collapsibleOptions = {
 		onOpenStart: function() {
-			var ul = $(this);
-			var icon = $(ul).find('i.collapsible-arrow-icon');
+			var icon = $(this).find('.collapsible-arrow-icon');
 			$(icon).fadeOut(300, function() {
 				$(icon).html('arrow_drop_up');
 				$(icon).fadeIn(300);
 			});
 		}, onCloseStart: function() {
-			var icon = $(this).find('.collapsible-arrow-icon');
-			$(icon).fadeOut(300, function() {
-				$(icon).html('arrow_drop_down');
-				$(icon).fadeIn(300);
-			});
+			$(this).hide();
+			//var icon = $(this).find('.collapsible-arrow-icon');
+			//$(icon).fadeOut(300, function() {
+			//	$(icon).html('arrow_drop_down');
+			//	$(icon).fadeIn(300);
+			//});
 		}
 	};
 	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
