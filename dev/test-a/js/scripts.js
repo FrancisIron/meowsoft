@@ -7,11 +7,15 @@ $(document).ready(function() {
     M.Sidenav.init($('.sidenav'), {
         menuWidth: 300,
 		edge: 'right',
-		loseOnClick: true/*,
+		loseOnClick: true,
 		onCloseStart: function() {
 			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
 			collapsible.close();
-		}*/
+		},
+		onOpenStart: function() {
+			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
+			collapsible.close();
+		}
     });
 	// Dropdown
     M.Dropdown.init($('.dropdown-trigger'));
