@@ -117,8 +117,8 @@ function fnSaveUserSettings() {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
-		background-color: "rgba(90, 15, 15, 0.9)", 
-		text-color: "#FFF"
+		backgroundColor: "rgba(90, 15, 15, 0.9)", 
+		textColor: "#FFF"
 	}, { merge: true });
 }
 
@@ -126,7 +126,7 @@ function fnSaveUserSettings-BackgroundColor(value) {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
-		background-color: value
+		backgroundColor: value
 	}, { merge: true });
 }
 
@@ -134,7 +134,7 @@ function fnSaveUserSettings-TextColor(value) {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
-		text-color: value
+		textColor: value
 	}, { merge: true });
 }
 
