@@ -6,11 +6,30 @@ $(document).ready(function() {
     M.Sidenav.init($('.sidenav'), {
         menuWidth: 300,
 		edge: 'right',
-		loseOnClick: true
+		loseOnClick: true,
+		onCloseStart: closeSideNavCollapsible();
     });
     M.Dropdown.init($('.dropdown-trigger'));
-	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"));
-    //var sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible");
+	var collapsibleOptions = {
+		onOpenStart: function() {
+			var icon = $(this).find('.collapsible-arrow-icon');
+			$(icon).fadeOut(300, function() {
+				$(icon).html('arrow_drop_up');
+				$(icon).fadeIn(300);
+			});
+		}, onCloseStart: function {
+			var icon = $(this).find('.collapsible-arrow-icon');
+			$(icon).fadeOut(300, function() {
+				$(icon).html('arrow_drop_down');
+				$(icon).fadeIn(300);
+			});
+		}
+	};
+	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
+    var sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
+	function closeSideNavCollapsible() {
+		sideNavCollapsible.close();
+	}
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
