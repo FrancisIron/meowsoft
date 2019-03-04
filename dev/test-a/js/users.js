@@ -107,10 +107,16 @@ function fnLoadUserSettings() {
 			console.log("Document data:", doc.data());
 			var backgroundColor = doc.data()["backgroundColor"];
 			var textColor = doc.data()["textColor"];
+			// Data processing
+			//
 			// Set data
 			$("#color-backs").spectrum("set", backgroundColor);
-			changeBackgroundColors(backgroundColor);
 			$("#color-texts").spectrum("set", textColor);
+			// Data processing
+			backgroundColor.replace("rgba", "rgb");
+			textColor.replace("rgba", "rgb");
+			// Set data
+			changeBackgroundColors(backgroundColor);
 			changeTextColors(backgroundColor);
 		} else {
 			// doc.data() will be undefined in this case
