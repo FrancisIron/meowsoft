@@ -19,10 +19,11 @@ $(document).ready(function() {
 		showInput: true,
 		showAlpha: true
 	});
-	//$(".color-pickers").show();
-	//$(".color-pickers").keyup(function(e) {
-	//	$(this).spectrum("set", $(this).val());
-	//});
+	$(".color-pickers-palette-only").spectrum({
+		containerClassName: 'color-picker-container',
+		showPaletteOnly: true,
+		showPalette: true
+	});
 	$('#color-backs').on("dragstop.spectrum", function(e, color) {
 		changeBackgroundColors(color);
 	});
@@ -43,7 +44,6 @@ function changeBackgroundColors(color) {
 }
 
 function changeTextColors(color) {
-		//color.toHexString(); // #ff0000
 		$('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input').css("color",color);
 }
 
