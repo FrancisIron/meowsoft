@@ -109,7 +109,9 @@ function fnLoadUserSettings() {
 			var textColor = doc.data()["textColor"];
 			// Set data
 			$("#color-backs").spectrum("set", backgroundColor);
+			changeBackgroundColors(backgroundColor);
 			$("#color-texts").spectrum("set", textColor);
+			changeTextColors(backgroundColor);
 		} else {
 			// doc.data() will be undefined in this case
 			console.log("No document stored for current user! Creating default document!");
