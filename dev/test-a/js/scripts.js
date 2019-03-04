@@ -38,7 +38,7 @@ $(document).ready(function() {
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
 		containerClassName: 'color-picker-container',
-		preferredFormat: "hex3",
+		preferredFormat: "rgb",
 		showButtons: false,
 		showInput: true,
 		showAlpha: true
@@ -50,19 +50,19 @@ $(document).ready(function() {
 	});
 	$('#color-backs').on("dragstop.spectrum", function(e, color) {
 		changeBackgroundColors(color);
-		fnSaveUserSettingsBackgroundColor(color.toHsvString());
+		fnSaveUserSettingsBackgroundColor(color.toRgbString());
 	});
 	$('#color-backs').on("change", function(e, color) {
 		changeBackgroundColors(color);
-		fnSaveUserSettingsBackgroundColor(color.toHsvString());
+		fnSaveUserSettingsBackgroundColor(color.toRgbString());
 	});
 	$('#color-texts').on("dragstop.spectrum", function(e, color) {
 		changeTextColors(color);
-		fnSaveUserSettingsTextColor(color.toHsvString());
+		fnSaveUserSettingsTextColor(color.toRgbString());
 	});
 	$('#color-texts').on("change", function(e, color) {
 		changeTextColors(color);
-		fnSaveUserSettingsTextColor(color.toHsvString());
+		fnSaveUserSettingsTextColor(color.toRgbString());
 	});
 
 	/** Other Scripts **/

@@ -127,7 +127,7 @@ function fnSaveUserSettings() {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
-		backgroundColor: "hsva(0, 83.33%, 35.29%, 0.9)", 
+		backgroundColor: "rgb(90, 15, 15, 0.9)", 
 		textColor: "#FFF"
 	}, { merge: true });
 }

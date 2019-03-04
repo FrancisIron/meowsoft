@@ -14,7 +14,7 @@ html, .background{
 
 /* App default color */
 nav, .sidenav, .color-picker-container {
-	/* background-color: #ee6e73; */
+	/* background-color: #ee6e73; *//* hsva(0, 83.33%, 35.29%, 0.9) */
 	background-color: rgb(90, 15, 15, 0.9);
 }
 
