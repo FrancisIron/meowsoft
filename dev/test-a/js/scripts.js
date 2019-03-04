@@ -9,7 +9,8 @@ $(document).ready(function() {
 		loseOnClick: true
     });
     M.Dropdown.init($('.dropdown-trigger'));
-    M.Collapsible.init($('.collapsible'));
+	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"));
+    //var sideNavCollapsible = M.Collapsible.init($('.sidenav').find(".collapsible");
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({

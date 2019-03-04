@@ -198,14 +198,18 @@ nav, .sidenav {
 }
 
 .collapsible-header:hover, .sidenav .collapsible-header:hover, .sidenav.fixed .collapsible-header:hover {
-	background-color: rgb(0,0,0,0.05);
+	background-color: rgb(0, 0, 0, 0.1);
+}
+
+.keyboard-focused .collapsible-header:focus {
+    background-color: rgb(0, 0, 0, 0.1);
 }
 
 .collapsible-body, .sidenav .collapsible-body, .sidenav.fixed .collapsible-body {
     border-style: inset none;
     border-width: 1px;
     border-color: #fff5;
-    background-color: #fff2;
+    background-color: #ffffff18;
 }
 
 .collapsible-body.inner-collapsible-body-1, .sidenav .collapsible-body.inner-collapsible-body-1, .sidenav.fixed .collapsible-body.inner-collapsible-body-1 {
