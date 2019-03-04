@@ -3,6 +3,16 @@ var mobile = false;
 
 $(document).ready(function() {
 	/** Initialize MaterializeCSS **/
+	// Sidenav
+    M.Sidenav.init($('.sidenav'), {
+        menuWidth: 300,
+		edge: 'right',
+		loseOnClick: true,
+		onCloseStart: function() {
+			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
+			collapsible.close();
+		}
+    });
 	// Dropdown
     M.Dropdown.init($('.dropdown-trigger'));
 	// Collapsible
@@ -23,16 +33,6 @@ $(document).ready(function() {
 	};
 	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
     M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
-	// Sidenav
-    M.Sidenav.init($('.sidenav'), {
-        menuWidth: 300,
-		edge: 'right',
-		loseOnClick: true,
-		onCloseStart: function() {
-			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
-			collapsible.close();
-		}
-    });
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
