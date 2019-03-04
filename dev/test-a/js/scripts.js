@@ -41,6 +41,7 @@ $(document).ready(function() {
      
 function changeBackgroundColors(color) {
 		$('nav, .sidenav, .color-picker-container').css("background-color",color);
+		$('.name, .email').css("text-shadow","0 0 2px "+ color)
 }
 
 function changeTextColors(color) {

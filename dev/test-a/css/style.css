@@ -1,6 +1,6 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
-html {
+html, .background{
     background-image: url('/resources/backgrounds/bg3.jpg');
     min-height: 100%;
     background-position: center;
@@ -8,12 +8,25 @@ html {
     background-color: black;
 }
 
-html, body, head, nav, a, button, p, span, li, i, link, ul, ::placeholder {
+.background {
+    opacity: 0.4;
+}
+
+.name, .email {
+    text-shadow: 0 0 2px #ee6e73;
+}
+
+html, body, head, nav, a, button, p, span, li, i, link, ul {
 	color: white;
 }
 
 input {
 	color: black;
+}
+
+input::placeholder {
+	color: #999;
+    text-shadow: 2px 2px 2px #333;
 }
 
 #header {
@@ -73,7 +86,7 @@ input {
 .footer-owo {
     text-align: left;
     color: white;
-    text-shadow: 0 0 2px #000;
+    text-shadow: 0 0 2px #000, 0 0 1px #FFF;
 }
 
 #owo-link {
