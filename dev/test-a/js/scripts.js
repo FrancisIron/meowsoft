@@ -20,9 +20,7 @@ $(document).ready(function() {
 	// Collapsible
 	var collapsibleOptions = {
 		onOpenStart: function() {
-			console.log($(this));
-			var icon = $(this).find('.collapsible-arrow-icon');
-			console.log($(icon));
+			var icon = $(this).find('i.material-icons.right.margin-none.collapsible-arrow-icon');
 			$(icon).fadeOut(300, function() {
 				console.log("Fading Out");
 				$(icon).html('arrow_drop_up');
