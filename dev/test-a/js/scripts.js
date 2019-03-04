@@ -52,7 +52,15 @@ $(document).ready(function() {
 		changeBackgroundColors(color);
 		fnSaveUserSettingsBackgroundColor(color.toHsvString());
 	});
+	$('#color-backs').on("change", function(e, color) {
+		changeBackgroundColors(color);
+		fnSaveUserSettingsBackgroundColor(color.toHsvString());
+	});
 	$('#color-texts').on("dragstop.spectrum", function(e, color) {
+		changeTextColors(color);
+		fnSaveUserSettingsTextColor(color.toHsvString());
+	});
+	$('#color-texts').on("change", function(e, color) {
 		changeTextColors(color);
 		fnSaveUserSettingsTextColor(color.toHsvString());
 	});

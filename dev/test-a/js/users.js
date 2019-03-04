@@ -103,21 +103,29 @@ function fnLoadUserSettings() {
 	var docRef = db.collection("users").doc(uid);
 	docRef.get().then(function(doc) {
 		if (doc.exists) {
+			// Read data
 			console.log("Document data:", doc.data());
+			var backgroundColor = doc.data()["backgroundColor"];
+			var textColor = doc.data()["textColor"];
+			// Set data
+			$("#color-backs").spectrum("set", $(backgroundColor).val());
+			$("#color-texts").spectrum("set", $(textColor).val());
 		} else {
 			// doc.data() will be undefined in this case
 			console.log("No such document!");
+			fnSaveUserSettings()
 		}
 	}).catch(function(error) {
 		console.log("Error getting document:", error);
 	});
 }
 
+// Default Settings
 function fnSaveUserSettings() {
 	if (uid == null) {return;}
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
-		backgroundColor: "rgba(90, 15, 15, 0.9)", 
+		backgroundColor: "hsva(0, 83.33%, 35.29%, 0.9)", 
 		textColor: "#FFF"
 	}, { merge: true });
 }
