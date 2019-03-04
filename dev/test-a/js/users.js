@@ -108,11 +108,11 @@ function fnLoadUserSettings() {
 			var backgroundColor = doc.data()["backgroundColor"];
 			var textColor = doc.data()["textColor"];
 			// Set data
-			$("#color-backs").spectrum("set", $(backgroundColor).val());
-			$("#color-texts").spectrum("set", $(textColor).val());
+			$("#color-backs").spectrum("set", backgroundColor);
+			$("#color-texts").spectrum("set", textColor);
 		} else {
 			// doc.data() will be undefined in this case
-			console.log("No such document!");
+			console.log("No document stored for current user! Creating default document!");
 			fnSaveUserSettings()
 		}
 	}).catch(function(error) {
