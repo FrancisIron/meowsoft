@@ -19,19 +19,18 @@ $(document).ready(function() {
     M.Dropdown.init($('.dropdown-trigger'));
 	// Collapsible
 	var collapsibleOptions = {
-		onOpenStart: function() {
-			var icon = $(this).find('.collapsible-arrow-icon');
+		onOpenStart: function(ul) {
+			var icon = $(ul).find('.collapsible-arrow-icon');
 			$(icon).fadeOut(300, function() {
 				$(icon).html('arrow_drop_up');
 				$(icon).fadeIn(300);
 			});
 		}, onCloseStart: function() {
-			$(this).hide();
-			//var icon = $(this).find('.collapsible-arrow-icon');
-			//$(icon).fadeOut(300, function() {
-			//	$(icon).html('arrow_drop_down');
-			//	$(icon).fadeIn(300);
-			//});
+			var icon = $(this).find('.collapsible-arrow-icon');
+			$(icon).fadeOut(300, function() {
+				$(icon).html('arrow_drop_down');
+				$(icon).fadeIn(300);
+			});
 		}
 	};
 	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
