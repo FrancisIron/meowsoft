@@ -33,8 +33,7 @@ $(document).ready(function() {
 			});
 		}
 	};
-	M.Collapsible.init($('body').find(".collapsible:not(.sidenav *)"), collapsibleOptions);
-    M.Collapsible.init($('.sidenav').find(".collapsible"), collapsibleOptions);
+    M.Collapsible.init($('.collapsible'), collapsibleOptions);
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
