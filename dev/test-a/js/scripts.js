@@ -29,7 +29,7 @@ $(document).ready(function() {
 		edge: 'right',
 		loseOnClick: true,
 		onCloseStart: function() {
-			var collapsible = M.Collapsible.getInstance($(this).find(".collapsible"));
+			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
 			collapsible.close();
 		}
     });
