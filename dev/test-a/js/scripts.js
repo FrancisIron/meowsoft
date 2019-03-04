@@ -9,6 +9,7 @@ $(document).ready(function() {
 		edge: 'right',
 		loseOnClick: true,
 		onCloseStart: function() {
+			console.log($('.sidenav').find(".collapsible"));
 			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
 			collapsible.close();
 		},
@@ -22,6 +23,7 @@ $(document).ready(function() {
 	// Collapsible
 	var collapsibleOptions = {
 		onOpenStart: function() {
+			console.log($(this));
 			var icon = $(this).find('.collapsible-arrow-icon');
 			$(icon).fadeOut(300, function() {
 				$(icon).html('arrow_drop_up');
