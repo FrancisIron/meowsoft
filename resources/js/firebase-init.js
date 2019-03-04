@@ -7,4 +7,4 @@ var config = {
 		storageBucket: "neko-soft.appspot.com",
 		messagingSenderId: "943517613846"
 		};
-		firebase.initializeApp(config);	
+firebase.initializeApp(config);	

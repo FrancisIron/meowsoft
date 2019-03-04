@@ -1,4 +1,7 @@
 // JavaScript source code
+// Get a reference to the database service
+var db = null;
+var uid = null;
 /**
  * Function called when clicking the Login/Logout button.
  */
@@ -65,14 +68,16 @@ function initApp() {
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
             //var isAnonymous = user.isAnonymous;
-            //var uid = user.uid;
+            uid = user.uid;
             //var providerData = user.providerData;
             // [START_EXCLUDE]
+			fnLoadUserSettings();
 			fnSignIn(displayName, email, emailVerified, photoURL);
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
+			uid = null;
 			fnSignOut();
             // [END_EXCLUDE]
         }
@@ -85,44 +90,87 @@ function initApp() {
     document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
+	db = firebase.firestore();
     initApp();
 };
 
-/**
-*	Custom Scripts for Firebase buttons
-*/
+
+/** Custom Scripts **/
+
+/** User Settings **/
+function fnLoadUserSettings() {
+	if (uid == null) {return;}
+	var docRef = db.collection("users").doc(uid);
+	docRef.get().then(function(doc) {
+		if (doc.exists) {
+			console.log("Document data:", doc.data());
+		} else {
+			// doc.data() will be undefined in this case
+			console.log("No such document!");
+		}
+	}).catch(function(error) {
+		console.log("Error getting document:", error);
+	});
+}
+
+function fnSaveUserSettings() {
+	if (uid == null) {return;}
+	var usersRef = db.collection("users");
+	usersRef.doc(uid).set({
+		background-color: "rgba(90, 15, 15, 0.9)", 
+		text-color: "#FFF"
+	}, { merge: true });
+}
+
+function fnSaveUserSettings-BackgroundColor(value) {
+	if (uid == null) {return;}
+	var usersRef = db.collection("users");
+	usersRef.doc(uid).set({
+		background-color: value
+	}, { merge: true });
+}
+
+function fnSaveUserSettings-TextColor(value) {
+	if (uid == null) {return;}
+	var usersRef = db.collection("users");
+	usersRef.doc(uid).set({
+		text-color: value
+	}, { merge: true });
+}
+
+/** oAuth buttons **/
 function fnSignIn(displayName, email, emailVerified, photoURL) {
-			$("#sign-in-wrapper").fadeOut(500, function() {
-				$("#sign-in-wrapper").hide();
-			});
-			$(".user-view").css("border-bottom-style","outset");
-            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
-            $("#user-profile-name").html('<span class="name">' + displayName + '</span>');
-            $("#user-profile-email").html('<span class="email">' + email + '</span>');
-			setTimeout(function() {
-				$("#user-data-wrapper").fadeIn(500, function() {
-					$("#user-data-wrapper").show();
-				});
-				$("#side-options-wrapper").fadeIn(500, function() {
-					$("#side-options-wrapper").show();
-				});
-			}, 100);
+	$("#sign-in-wrapper").fadeOut(500, function() {
+		$("#sign-in-wrapper").hide();
+	});
+	$(".user-view").css("border-bottom-style","outset");
+	$("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL +'">');
+    $("#user-profile-name").html('<span class="name">' + displayName + '</span>');
+    $("#user-profile-email").html('<span class="email">' + email + '</span>');
+	setTimeout(function() {
+		$("#user-data-wrapper").fadeIn(500, function() {
+			$("#user-data-wrapper").show();
+		});
+		$("#side-options-wrapper").fadeIn(500, function() {
+			$("#side-options-wrapper").show();
+		});
+	}, 100);
 }
 
 function fnSignOut() {
-			$("#user-data-wrapper").fadeOut(500, function() {
-				$("#user-data-wrapper").hide();
-			});
-			$("#side-options-wrapper").fadeOut(500, function() {
-				$("#side-options-wrapper").hide();
-			});
-			$(".user-view").css("border-bottom-style","none");
-            $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
-            $("#user-profile-name").html('<span class="name"></span>');
-            $("#user-profile-email").html('<span class="email"></span>');
-			setTimeout(function() {
-				$("#sign-in-wrapper").fadeIn(500, function() {
-					$("#sign-in-wrapper").show();
-				});
-			}, 100);
+	$("#user-data-wrapper").fadeOut(500, function() {
+		$("#user-data-wrapper").hide();
+	});
+	$("#side-options-wrapper").fadeOut(500, function() {
+		$("#side-options-wrapper").hide();
+	});
+	$(".user-view").css("border-bottom-style","none");
+	$("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
+	$("#user-profile-name").html('<span class="name"></span>');
+	$("#user-profile-email").html('<span class="email"></span>');
+	setTimeout(function() {
+		$("#sign-in-wrapper").fadeIn(500, function() {
+			$("#sign-in-wrapper").show();
+		});
+	}, 100);
 }

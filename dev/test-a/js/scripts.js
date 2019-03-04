@@ -51,9 +51,11 @@ $(document).ready(function() {
 	});
 	$('#color-backs').on("dragstop.spectrum", function(e, color) {
 		changeBackgroundColors(color);
+		fnSaveUserSettings-BackgroundColor(color);
 	});
 	$('#color-texts').on("dragstop.spectrum", function(e, color) {
 		changeTextColors(color);
+		fnSaveUserSettings-TextColor(color);
 	});
 
 	/** Other Scripts **/
