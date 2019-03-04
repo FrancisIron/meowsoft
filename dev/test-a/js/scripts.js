@@ -17,7 +17,7 @@ $(document).ready(function() {
 				$(icon).html('arrow_drop_up');
 				$(icon).fadeIn(300);
 			});
-		}, onCloseStart: function {
+		}, onCloseStart: function() {
 			var icon = $(this).find('.collapsible-arrow-icon');
 			$(icon).fadeOut(300, function() {
 				$(icon).html('arrow_drop_down');
