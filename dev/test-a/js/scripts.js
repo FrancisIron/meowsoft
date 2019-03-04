@@ -1,16 +1,12 @@
 // JavaScript source code
 var mobile = false;
-var sideNavCollapsible;
+var sideNavCollapsible = null;
 
 $(document).ready(function() {
 	/** Initialize MaterializeCSS **/
-    M.Sidenav.init($('.sidenav'), {
-        menuWidth: 300,
-		edge: 'right',
-		loseOnClick: true,
-		onCloseStart: closeSideNavCollapsible()
-    });
+	// Dropdown
     M.Dropdown.init($('.dropdown-trigger'));
+	// Collapsible
 	var collapsibleOptions = {
 		onOpenStart: function() {
 			var icon = $(this).find('.collapsible-arrow-icon');
@@ -31,6 +27,13 @@ $(document).ready(function() {
 	function closeSideNavCollapsible() {
 		sideNavCollapsible.close();
 	}
+	// Sidenav
+    M.Sidenav.init($('.sidenav'), {
+        menuWidth: 300,
+		edge: 'right',
+		loseOnClick: true,
+		onCloseStart: closeSideNavCollapsible()
+    });
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
