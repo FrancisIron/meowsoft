@@ -9,13 +9,10 @@ $(document).ready(function() {
 		edge: 'right',
 		loseOnClick: true,
 		onCloseStart: function() {
-			console.log($('.sidenav').find(".collapsible"));
-			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
-			collapsible.close();
-		},
-		onOpenStart: function() {
-			var collapsible = M.Collapsible.getInstance($('.sidenav').find(".collapsible"));
-			collapsible.close();
+			var array = $('.sidenav').find(".collapsible");
+			for (var i = 0; i < array.length; i++) {
+				M.Collapsible.getInstance($(array[i])).close();
+			}
 		}
     });
 	// Dropdown
@@ -25,7 +22,9 @@ $(document).ready(function() {
 		onOpenStart: function() {
 			console.log($(this));
 			var icon = $(this).find('.collapsible-arrow-icon');
+			console.log($(icon));
 			$(icon).fadeOut(300, function() {
+				console.log("Fading Out");
 				$(icon).html('arrow_drop_up');
 				$(icon).fadeIn(300);
 			});
