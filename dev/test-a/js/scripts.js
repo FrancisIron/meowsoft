@@ -50,11 +50,11 @@ $(document).ready(function() {
 	});
 	$('#color-backs').on("dragstop.spectrum", function(e, color) {
 		changeBackgroundColors(color);
-		fnSaveUserSettingsBackgroundColor(JSON.stringify(color));
+		fnSaveUserSettingsBackgroundColor(color.toHsvString());
 	});
 	$('#color-texts').on("dragstop.spectrum", function(e, color) {
 		changeTextColors(color);
-		fnSaveUserSettingsTextColor(JSON.stringify(color));
+		fnSaveUserSettingsTextColor(color.toHsvString());
 	});
 
 	/** Other Scripts **/
