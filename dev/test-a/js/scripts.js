@@ -7,7 +7,7 @@ $(document).ready(function() {
         menuWidth: 300,
 		edge: 'right',
 		loseOnClick: true,
-		onCloseStart: closeSideNavCollapsible();
+		onCloseStart: closeSideNavCollapsible()
     });
     M.Dropdown.init($('.dropdown-trigger'));
 	var collapsibleOptions = {
