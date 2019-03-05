@@ -113,8 +113,8 @@ function fnLoadUserSettings() {
 			$("#color-backs").spectrum("set", backgroundColor);
 			$("#color-texts").spectrum("set", textColor);
 			// Data processing
-			backgroundColor.replace("rgba", "rgb");
-			textColor.replace("rgba", "rgb");
+			backgroundColor = backgroundColor.replace("rgba", "rgb");
+			textColor = textColor.replace("rgba", "rgb");
 			// Set data
 			changeBackgroundColors(backgroundColor);
 			changeTextColors(backgroundColor);
