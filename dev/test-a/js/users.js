@@ -117,7 +117,7 @@ function fnLoadUserSettings() {
 			textColor = textColor.replace("rgba", "rgb");
 			// Set data
 			changeBackgroundColors(backgroundColor);
-			changeTextColors(backgroundColor);
+			changeTextColors(textColor);
 		} else {
 			// doc.data() will be undefined in this case
 			console.log("No document stored for current user! Creating default document!");
