@@ -76,10 +76,12 @@ $(document).ready(function() {
 function changeBackgroundColors(color) {
 		$('nav, .sidenav, .color-picker-container').css("background-color",color);
 		$('.name, .email').css("text-shadow","0 0 2px "+ color)
+		localStorage.setItem("backgroundColor", color);
 }
 
 function changeTextColors(color) {
 		$('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input').css("color",color);
+		localStorage.setItem("textColor", color);
 }
 
 function checkMobile(){

@@ -5,12 +5,19 @@
     <title>MeowSoft</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Priority Script -->
+	<script>
+		document.querySelectorAll('nav, .sidenav, .color-picker-container').style.cssText = 'background-color:'+localStorage.getItem("backgroundColor");
+		document.querySelectorAll('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input').style.cssText = 'color:'+localStorage.getItem("textColor");
+	</script>
+	<!-- Priority Script -->
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/resources/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="/resources/css/spectrum.css"/>
     <link type="text/css" rel="stylesheet" href="./css/style.css"/>
     <!-- CSS -->
+
 </head>
 <body>
 	<nav>
