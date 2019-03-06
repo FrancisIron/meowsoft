@@ -70,16 +70,16 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
-		fade: true,
-		asNavFor: '.slick-slider-lower'
+		fade: true//,
+		//asNavFor: '.slick-slider-lower'
 	});
-	$('.slick-slider-lower').slick({
+	/*$('.slick-slider-lower').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.slick-slider-upper',
 		centerMode: true,
 		focusOnSelect: true
-	});
+	});*/
 
 	/** Other Scripts **/
 	checkMobile();
