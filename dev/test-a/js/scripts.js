@@ -74,10 +74,10 @@ $(document).ready(function() {
 		fade: true//,
 		//asNavFor: '.slick-slider-lower'
 	});
-	$('.slick-slider-backgrounds').slick('slickGoTo',1);
+	$('.slick-slider-backgrounds').slick('slickGoTo',2);
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
 		//console.log('Current: '+ $(this).slick('slickCurrentSlide'));
-		var bgN = currentSlide + 1;
+		var bgN = $(this).slick('slickCurrentSlide') + 1;
 		$('html').css("background-image","/resources/backgrounds/bg"+bgN+".jpg");
 	});
 
