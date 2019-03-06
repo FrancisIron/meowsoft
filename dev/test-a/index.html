@@ -5,16 +5,6 @@
     <title>MeowSoft</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Priority Script -->
-	<script>
-		window.onload = function () {
-			var temp1 = document.querySelectorAll('nav, .sidenav, .color-picker-container');
-			for (var i = 0; i < temp1.length; i++){temp1[i].style.cssText = 'background-color:'+localStorage.getItem("backgroundColor");}
-			var temp2 = document.querySelectorAll('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input')
-			for (var i = 0; i < temp2.length; i++){temp2[i].style.cssText = 'color:'+localStorage.getItem("textColor");}
-		};
-	</script>
-	<!-- Priority Script -->
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/resources/css/materialize.min.css" media="screen,projection" />
@@ -201,6 +191,15 @@
 
     <!-- Scripts -->
     <div hidden name="scripts">
+		<!-- Priority Script -->
+		<script>
+			window.onload = function () {
+				var temp1 = document.querySelectorAll('nav, .sidenav, .color-picker-container');
+				for (var i = 0; i < temp1.length; i++){temp1[i].style.cssText = 'background-color:'+localStorage.getItem("backgroundColor");}
+				var temp2 = document.querySelectorAll('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input')
+				for (var i = 0; i < temp2.length; i++){temp2[i].style.cssText = 'color:'+localStorage.getItem("textColor");}
+			};
+		</script>
         <!-- jQuery -- https://jquery.com/ -->
         <script type="text/javascript" src="/resources/js/jquery-3.3.1.min.js"></script>
         <!-- Materialize CSS -- https://materializecss.com/ -->
