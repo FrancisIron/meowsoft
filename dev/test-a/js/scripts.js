@@ -34,8 +34,6 @@ $(document).ready(function() {
 		}
 	};
     M.Collapsible.init($('.collapsible'), collapsibleOptions);
-	// Carousel
-	M.Carousel.init($('.carousel'));
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
@@ -65,6 +63,12 @@ $(document).ready(function() {
 	$('#color-texts').on("change", function(e, color) {
 		changeTextColors(color);
 		fnSaveUserSettingsTextColor(color.toRgbString());
+	});
+
+	/** Initialize Albery **/
+	$(".albery-container").albery({
+		speed: 200, // default: 200
+		imgWidth: 250, // default: 600
 	});
 
 	/** Other Scripts **/
