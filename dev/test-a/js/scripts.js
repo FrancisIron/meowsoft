@@ -73,11 +73,16 @@ $(document).ready(function() {
 		dots: true,
 		fade: true
 	});
+	$('.slick-slider-backgrounds').addClass('temp-reference-class');
 	$('.slick-slider-backgrounds').slick('slickGoTo',2);
 	$('.slick-track').addClass('not-so-random-useless-width');
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
+		if ($('.slick-slider-backgrounds.temp-reference-class').length > -1) {
+			$('.slick-slider-backgrounds').removeClass('temp-reference-class');
+		} else {
+			fnSaveUserSettingsBackgroundImage(bgN);
+		}
 		var bgN = "bg" + ($(this).slick('slickCurrentSlide') + 1);
-		fnSaveUserSettingsBackgroundImage(bgN);
 		changeBackgroundImage(bgN);
 	});
 
