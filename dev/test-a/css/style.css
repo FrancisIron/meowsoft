@@ -112,6 +112,11 @@ input::placeholder {
     height: 100%;
 }
 
+.width-100 {
+	width: 100%;
+	height: auto;
+}
+
 #btn-sign-in-google {
     background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
     background-size: 191px 46px;
