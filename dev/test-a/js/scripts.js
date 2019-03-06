@@ -66,7 +66,7 @@ $(document).ready(function() {
 	});
 
 	/** Initialize Slick **/
-	$('.slick-slider-upper').slick({
+	$('.slick-slider-backgrounds').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
@@ -77,10 +77,14 @@ $(document).ready(function() {
 	/*$('.slick-slider-lower').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		asNavFor: '.slick-slider-upper',
+		asNavFor: '.slick-slider-backgrounds',
 		centerMode: true,
 		focusOnSelect: true
 	});*/
+	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
+		console.log('Current: '+currentSlide);
+		//$('html').css("background-image","/resources/backgrounds/bg"+(currentSlide++));
+	});
 
 	/** Other Scripts **/
 	checkMobile();
