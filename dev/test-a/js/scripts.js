@@ -77,6 +77,7 @@ $(document).ready(function() {
 	$('.slick-track').addClass('not-so-random-useless-width');
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
 		var bgN = "bg" + ($(this).slick('slickCurrentSlide') + 1);
+		fnSaveUserSettingsBackgroundImage(bgN);
 		changeBackgroundImage(bgN);
 	});
 
