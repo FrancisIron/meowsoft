@@ -35,7 +35,7 @@ $(document).ready(function() {
 	};
     M.Collapsible.init($('.collapsible'), collapsibleOptions);
 	// Carousel
-	M.Carousel.init($('.carousel'),{fullWidth:true});
+	M.Carousel.init($('.carousel'));
 
 	/** Initialize Spectrum **/
 	$(".color-pickers").spectrum({
