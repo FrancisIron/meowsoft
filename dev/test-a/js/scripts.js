@@ -71,15 +71,13 @@ $(document).ready(function() {
 		slidesToScroll: 1,
 		arrows: true,
 		dots: true,
-		fade: true//,
-		//asNavFor: '.slick-slider-lower'
+		fade: true
 	});
 	$('.slick-slider-backgrounds').slick('slickGoTo',2);
 	$('.slick-track').addClass('not-so-random-useless-width');
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
-		//console.log('Current: '+ $(this).slick('slickCurrentSlide'));
-		var bgN = $(this).slick('slickCurrentSlide') + 1;
-		$('html').css("background-image","url(/resources/backgrounds/bg"+bgN+".jpg)");
+		var bgN = "bg" + ($(this).slick('slickCurrentSlide') + 1);
+		changeBackgroundImage(bgN);
 	});
 
 	/** Other Scripts **/
@@ -99,6 +97,11 @@ function changeBackgroundColors(color) {
 function changeTextColors(color) {
 		$('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input').css("color",color);
 		localStorage.setItem("textColor", color);
+}
+
+function changeBackgroundImage(bgN) {
+	$('.slick-slider-backgrounds').slick('slickGoTo',(bgN - 1));
+	$('html').css("background-image","url(/resources/backgrounds/"+bgN+".jpg)");
 }
 
 function checkMobile(){

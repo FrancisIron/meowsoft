@@ -94,9 +94,7 @@ window.onload = function () {
     initApp();
 };
 
-
 /** Custom Scripts **/
-
 /** User Settings **/
 function fnLoadUserSettings() {
 	if (uid == null) {return;}
@@ -107,6 +105,7 @@ function fnLoadUserSettings() {
 			console.log("Document data:", doc.data());
 			var backgroundColor = doc.data()["backgroundColor"];
 			var textColor = doc.data()["textColor"];
+			var bgN = doc.data()["backgroundImage"];
 			// Data processing
 			//
 			// Set data
@@ -118,6 +117,7 @@ function fnLoadUserSettings() {
 			// Set data
 			changeBackgroundColors(backgroundColor);
 			changeTextColors(textColor);
+			changeBackgroundImage(bgN);
 		} else {
 			// doc.data() will be undefined in this case
 			console.log("No document stored for current user! Creating default document!");
@@ -134,7 +134,8 @@ function fnSaveUserSettings() {
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
 		backgroundColor: "rgb(90, 15, 15, 0.9)", 
-		textColor: "#FFF"
+		textColor: "#FFF",
+		backgroundImage: "bg3"
 	}, { merge: true });
 }
 
@@ -151,6 +152,14 @@ function fnSaveUserSettingsTextColor(value) {
 	var usersRef = db.collection("users");
 	usersRef.doc(uid).set({
 		textColor: value
+	}, { merge: true });
+}
+
+function fnSaveUserSettingsBackgroundImage(value) {
+	if (uid == null) {return;}
+	var usersRef = db.collection("users");
+	usersRef.doc(uid).set({
+		backgroundImage: value
 	}, { merge: true });
 }
 
@@ -189,4 +198,5 @@ function fnSignOut() {
 			$("#sign-in-wrapper").show();
 		});
 	}, 100);
+	$('html').css('background-image','url(/resources/backgrounds/bg3.jpg)');
 }
