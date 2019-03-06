@@ -65,10 +65,21 @@ $(document).ready(function() {
 		fnSaveUserSettingsTextColor(color.toRgbString());
 	});
 
-	/** Initialize Albery **/
-	$(".albery-container").albery({
-		speed: 200, // default: 200
-		imgWidth: 250, // default: 600
+	/** Initialize Slick **/
+	$('.slick-slider-upper').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slick-slider-lower'
+	});
+	$('.slick-slider-lower').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slick-slider-upper',
+		dots: true,
+		centerMode: true,
+		focusOnSelect: true
 	});
 
 	/** Other Scripts **/
