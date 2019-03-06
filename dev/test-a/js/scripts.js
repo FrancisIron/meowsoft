@@ -71,18 +71,14 @@ $(document).ready(function() {
 		slidesToScroll: 1,
 		arrows: true,
 		dots: true,
-		fade: true
+		fade: true,
+		initialSlide: 2
 	});
-	$('.slick-slider-backgrounds').addClass('temp-reference-class');
-	$('.slick-slider-backgrounds').slick('slickGoTo',2);
+	//$('.slick-slider-backgrounds').slick('slickGoTo',2);
 	$('.slick-track').addClass('not-so-random-useless-width');
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
 		var bgN = "bg" + ($(this).slick('slickCurrentSlide') + 1);
-		if ($('.slick-slider-backgrounds.temp-reference-class').length > -1) {
-			$('.slick-slider-backgrounds').removeClass('temp-reference-class');
-		} else {
-			fnSaveUserSettingsBackgroundImage(bgN);
-		}
+		fnSaveUserSettingsBackgroundImage(bgN);
 		changeBackgroundImage(bgN);
 	});
 
