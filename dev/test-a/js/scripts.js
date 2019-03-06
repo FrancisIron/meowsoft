@@ -69,7 +69,7 @@ $(document).ready(function() {
 	$('.slick-slider-upper').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false,
+		arrows: true,
 		fade: true,
 		asNavFor: '.slick-slider-lower'
 	});
@@ -77,7 +77,6 @@ $(document).ready(function() {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.slick-slider-upper',
-		dots: true,
 		centerMode: true,
 		focusOnSelect: true
 	});
