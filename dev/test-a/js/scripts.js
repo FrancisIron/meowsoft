@@ -75,8 +75,7 @@ $(document).ready(function() {
 		//asNavFor: '.slick-slider-lower'
 	});
 	$('.slick-slider-backgrounds').slick('slickGoTo',2);
-	var slides = $('.slick-track').find('.background-slider-image');
-	$('.slick-track').css("width",(238*slides.length));
+	$('.slick-track').addClass('not-so-random-useless-width');
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
 		//console.log('Current: '+ $(this).slick('slickCurrentSlide'));
 		var bgN = $(this).slick('slickCurrentSlide') + 1;

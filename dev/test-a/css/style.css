@@ -117,6 +117,11 @@ input::placeholder {
 	height: auto;
 }
 
+/* Required to fix Slick issues */
+.not-so-random-useless-width {
+	width: 10000px !important;
+}
+
 #btn-sign-in-google {
     background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
     background-size: 191px 46px;
