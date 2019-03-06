@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Priority Script -->
 	<script>
-		var temp1 = document.querySelectorAll('nav, .sidenav, .color-picker-container');
-		for (var i = 0; i < temp1.length; i++){temp1[i].style.cssText = 'background-color:'+localStorage.getItem("backgroundColor");}
-		var temp2 = document.querySelectorAll('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input')
-		for (var i = 0; i < temp2.length; i++){temp2[i].style.cssText = 'color:'+localStorage.getItem("textColor");}
+		window.onload = function () {
+			var temp1 = document.querySelectorAll('nav, .sidenav, .color-picker-container');
+			for (var i = 0; i < temp1.length; i++){temp1[i].style.cssText = 'background-color:'+localStorage.getItem("backgroundColor");}
+			var temp2 = document.querySelectorAll('html, body, head, nav, a, button, p, span, li, i, link, ul, .color-picker-container, .sp-input')
+			for (var i = 0; i < temp2.length; i++){temp2[i].style.cssText = 'color:'+localStorage.getItem("textColor");}
+		};
 	</script>
 	<!-- Priority Script -->
     <!-- CSS -->
