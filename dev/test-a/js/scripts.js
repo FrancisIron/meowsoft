@@ -82,7 +82,7 @@ $(document).ready(function() {
 		focusOnSelect: true
 	});*/
 	$('.slick-slider-backgrounds').on('afterChange', function(slick, currentSlide){
-		console.log('Current: '+currentSlide);
+		console.log('Current: '+ $(this).slick('slickCurrentSlide'));
 		//$('html').css("background-image","/resources/backgrounds/bg"+(currentSlide++));
 	});
 
