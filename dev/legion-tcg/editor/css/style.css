@@ -29,6 +29,10 @@ body {
     margin-bottom: 10px;
 }
 
+.sidenav {
+    background-color: #26a69a7a;
+}
+
 .nya-wrapper {
     display: flex;
     align-items: center;
@@ -102,6 +106,13 @@ body {
     transform: translateX(50%);
 }
 
+.footer {
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 
 /** Google **//*
 #btn-sign-in-google {
