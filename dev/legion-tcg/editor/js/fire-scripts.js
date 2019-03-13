@@ -16,8 +16,6 @@ $(document).ready(function () {
     ui.start('#firebaseui-auth-container', uiConfig);
 });
 
-
-
 function toggleSignIn() {
     if (!firebase.auth().currentUser) {
         // [START createprovider]
@@ -101,25 +99,18 @@ function fnLoadUserSettings() {
         if (doc.exists) {
             // Read data
             console.log("Document data:", doc.data());
-            /*var backgroundColor = doc.data()["backgroundColor"];
-            var textColor = doc.data()["textColor"];
-            var bgN = doc.data()["backgroundImage"];
+            var canView = doc.data()["view"];
+            var canEdit = doc.data()["edit"];
             // Data processing
-            //
+            if (!canView) {
+                console.log("View not found");
+            }
             // Set data
-            $("#color-backs").spectrum("set", backgroundColor);
-            $("#color-texts").spectrum("set", textColor);
             // Data processing
-            backgroundColor = backgroundColor.replace("rgba", "rgb");
-            textColor = textColor.replace("rgba", "rgb");
             // Set data
-            changeBackgroundColors(backgroundColor);
-            changeTextColors(textColor);
-            changeBackgroundImage(bgN);*/
         } else {
             // doc.data() will be undefined in this case
-            console.log("No document stored for current user! Creating default document!");
-            fnSaveUserSettings()
+            fnSaveUserSettings();
         }
     }).catch(function (error) {
         console.log("Error getting document:", error);
