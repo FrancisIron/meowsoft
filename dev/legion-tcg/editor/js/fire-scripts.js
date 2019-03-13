@@ -58,10 +58,11 @@ function fnLoadUserSettings() {
         if (doc.exists) {
             // Read data
             console.log("Document data:", doc.data());
+            var isEditor = doc.data()["tcgEditor"];
             var canView = doc.data()["view"];
             var canEdit = doc.data()["edit"];
             // Data processing
-            if (!canView) {
+            if (!isEditor) {
                 fnSaveUserSettings();
                 fnLoadUserSettings();
             }
@@ -82,6 +83,7 @@ function fnSaveUserSettings() {
     if (uid == null) { return; }
     var usersRef = db.collection("users");
     usersRef.doc(uid).set({
+        tcgEditor: true,
         view: false,
         edit: false
     }, { merge: true });
