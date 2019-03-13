@@ -1,0 +1,116 @@
+body {
+    background-image: url("./../resources/background.jpg");
+    background-position: center;
+    overflow: hidden;
+}
+
+.preloader-container {
+    margin: auto;
+    background: white;
+    z-index: 9999;
+}
+
+.preloader-center {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.preloader-wrapper.big {
+    width: 100px;
+    height: 100px;
+}
+
+#header {
+    border-bottom-style: inset;
+    border-bottom-color: #26a69a4a;
+    background-color: #26a69a4a;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.nya-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nya-fs0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.nya-dh100 {
+    height: 100%;
+}
+
+.nya-vh100 {
+    height: 100vh;
+}
+
+.nya-mr5 {
+    margin-right: 5% !important;
+}
+
+.nya-ml28 {
+    margin-left: 28% !important;
+}
+
+.tabs {
+    display: flex;
+    background-color: initial;
+}
+
+.tabs .tab {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.list-scrollbar {
+    position: fixed;
+    overflow-y: scroll;
+    bottom: 0;
+    top: 70px;
+}
+
+.input-field {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+#toast-container {
+    min-width: 10%;
+    top: auto !important;
+    bottom: 9%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+
+/** Google **/
+#btn-sign-in-google {
+    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
+    background-size: 191px 46px;
+    height: 46px;
+    width: 191px;
+    background-position: center;
+    background-color: transparent;
+    border-style: none;
+}
+
+    #btn-sign-in-google:hover {
+        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_focus_web.png');
+    }
+
+    #btn-sign-in-google:active {
+        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_pressed_web.png');
+    }
+
+    #btn-sign-in-google:disabled {
+        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png');
+    }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Legion TCG - Card Editor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="preloader-container nya-fs0" id="preloader">
+        <div class="preloader-center nya-fs0">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center" id="main_div" class="nya-fs0">
+        <div id="div-login" class="nya-dh100">
+            <h5>Card Editor</h5>
+            <div id="sign-in-wrapper" class="nya-wrapper nya-dh100">
+                <button id="btn-sign-in-google" disabled=""></button>
+                <div id="btn-sign-in-google"></div>
+                <div id="firebaseui-auth-container"></div>
+            </div>
+        </div>
+        <div id="div-main" class="nya-dh100" hidden>
+            <div>
+                <div id="tabs-wrapper" class="row">
+                    <div id="header" class="col s12 m12">
+                        <ul class="tabs">
+                            <li><h5>Card Editor [v 0.1]</h5></li>
+                            <li class="tab col s3 m3 disabled"><a href="#tab4"></a></li>
+                            <li class="tab col s3 m3 disabled"><a href="#tab3"></a></li>
+                            <li class="tab col s3 m3"><a class="active" href="#tab1">Cards</a></li>
+                            <li class="tab col s3 m3 disabled"><a href="#tab2">Abilities</a></li>
+                        </ul>
+                    </div>
+                    <div id="tab1" class="col s12 m12">
+                        <div class="row">
+                            <div class="col s3 m3 list-scrollbar">
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                                <div><p>content</p></div>
+                            </div>
+                            <div class="col s9 m9 nya-ml28">
+                                <div id="card-editor" class="section nya-mr5">
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <input id="card-id" type="number" disabled="">
+                                            <label for="card-id">Id</label>
+                                        </div>
+                                        <div class="input-field col s10">
+                                            <input id="card-name" type="text">
+                                            <label for="card-name">Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s2">
+                                            <input id="card-rarity" type="number" min="0" max="10">
+                                            <label for="card-rarity">Rareza</label>
+                                        </div>
+                                        <div class="input-field col s5">
+                                            <input id="card-type" type="text">
+                                            <label for="card-type">Tipo</label>
+                                        </div>
+                                        <div class="input-field col s5">
+                                            <input id="card-faction" type="text">
+                                            <label for="card-faction">Faccion</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s4">
+                                            <input id="card-cost" type="number" min="0" max="10">
+                                            <label for="card-cost">Costo</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="card-attack" type="number" min="0" max="10">
+                                            <label for="card-attack">Ataque</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="card-defense" type="number" min="0" max="10">
+                                            <label for="card-defense">Defensa</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <textarea id="card-description-es" class="materialize-textarea"></textarea>
+                                            <label for="card-description-es">Descripcion (Español)</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <textarea id="card-description-en" class="materialize-textarea"></textarea>
+                                            <label for="card-description-en">Descripcion (English)</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="card-abilities" type="text">
+                                            <label for="card-abilities">Habilidades</label>
+                                        </div>
+                                    </div>
+                                    <div class="row" hidden>
+                                        <div class="file-field input-field">
+                                            <div class="btn">
+                                                <span>File</span>
+                                                <input type="file">
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="card-illustration" type="text">
+                                            <label for="card-illustration">Ilustracion</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="card-frame-illustration" type="text">
+                                            <label for="card-frame-illustration">Diseño de Fondo</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="col s12">Test 2</div>
+                    <div id="tab3" class="col s12">Test 3</div>
+                    <div id="tab4" class="col s12">Test 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scripts" hidden>
+        <!-- Base App -->
+        <script type="text/javascript" src="/resources/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/resources/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.disableAutoFill.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <!-- Scripts -->
+        <!--<script type="text/javascript" src="./js/firebase-init"></script>-->
+        <script type="text/javascript" src="/resources/js/firebase-init.js"></script>
+        <script type="text/javascript" src="./js/scripts"></script>
+        <script type="text/javascript" src="./js/fire-scripts"></script>
+    </div>
+</body>
+</html>
