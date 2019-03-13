@@ -93,7 +93,7 @@ body {
 }
 
 
-/** Google **/
+/** Google **//*
 #btn-sign-in-google {
     background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
     background-size: 191px 46px;
@@ -115,3 +115,4 @@ body {
     #btn-sign-in-google:disabled {
         background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png');
     }
+*/

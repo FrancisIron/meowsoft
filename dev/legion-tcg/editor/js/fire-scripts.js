@@ -9,52 +9,11 @@ $(document).ready(function () {
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ]
     };
-
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
 });
-
-function toggleSignIn() {
-    if (!firebase.auth().currentUser) {
-        // [START createprovider]
-        var provider = new firebase.auth.GoogleAuthProvider();
-        //provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-        // [START signin]
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-        }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // [START_EXCLUDE]
-            if (errorCode === 'auth/account-exists-with-different-credential') {
-                alert('You have already signed up with a different auth provider for that email.');
-                // If you are using multiple auth providers on your app you should handle linking
-                // the user's accounts here.
-            } else {
-                console.error(error);
-            }
-        });
-        // [END signin]
-    } else {
-        // [START signout]
-        firebase.auth().signOut();
-        // [END signout]
-    }
-    // [START_EXCLUDE]
-    document.getElementById('btn-sign-in-google').disabled = true;
-    // [END_EXCLUDE]
-}
-// [END buttoncallback]
 
 function initApp() {
     // Listening for auth state changes.
@@ -79,10 +38,10 @@ function initApp() {
             fnSignOut();
         }
         // [START_EXCLUDE]
-        document.getElementById('btn-sign-in-google').disabled = false;
+        //document.getElementById('btn-sign-in-google').disabled = false;
     });
     // [END authstatelistener]
-    document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
+    //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
     //document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
@@ -103,7 +62,8 @@ function fnLoadUserSettings() {
             var canEdit = doc.data()["edit"];
             // Data processing
             if (!canView) {
-                console.log("View not found");
+                fnSaveUserSettings();
+                fnLoadUserSettings();
             }
             // Set data
             // Data processing
