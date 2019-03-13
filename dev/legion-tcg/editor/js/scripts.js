@@ -1,6 +1,13 @@
 $(document).ready(function () {
     /** Initialize MaterializeCSS Components **/
+    // Tabs
     M.Tabs.init($('.tabs'));
+    // Sidenav
+    M.Sidenav.init($('.sidenav'), {
+        menuWidth: 300,
+        edge: 'right',
+        loseOnClick: true
+    });
     //M.ScrollSpy.init($('.scrollspy'));
     /** MaterializeCSS End **/
 
