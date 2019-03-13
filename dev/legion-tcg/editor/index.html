@@ -41,25 +41,25 @@
             <div>
                 <div id="tabs-wrapper" class="row">
                     <div id="header" class="col s12 m12">
-                        <h5>Card Editor [v 0.1]</h5>
+                        <h5 class="tcgtitle">Card Editor [v 0.1]</h5>
                         <ul id="slide-out" class="sidenav">
                             <li>
                                 <div class="user-view">
-                                    <div class="background">
-                                        <img src="">
+                                    <div class="background"></div>
+                                    <div id="user-data-wrapper">
+                                        <a href="#user" id="user-profile-image"><img class="circle profile-image" src=""></a>
+                                        <a href="#name" id="user-profile-name"><span class="name"></span></a>
+                                        <a href="#email" id="user-profile-email"><span class="email"></span></a>
                                     </div>
-                                    <a href="#user"><img class="circle" src=""></a>
-                                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                                 </div>
                             </li>
-                            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-                            <li><a href="#!">Second Link</a></li>
-                            <li><div class="divider"></div></li>
-                            <li><a class="subheader">Subheader</a></li>
-                            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                            <div id="side-options-wrapper">
+                                <li class="footer" style="padding: 66px 32px;">
+                                    <a id="btn-log-out" class="waves-effect waves-teal btn-flat" style="text-align: center;">Log out</a>
+                                </li>
+                            </div>
                         </ul>
-                        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <a href="#" data-target="slide-out" class="sidenav-trigger nya-sidenav"><i class="material-icons small">menu</i></a>
                         <div class="row">
                             <ul class="tabs">
                                 <li class="tab col s3 m3 disabled"><a href="#tab4"></a></li>

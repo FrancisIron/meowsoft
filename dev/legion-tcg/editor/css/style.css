@@ -79,6 +79,16 @@ body {
     max-height: 80vh;
 }
 
+.tcgtitle {
+    display: inline-block;
+    padding-left: 2rem;
+}
+
+.nya-sidenav {
+    float: right;
+    padding: 1rem 1rem 0rem 0rem;
+}
+
 .input-field {
     margin-top: 0rem;
     margin-bottom: 0rem;
