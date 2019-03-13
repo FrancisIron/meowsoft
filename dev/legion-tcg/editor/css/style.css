@@ -72,10 +72,11 @@ body {
 }
 
 .list-scrollbar {
-    position: fixed;
+    /*position: fixed;*/
     overflow-y: scroll;
-    bottom: 0;
-    top: 70px;
+    /*bottom: 0;*/
+    /*top: 70px;*/
+    max-height: 80vh;
 }
 
 .input-field {
