@@ -5,6 +5,7 @@ html {
 body {
     background-image: url("./../resources/background.jpg");
     background-position: center;
+    background-size: cover;
     overflow: hidden;
 }
 
