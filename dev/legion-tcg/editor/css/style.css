@@ -1,3 +1,7 @@
+html {
+    background-color: black;
+}
+
 body {
     background-image: url("./../resources/background.jpg");
     background-position: center;
@@ -31,6 +35,20 @@ body {
 
 .sidenav {
     background-color: #26a69a7a;
+}
+
+.user-background {
+    background-image: url('/resources/backgrounds/bg3.jpg');
+    background-color: black;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.name, .email {
+    /* text-shadow: 0 0 2px #ee6e73; */
+    text-shadow: 0 0 2px rgb(90, 15, 15, 0.9);
 }
 
 .nya-wrapper {
@@ -80,12 +98,19 @@ body {
     overflow-y: scroll;
     /*bottom: 0;*/
     /*top: 70px;*/
-    max-height: 80vh;
+    max-height: 80%;
 }
 
 .tcgtitle {
     display: inline-block;
     padding-left: 2rem;
+}
+
+#card-editor {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .nya-sidenav {

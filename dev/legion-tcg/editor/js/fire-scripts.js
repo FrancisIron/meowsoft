@@ -95,9 +95,9 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
         $("#div-login").hide();
     });
     //$(".user-view").css("border-bottom-style", "outset");
-    //$("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL + '">');
-    //$("#user-profile-name").html('<span class="name">' + displayName + '</span>');
-    //$("#user-profile-email").html('<span class="email">' + email + '</span>');
+    $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL + '">');
+    $("#user-profile-name").html('<span class="name">' + displayName + '</span>');
+    $("#user-profile-email").html('<span class="email">' + email + '</span>');
     setTimeout(function () {
         $("#div-main").fadeIn(500, function () {
             $("#div-main").show();
@@ -109,10 +109,9 @@ function fnSignOut() {
     $("#div-main").fadeOut(500, function () {
         $("#div-main").hide();
     });
-    //$(".user-view").css("border-bottom-style", "none");
-    //$("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
-    //$("#user-profile-name").html('<span class="name"></span>');
-    //$("#user-profile-email").html('<span class="email"></span>');
+    $("#user-profile-image").html('<img class="circle profile-image" alt="" src="">');
+    $("#user-profile-name").html('<span class="name"></span>');
+    $("#user-profile-email").html('<span class="email"></span>');
     setTimeout(function () {
         $("#div-login").fadeIn(500, function () {
             $("#div-login").show();
