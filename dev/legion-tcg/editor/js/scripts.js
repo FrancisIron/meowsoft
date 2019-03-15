@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Tabs
     M.Tabs.init($('.tabs'), {
         onShow: function () {
-            $('#tabs-wrapper .active').css('display', 'flex');
+            $('#tabs-wrapper > .active').css('display', 'flex');
         }
     });
     // Sidenav
