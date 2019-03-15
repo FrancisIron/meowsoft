@@ -23,12 +23,14 @@ div {
     margin: auto;
     background: white;
     z-index: 9999;
+    display:block;
 }
 
 .preloader-center {
     margin: auto;
     width: 100px;
     height: 100px;
+    display: block;
 }
 
 .preloader-wrapper.big {
@@ -76,6 +78,7 @@ div {
     bottom: 0;
     left: 0;
     position: absolute;
+    display: block;
 }
 
 .nya-dh100 {
@@ -111,11 +114,14 @@ div {
 }
 
 .list-scrollbar {
-    /*position: fixed;*/
     overflow-y: scroll;
-    /*bottom: 0;*/
-    /*top: 70px;*/
-    max-height: 80%;
+    display: block;
+    margin-top: 30px;
+}
+
+.end-button-container {
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 .tcgtitle {
@@ -127,7 +133,7 @@ div {
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    flex-grow: 1;
 }
 
 .nya-sidenav {
