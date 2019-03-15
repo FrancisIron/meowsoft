@@ -1,18 +1,17 @@
 html {
-    background-color: #39796b;
     color: white;
 }
 
 nya-color-main {
-    background-color: #004d40;
+    background-color: #004d408f;
 }
 
-nya-color-light {
-    background-color: #39796b;
+nya-color-light, #main_div {
+    background-color: #39796b8f;
 }
 
 nya-color-dark {
-    background-color: #00251a;
+    background-color: #00251a8f;
 }
 
 body {
