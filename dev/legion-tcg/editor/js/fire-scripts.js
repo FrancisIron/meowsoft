@@ -129,7 +129,9 @@ function fnUpdateCard(card) {
 function fnUpdateCID() {
     console.log('DEBUG: fnUpdateCID()');
     if (uid == null) { return; }
+    console.log('DEBUG: cid value: ', cid);
     cid++;
+    console.log('DEBUG: cid update: ', cid);
     var usersRef = db.collection("lcgSettings");
     usersRef.doc('cards').set({
         cid: cid
