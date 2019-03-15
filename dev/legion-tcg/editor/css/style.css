@@ -9,6 +9,12 @@ body {
     overflow: hidden;
 }
 
+body, div {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
 .preloader-container {
     margin: auto;
     background: white;
