@@ -1,5 +1,5 @@
 /**Color Variables**/
-element {
+:root {
     --n-color-main: #004d40;
     --n-color-main-t: #004d40cf;
     --n-color-dark: #00251a;
