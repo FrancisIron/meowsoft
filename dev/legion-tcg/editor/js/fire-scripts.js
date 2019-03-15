@@ -100,9 +100,9 @@ function fnLoadSettings() {
     console.log('DEBUG: fnLoadSettings()');
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
-            cid = doc.data();
+            cid = doc.data()['cid'];
+            console.log('DEBUG: current cid: ', cid);
         });
-    console.log('DEBUG: current cid: ',cid);
 }
 
 // Update Card
@@ -129,9 +129,7 @@ function fnUpdateCard(card) {
 function fnUpdateCID() {
     console.log('DEBUG: fnUpdateCID()');
     if (uid == null) { return; }
-    console.log('DEBUG: cid value: ', cid);
     cid++;
-    console.log('DEBUG: cid update: ', cid);
     var usersRef = db.collection("lcgSettings");
     usersRef.doc('cards').set({
         cid: cid
