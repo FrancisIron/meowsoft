@@ -33,6 +33,7 @@ function initApp() {
             fnLoadUserSettings();
             fnSignIn(displayName, email, emailVerified, photoURL);
             fnLoadSettings();
+            fnDownloadCards();
         } else {
             // User is signed out.
             // [START_EXCLUDE]
@@ -106,7 +107,7 @@ function fnLoadSettings() {
 }
 
 // Real-time Card Downloads
-function fnDownloadCard() {
+function fnDownloadCards() {
     console.log('DEBUG: fnDownloadCard()');
     if (uid == null) { return; }
     db.collection("lcgCards")
