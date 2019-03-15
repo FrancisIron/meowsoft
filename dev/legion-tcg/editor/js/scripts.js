@@ -10,7 +10,12 @@ $(document).ready(function () {
     });
     //M.ScrollSpy.init($('.scrollspy'));
     /** MaterializeCSS End **/
+    /** Scripts **/
+    $('#btn-card-delete').click(function () {
 
+    });
+
+    /** Load Ready **/
     $('input, textarea').disableAutoFill();
     onLoad();
 });
