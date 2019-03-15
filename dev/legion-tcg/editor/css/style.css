@@ -20,7 +20,7 @@ html, input, a {
     border-bottom-style: inset;
 }
 
-#main_div, #side-options-wrapper {
+#main_div, #side-options-wrapper, .sidenav {
     background-color: var(--n-color-light-t);
 }
 
@@ -57,7 +57,12 @@ div {
 }
 
 .sidenav {
-    background-color: var(--n-color-light-t);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav .user-view {
+    margin: 0;
 }
 
 .user-background {
@@ -72,6 +77,10 @@ div {
 .name, .email {
     /* text-shadow: 0 0 2px #ee6e73; */
     text-shadow: 0 0 2px rgb(90, 15, 15, 0.9);
+}
+
+#side-options-wrapper {
+    flex-grow: 1;
 }
 
 .nya-wrapper {
