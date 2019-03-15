@@ -1,6 +1,6 @@
 @import url("materializeOverwrite.css");
 
-html {
+html, input {
     color: white;
 }
 
