@@ -21,7 +21,15 @@ $(document).ready(function () {
 
 function initApp() {
     //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
-    document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
+    document.getElementById('btn-log-out').addEventListener('click', function () {
+        firebase.auth().signOut()
+        .then(function () {
+            // Sign-out successful.
+        })
+        .catch(function (error) {
+            // An error happened
+        });
+    });
     // Listening for auth state changes.
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
