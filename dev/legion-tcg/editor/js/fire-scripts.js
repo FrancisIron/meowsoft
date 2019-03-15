@@ -36,13 +36,13 @@ function initApp() {
             //var providerData = user.providerData;
             // [START_EXCLUDE]
             fnLoadUserSettings(displayName, email);
-            if (ucv) {
+            //if (ucv) {
                 fnSignIn(displayName, email, emailVerified, photoURL);
                 fnLoadSettings();
                 fnDownloadCards();
-            } else {
-                $('btn-log-out').click();
-            }
+            //} else {
+                //$('btn-log-out').click();
+            //}
         } else {
             // User is signed out.
             // [START_EXCLUDE]
