@@ -59,7 +59,6 @@ function fnLoadUserSettings() {
     docRef.get().then(function (doc) {
         if (doc.exists) {
             // Read data
-            console.log("Document data:", doc.data());
             var isEditor = doc.data()["tcgEditor"];
             var canView = doc.data()["tcgView"];
             var canEdit = doc.data()["tcgEdit"];
@@ -67,13 +66,17 @@ function fnLoadUserSettings() {
             if (!isEditor) {
                 fnSaveUserSettings();
                 fnLoadUserSettings();
+                return;
             }
             // Set data
             // Data processing
             // Set data
+            console.log('DEBUG: fnLoadSettings finished');
+            console.log("Document data:", doc.data());
         } else {
             // doc.data() will be undefined in this case
             fnSaveUserSettings();
+            fnLoadUserSettings();
         }
     }).catch(function (error) {
         console.log("Error getting document:", error);
@@ -94,6 +97,7 @@ function fnSaveUserSettings() {
 /** Legion-TCG **/
 // Real-time Settings
 function fnLoadSettings() {
+    console.log('DEBUG: fnLoadSettings()');
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
             cid = doc.data();
@@ -102,6 +106,7 @@ function fnLoadSettings() {
 
 // Update Card
 function fnUpdateCard(card) {
+    console.log('DEBUG: fnUpdateCard()');
     if (uid == null) { return; }
     var usersRef = db.collection("lcgCards");
     usersRef.doc(card['id']).set({
@@ -121,6 +126,7 @@ function fnUpdateCard(card) {
 
 // Update Card ID
 function fnUpdateCID() {
+    console.log('DEBUG: fnUpdateCID()');
     if (uid == null) { return; }
     cid++;
     var usersRef = db.collection("lcgSettings");
@@ -131,6 +137,7 @@ function fnUpdateCID() {
 
 // Download Card
 function fnDownloadCard() {
+    console.log('DEBUG: fnDownloadCard()');
     if (uid == null) { return; }
 }
 

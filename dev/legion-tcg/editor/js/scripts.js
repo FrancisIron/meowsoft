@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log('DEBUG: initializing components');
     /** Initialize MaterializeCSS Components **/
     // Tabs
     M.Tabs.init($('.tabs'), {
@@ -18,10 +19,13 @@ $(document).ready(function () {
     /** MaterializeCSS End **/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
+        console.log('DEBUG: btn-card-new pressed');
         $('input, textarea').val('');
     });
     $('#btn-card-save').click(function () {
+        console.log('DEBUG: btn-card-save pressed');
         if (!($('#card-id').val())) {
+            console.log('DEBUG: card-id is empty');
             fnUpdateCID();
             $('#card-id').val(cid);
         }
@@ -38,9 +42,11 @@ $(document).ready(function () {
             defense: $('#card-defense').val(),
             health: $('#card-health').val()
         };
+        console.log('DEBUG: card data:',card);
         fnUpdateCard(card);
     });
     $('#btn-card-delete').click(function () {
+        console.log('DEBUG: btn-card-delete pressed');
 
     });
     /** Button Scripts End **/
