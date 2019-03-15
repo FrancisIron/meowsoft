@@ -42,6 +42,8 @@ $(document).ready(function () {
             defense: $('#card-defense').val(),
             health: $('#card-health').val()
         };
+        if (!card['descriptionEN']) card['descriptionEN'] = "";
+        if (!card['descriptionES']) card['descriptionES'] = "";
         console.log('DEBUG: card data:',card);
         fnUpdateCard(card);
     });
