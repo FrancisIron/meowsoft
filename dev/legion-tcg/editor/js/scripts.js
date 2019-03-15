@@ -21,6 +21,7 @@ $(document).ready(function () {
     $('#btn-card-new').click(function () {
         console.log('DEBUG: btn-card-new pressed');
         $('input, textarea').val('');
+        $('input + label, textarea + label').removeClass('active');
     });
     $('#btn-card-save').click(function () {
         console.log('DEBUG: btn-card-save pressed');
@@ -28,6 +29,7 @@ $(document).ready(function () {
             console.log('DEBUG: card-id is empty');
             fnUpdateCID();
             $('#card-id').val(cid);
+            $('#card-id').addClass('active');
         }
         var card = {
             id: $('#card-id').val(),
