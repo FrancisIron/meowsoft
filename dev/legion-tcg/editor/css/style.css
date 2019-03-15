@@ -10,7 +10,7 @@
 .--n-color-light-t {background: var(--n-color-light-t);}
 /**------**/
 
-html, input {
+html, input, a {
     color: var(--n-color-text);
 }
 
@@ -45,23 +45,8 @@ div {
     flex-direction: row;
 }
 
-.preloader-container {
-    margin: auto;
-    background: white;
-    z-index: 9999;
-    display:block;
-}
-
-.preloader-center {
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    display: block;
-}
-
-.preloader-wrapper.big {
-    width: 100px;
-    height: 100px;
+.scroll-list-item {
+    margin: 5px;
 }
 
 #header {
@@ -211,3 +196,22 @@ div {
         background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png');
     }
 */
+
+.preloader-container {
+    margin: auto;
+    background: white;
+    z-index: 9999;
+    display: block;
+}
+
+.preloader-center {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.preloader-wrapper.big {
+    width: 100px;
+    height: 100px;
+}
