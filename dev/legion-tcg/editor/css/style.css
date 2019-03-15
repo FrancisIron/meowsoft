@@ -80,7 +80,7 @@ div {
     position: absolute;
 }
 
-.fieldset {
+.flex-unset {
     flex-direction: unset;
 }
 
