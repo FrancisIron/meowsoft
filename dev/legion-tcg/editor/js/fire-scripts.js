@@ -50,6 +50,9 @@ function initApp() {
             ucv = null;
             uce = null;
             umeowname = null;
+            var uemail = null;
+            db.collection("lcgCards").onSnapshot(function () { });
+            db.collection("lcgSettings").onSnapshot(function () { });
             fnSignOut();
         }
         // [START_EXCLUDE]
@@ -70,14 +73,14 @@ function fnLoadUserSettings(name, email) {
             if (doc.exists) {
                 // Read data
                 var isEditor = doc.data()["tcgEditor"];
-                ucv = doc.data()["tcgView"];
-                uce = doc.data()["tcgEdit"];
-                // Data processing
                 if (!isEditor) {
                     fnSaveUserSettings(name, email);
                     fnLoadUserSettings(name, email);
                     return;
                 }
+                ucv = doc.data()["tcgView"];
+                uce = doc.data()["tcgEdit"];
+                umeowname = doc.data()["userMeowName"];
                 //console.log('DEBUG: fnLoadUserSettings finished');
                 //console.log("Document data:", doc.data());
             } else {
@@ -123,15 +126,17 @@ function fnDownloadCards() {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
                     //console.log("New document: ", change.doc.data());
-                    M.toast({ html: '{user} added a new document' })
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' added a new card: ID' + change.doc.data()['id'] })
                 }
                 if (change.type === "modified") {
                     //console.log("Modified document: ", change.doc.data());
-                    M.toast({ html: '{user} updated a document' })
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card ' + change.doc.data()['id']})
                 }
                 if (change.type === "removed") {
                     //console.log("Removed document: ", change.doc.data());
-                    M.toast({ html: '{user} removed a document' })
+                    var card = fnDownloadCard("lcgCardsBackup", change.doc.data()['id']);
+                    if (card == null) { return; }
+                    M.toast({ html: '@' + card['removedBy'] + ' removed card ' + card['id']})
                 }
             });
         });
@@ -154,7 +159,7 @@ function fnUpdateCard(card) {
     if (uid == null) { return; }
     db.collection("lcgCards")
         .doc(card['id']).set({
-            lastEditedBy: 
+            lastEditedBy: umeowname,
             id: card['id'],
             name: card['name'],
             descriptionEN: card['descriptionEN'],
@@ -169,16 +174,16 @@ function fnUpdateCard(card) {
         }, { merge: true });
 }
 
-// Get Card
-function fnDownloadCard(cardNumber) {
+// Get Document
+function fnDownloadDocument(dbid,documentid) {
     //console.log('DEBUG: fnDownloadCard()');
     if (uid == null) { return; }
-    db.collection("lcgCards").doc(cardNumber)
+    db.collection(dbid).doc(documentid)
         .get().then(function (doc) {
             if (doc.exists) {
                 return doc.data();
             } else {
-                console.log("Could not find document ", cardNumber);
+                console.log("Could not find document " +dbid+'@'+documentid);
                 return null;
             }
         }).catch(function (error) {
@@ -191,10 +196,12 @@ function fnDownloadCard(cardNumber) {
 function fnBackupCard(cardNumber) {
     //console.log('DEBUG: fnBackupCard()');
     if (uid == null) { return; }
-    var card = fnDownloadCard(cardNumber);
+    var card = fnDownloadCard("lcgCards",cardNumber);
     if (card == null) { return; }
     db.collection("lcgCardsBackup")
         .doc(card['id']).set({
+            removedBy: umeowname,
+            lastEditedBy: card['lastEditedBy'],
             id: card['id'],
             name: card['name'],
             descriptionEN: card['descriptionEN'],
