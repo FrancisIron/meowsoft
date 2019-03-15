@@ -1,26 +1,28 @@
 @import url("materializeOverwrite.css");
+/**Colors**/
+.--n-color-text {color: var(--n-color-text);}
+.--n-color-text-d {color: var(--n-color-text-d);}
+.--n-color-main {background: var(--n-color-main);}
+.--n-color-main-t {background: var(--n-color-main-t);}
+.--n-color-dark {background: var(--n-color-dark);}
+.--n-color-dark-t {background: var(--n-color-dark-t);}
+.--n-color-light {background: var(--n-color-light);}
+.--n-color-light-t {background: var(--n-color-light-t);}
+/**------**/
 
 html, input {
-    color: white;
-}
-
-nya-color-main {
-    background-color: #004d40cf;
+    color: var(--n-color-text);
 }
 
 nya-color-light, #main_div {
-    background-color: #39796bcf;
-}
-
-nya-color-dark {
-    background-color: #00251acf;
+    background-color: var(--n-color-light-t);
 }
 
 .input-field > label {
     color: #c3c3c3;
 }
 
-body {
+body, .sidenav {
     background-image: url("./../resources/background.jpg");
     background-position: center;
     /*background-size: cover;*/
@@ -59,7 +61,7 @@ div {
 #header {
     border-bottom-style: inset;
     border-bottom-color: #26a69a4a;
-    background-color: #26a69a4a;
+    background-color: var(--n-color-dark-t);
     padding-bottom: 10px;
     margin-bottom: 10px;
     display: block;
@@ -67,7 +69,7 @@ div {
 }
 
 .sidenav {
-    background-color: #26a69a7a;
+    background-color: var(--n-color-light-t);
 }
 
 .user-background {
