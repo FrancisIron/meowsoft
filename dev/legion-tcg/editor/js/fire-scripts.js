@@ -12,10 +12,8 @@ $(document).ready(function () {
         //signInSuccessUrl: 'https://meowsoft.net/dev/legion-tcg/editor/',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ], signInSuccess: function (currentUser, credential, redirectUrl) {
-            // Do not automatically redirect.
-            return false;
-        }, signInSuccessUrl: '/'
+        ], signInSuccess: false,
+        signInSuccessUrl: '/dev/legion-tcg/editor/'
     };
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
