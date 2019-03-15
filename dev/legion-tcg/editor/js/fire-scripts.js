@@ -71,7 +71,7 @@ function fnLoadUserSettings() {
             // Set data
             // Data processing
             // Set data
-            console.log('DEBUG: fnLoadSettings finished');
+            console.log('DEBUG: fnLoadUserSettings finished');
             console.log("Document data:", doc.data());
         } else {
             // doc.data() will be undefined in this case
@@ -102,6 +102,7 @@ function fnLoadSettings() {
         .onSnapshot(function (doc) {
             cid = doc.data();
         });
+    console.log('DEBUG: current cid: ',cid);
 }
 
 // Update Card
