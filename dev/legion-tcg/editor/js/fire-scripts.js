@@ -1,6 +1,7 @@
 // Get a reference to the database service
 var db = null;
 var uid = null;
+var cid = 0;
 
 $(document).ready(function () {
     // FirebaseUI config.
@@ -31,6 +32,7 @@ function initApp() {
             // [START_EXCLUDE]
             fnLoadUserSettings();
             fnSignIn(displayName, email, emailVerified, photoURL);
+            fnLoadSettings();
         } else {
             // User is signed out.
             // [START_EXCLUDE]
@@ -90,6 +92,14 @@ function fnSaveUserSettings() {
 }
 
 /** Legion-TCG **/
+// Real-time Settings
+function fnLoadSettings() {
+    db.collection("lcgSettings").doc("cards")
+        .onSnapshot(function (doc) {
+            cid = doc.data();
+        });
+}
+
 // Update Card
 function fnUpdateCard(card) {
     if (uid == null) { return; }
@@ -106,6 +116,16 @@ function fnUpdateCard(card) {
         damage: card['damage'],
         defense: card['defense'],
         health: card['health']
+    }, { merge: true });
+}
+
+// Update Card ID
+function fnUpdateCID() {
+    if (uid == null) { return; }
+    cid++;
+    var usersRef = db.collection("lcgSettings");
+    usersRef.doc('cards').set({
+        cid: cid
     }, { merge: true });
 }
 

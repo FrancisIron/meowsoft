@@ -16,11 +16,34 @@ $(document).ready(function () {
     // Modals
     M.Modal.init($('.modal'));
     /** MaterializeCSS End **/
-    /** Scripts **/
+    /** Button Scripts **/
+    $('#btn-card-new').click(function () {
+        $('input, textarea').text('');
+    });
+    $('#btn-card-save').click(function () {
+        if (!($('#card-id').val())) {
+            fnUpdateCID();
+            $('#card-id').val(cid);
+        }
+        var card = {
+            id: $('#card-id').val(),
+            name: $('#card-name').val(),
+            descriptionEN: $('#card-descriptionEN').val(),
+            descriptionES: $('#card-descriptionES').val(),
+            rarity: $('#card-rarity').val(),
+            type: $('#card-type').val(),
+            faction: $('#card-faction').val(),
+            value: $('#card-value').val(),
+            damage: $('#card-damage').val(),
+            defense: $('#card-defense').val(),
+            health: $('#card-health').val()
+        };
+        fnUpdateCard(card);
+    });
     $('#btn-card-delete').click(function () {
 
     });
-
+    /** Button Scripts End **/
     /** Load Ready **/
     $('input, textarea').disableAutoFill();
     onLoad();
