@@ -9,6 +9,7 @@ var cid = 0;
 $(document).ready(function () {
     // FirebaseUI config.
     var uiConfig = {
+        signInSuccessUrl: 'https://meowsoft.net/dev/legion-tcg/editor/',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ]
