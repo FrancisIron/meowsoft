@@ -149,17 +149,21 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="input-field col s4">
-                                                <input id="card-cost" type="number" min="0" max="10">
-                                                <label for="card-cost">Costo</label>
+                                            <div class="input-field col s3">
+                                                <input type="number" min="0" max="10" id="card-value">
+                                                <label for="card-value">Valor/Costo</label>
                                             </div>
-                                            <div class="input-field col s4">
-                                                <input id="card-attack" type="number" min="0" max="10">
-                                                <label for="card-attack">Ataque</label>
+                                            <div class="input-field col s3">
+                                                <input type="number" min="0" max="10" id="card-damage">
+                                                <label for="card-damage">Ataque</label>
                                             </div>
-                                            <div class="input-field col s4">
+                                            <div class="input-field col s3">
                                                 <input id="card-defense" type="number" min="0" max="10">
                                                 <label for="card-defense">Defensa</label>
+                                            </div>
+                                            <div class="input-field col s3">
+                                                <input type="number" min="0" id="card-health" max="50">
+                                                <label for="card-health">Salud</label>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -199,7 +203,11 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button>test</button>
+                                        <div>
+                                            <a class="waves-effect waves-light btn"><i class="material-icons left">create</i>Nuevo</a>
+                                            <a class="waves-effect waves-light btn"><i class="material-icons left">check</i>Guardar</a>
+                                            <a class="waves-effect waves-light btn red"><i class="material-icons left">clear</i>Eliminar</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

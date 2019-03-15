@@ -89,6 +89,31 @@ function fnSaveUserSettings() {
     }, { merge: true });
 }
 
+/** Legion-TCG **/
+// Update Card
+function fnUpdateCard(card) {
+    if (uid == null) { return; }
+    var usersRef = db.collection("lcgCards");
+    usersRef.doc(card['id']).set({
+        id: card['id'],
+        name: card['name'],
+        descriptionEN: card['descriptionEN'],
+        descriptionES: card['descriptionES'],
+        rarity: card['rarity'],
+        type: card['type'],
+        faction: card['faction'],
+        value: card['value'],
+        damage: card['damage'],
+        defense: card['defense'],
+        health: card['health']
+    }, { merge: true });
+}
+
+// Download Card
+function fnDownloadCard() {
+    if (uid == null) { return; }
+}
+
 /** oAuth buttons **/
 function fnSignIn(displayName, email, emailVerified, photoURL) {
     $("#div-login").fadeOut(500, function () {
