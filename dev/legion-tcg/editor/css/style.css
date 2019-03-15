@@ -14,7 +14,13 @@ html, input {
     color: var(--n-color-text);
 }
 
-nya-color-light, #main_div {
+#header, .user-view {
+    background-color: var(--n-color-dark-t);
+    border-bottom-color: #26a69a4a;
+    border-bottom-style: inset;
+}
+
+#main_div, #side-options-wrapper {
     background-color: var(--n-color-light-t);
 }
 
@@ -59,9 +65,6 @@ div {
 }
 
 #header {
-    border-bottom-style: inset;
-    border-bottom-color: #26a69a4a;
-    background-color: var(--n-color-dark-t);
     padding-bottom: 10px;
     margin-bottom: 10px;
     display: block;
