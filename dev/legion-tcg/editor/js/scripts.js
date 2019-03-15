@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log('DEBUG: initializing components');
+    //console.log('DEBUG: initializing components');
     /** Initialize MaterializeCSS Components **/
     // Tabs
     M.Tabs.init($('.tabs'), {
@@ -19,16 +19,16 @@ $(document).ready(function () {
     /** MaterializeCSS End **/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
-        console.log('DEBUG: btn-card-new pressed');
+        //console.log('DEBUG: btn-card-new pressed');
         clearAllInputs();
     });
     $('#btn-card-save').click(function () {
-        console.log('DEBUG: btn-card-save pressed');
+        //console.log('DEBUG: btn-card-save pressed');
         saveCardBtn();
     });
     $('#btn-card-delete').click(function () {
-        console.log('DEBUG: btn-card-delete pressed');
-
+        //console.log('DEBUG: btn-card-delete pressed');
+        deleteCardBtn();
     });
     /** Button Scripts End **/
     /** Load Ready **/
@@ -37,7 +37,7 @@ $(document).ready(function () {
 });
 
 function clearAllInputs() {
-    console.log('DEBUG: clearing inputs');
+    //console.log('DEBUG: clearing inputs');
     $('input, textarea').disableAutoFill();
     $('input, textarea').val('');
     $('input + label, textarea + label').removeClass('active');
@@ -45,7 +45,7 @@ function clearAllInputs() {
 
 function saveCardBtn() {
     if (!($('#card-id').val())) {
-        console.log('DEBUG: card-id is empty');
+        //console.log('DEBUG: card-id is empty');
         fnUpdateCID();
         $('#card-id').val(cid);
         $('#card-id').addClass('active');
@@ -65,8 +65,19 @@ function saveCardBtn() {
     };
     if (!card['descriptionEN']) card['descriptionEN'] = "";
     if (!card['descriptionES']) card['descriptionES'] = "";
-    console.log('DEBUG: card data:', card);
+    //console.log('DEBUG: card data:', card);
     fnUpdateCard(card);
+}
+
+function deleteCardBtn() {
+    if (!($('#card-id').val())) {
+        //console.log('DEBUG: card-id is empty');
+        M.toast({ html: 'Current document hasn\'t been saved' });
+    } else {
+        $('#modal-delete-span').text();
+        $('#modal-delete-confirm').on('click', function () { fnBackupCard($('#card-id').val()); });
+        M.Modal.getInstance($('#modal-delete')).open();
+    }
 }
 
 function onLoad() {

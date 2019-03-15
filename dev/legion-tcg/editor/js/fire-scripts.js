@@ -1,6 +1,9 @@
 // Get a reference to the database service
 var db = null;
 var uid = null;
+var ucv = null;
+var uce = null;
+var umeowname = null;
 var cid = 0;
 
 $(document).ready(function () {
@@ -17,6 +20,8 @@ $(document).ready(function () {
 });
 
 function initApp() {
+    //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
+    document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
     // Listening for auth state changes.
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
@@ -30,22 +35,26 @@ function initApp() {
             uid = user.uid;
             //var providerData = user.providerData;
             // [START_EXCLUDE]
-            fnLoadUserSettings();
-            fnSignIn(displayName, email, emailVerified, photoURL);
-            fnLoadSettings();
-            fnDownloadCards();
+            fnLoadUserSettings(displayName, email);
+            if (ucv) {
+                fnSignIn(displayName, email, emailVerified, photoURL);
+                fnLoadSettings();
+                fnDownloadCards();
+            } else {
+                $('btn-log-out').click();
+            }
         } else {
             // User is signed out.
             // [START_EXCLUDE]
             uid = null;
+            ucv = null;
+            uce = null;
+            umeowname = null;
             fnSignOut();
         }
         // [START_EXCLUDE]
         //document.getElementById('btn-sign-in-google').disabled = false;
     });
-    // [END authstatelistener]
-    //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
-    //document.getElementById('btn-log-out').addEventListener('click', toggleSignIn, false);
 }
 window.onload = function () {
     db = firebase.firestore();
@@ -54,41 +63,40 @@ window.onload = function () {
 
 /** Custom Scripts **/
 /** User Settings **/
-function fnLoadUserSettings() {
+function fnLoadUserSettings(name, email) {
     if (uid == null) { return; }
-    var docRef = db.collection("users").doc(uid);
-    docRef.get().then(function (doc) {
-        if (doc.exists) {
-            // Read data
-            var isEditor = doc.data()["tcgEditor"];
-            var canView = doc.data()["tcgView"];
-            var canEdit = doc.data()["tcgEdit"];
-            // Data processing
-            if (!isEditor) {
-                fnSaveUserSettings();
-                fnLoadUserSettings();
-                return;
+    db.collection("users").doc(uid)
+        .get().then(function (doc) {
+            if (doc.exists) {
+                // Read data
+                var isEditor = doc.data()["tcgEditor"];
+                ucv = doc.data()["tcgView"];
+                uce = doc.data()["tcgEdit"];
+                // Data processing
+                if (!isEditor) {
+                    fnSaveUserSettings(name, email);
+                    fnLoadUserSettings(name, email);
+                    return;
+                }
+                //console.log('DEBUG: fnLoadUserSettings finished');
+                //console.log("Document data:", doc.data());
+            } else {
+                // doc.data() will be undefined in this case
+                fnSaveUserSettings(name, email);
+                fnLoadUserSettings(name, email);
             }
-            // Set data
-            // Data processing
-            // Set data
-            console.log('DEBUG: fnLoadUserSettings finished');
-            console.log("Document data:", doc.data());
-        } else {
-            // doc.data() will be undefined in this case
-            fnSaveUserSettings();
-            fnLoadUserSettings();
-        }
-    }).catch(function (error) {
-        console.log("Error getting document:", error);
-    });
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
 }
 
 // Default Settings
-function fnSaveUserSettings() {
+function fnSaveUserSettings(name, email) {
     if (uid == null) { return; }
     var usersRef = db.collection("users");
     usersRef.doc(uid).set({
+        userMeowName: name,
+        userEMail: email,
         tcgEditor: true,
         tcgView: false,
         tcgEdit: false
@@ -98,66 +106,117 @@ function fnSaveUserSettings() {
 /** Legion-TCG **/
 // Real-time Settings
 function fnLoadSettings() {
-    console.log('DEBUG: fnLoadSettings()');
+    //console.log('DEBUG: fnLoadSettings()');
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
             cid = doc.data()['cid'];
-            console.log('DEBUG: current cid: ', cid);
+            //console.log('DEBUG: current cid: ', cid);
         });
 }
 
 // Real-time Card Downloads
 function fnDownloadCards() {
-    console.log('DEBUG: fnDownloadCard()');
+    //console.log('DEBUG: fnDownloadCards()');
     if (uid == null) { return; }
     db.collection("lcgCards")
         .onSnapshot(function (snapshot) {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
-                    console.log("New document: ", change.doc.data());
+                    //console.log("New document: ", change.doc.data());
                     M.toast({ html: '{user} added a new document' })
                 }
                 if (change.type === "modified") {
-                    console.log("Modified document: ", change.doc.data());
+                    //console.log("Modified document: ", change.doc.data());
                     M.toast({ html: '{user} updated a document' })
                 }
                 if (change.type === "removed") {
-                    console.log("Removed document: ", change.doc.data());
+                    //console.log("Removed document: ", change.doc.data());
                     M.toast({ html: '{user} removed a document' })
                 }
             });
         });
 }
 
-// Update Card
-function fnUpdateCard(card) {
-    console.log('DEBUG: fnUpdateCard()');
-    if (uid == null) { return; }
-    var usersRef = db.collection("lcgCards");
-    usersRef.doc(card['id']).set({
-        id: card['id'],
-        name: card['name'],
-        descriptionEN: card['descriptionEN'],
-        descriptionES: card['descriptionES'],
-        rarity: card['rarity'],
-        type: card['type'],
-        faction: card['faction'],
-        value: card['value'],
-        damage: card['damage'],
-        defense: card['defense'],
-        health: card['health']
-    }, { merge: true });
-}
-
 // Update Card ID
 function fnUpdateCID() {
-    console.log('DEBUG: fnUpdateCID()');
+    //console.log('DEBUG: fnUpdateCID()');
     if (uid == null) { return; }
     cid++;
-    var usersRef = db.collection("lcgSettings");
-    usersRef.doc('cards').set({
-        cid: cid
-    }, { merge: true });
+    db.collection("lcgSettings")
+        .doc('cards').set({
+            cid: cid
+        }, { merge: true });
+}
+
+// Update Card
+function fnUpdateCard(card) {
+    //console.log('DEBUG: fnUpdateCard()');
+    if (uid == null) { return; }
+    db.collection("lcgCards")
+        .doc(card['id']).set({
+            lastEditedBy: 
+            id: card['id'],
+            name: card['name'],
+            descriptionEN: card['descriptionEN'],
+            descriptionES: card['descriptionES'],
+            rarity: card['rarity'],
+            type: card['type'],
+            faction: card['faction'],
+            value: card['value'],
+            damage: card['damage'],
+            defense: card['defense'],
+            health: card['health']
+        }, { merge: true });
+}
+
+// Get Card
+function fnDownloadCard(cardNumber) {
+    //console.log('DEBUG: fnDownloadCard()');
+    if (uid == null) { return; }
+    db.collection("lcgCards").doc(cardNumber)
+        .get().then(function (doc) {
+            if (doc.exists) {
+                return doc.data();
+            } else {
+                console.log("Could not find document ", cardNumber);
+                return null;
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+            return null;
+        });
+}
+
+// Backup Card
+function fnBackupCard(cardNumber) {
+    //console.log('DEBUG: fnBackupCard()');
+    if (uid == null) { return; }
+    var card = fnDownloadCard(cardNumber);
+    if (card == null) { return; }
+    db.collection("lcgCardsBackup")
+        .doc(card['id']).set({
+            id: card['id'],
+            name: card['name'],
+            descriptionEN: card['descriptionEN'],
+            descriptionES: card['descriptionES'],
+            rarity: card['rarity'],
+            type: card['type'],
+            faction: card['faction'],
+            value: card['value'],
+            damage: card['damage'],
+            defense: card['defense'],
+            health: card['health']
+        }, { merge: true });
+    fnRemoveCard(cardNumber);
+}
+
+// Remove Card
+function fnRemoveCard(cardNumber) {
+    db.collection("lcgCards").doc(cardNumber).delete().then(function () {
+        console.log("Document successfully deleted!");
+    }).catch(function (error) {
+        console.error("Error removing document: ", error);
+    });
 }
 
 /** oAuth buttons **/
