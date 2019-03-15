@@ -12,7 +12,8 @@ $(document).ready(function () {
         //signInSuccessUrl: 'https://meowsoft.net/dev/legion-tcg/editor/',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ]//, signInSuccessUrl: '/dev/legion-tcg/editor/'
+        ], signInSuccess: function () { return false; },
+        signInSuccessUrl: '/dev/legion-tcg/editor/'
     };
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -40,7 +41,7 @@ function initApp() {
                 fnLoadSettings();
                 fnDownloadCards();
             } else {
-                //$('btn-log-out').click();
+                $('btn-log-out').click();
             }
         } else {
             // User is signed out.
@@ -50,14 +51,23 @@ function initApp() {
             uce = null;
             umeowname = null;
             var uemail = null;
-            //db.collection("lcgCards").onSnapshot(function () { });
-            //db.collection("lcgSettings").onSnapshot(function () { });
+            db.collection("lcgCards").onSnapshot(function () { });
+            db.collection("lcgSettings").onSnapshot(function () { });
             fnSignOut();
         }
         // [START_EXCLUDE]
         //document.getElementById('btn-sign-in-google').disabled = false;
     });
-    
+    //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
+    document.getElementById('btn-log-out').addEventListener('click', function () {
+        firebase.auth().signOut()
+        .then(function () {
+            // Sign-out successful.
+        })
+        .catch(function (error) {
+            console.log("Something happened...", error);
+        });
+    });
 }
 window.onload = function () {
     db = firebase.firestore();
@@ -255,23 +265,3 @@ function fnSignOut() {
         });
     }, 100);
 }
-
-
-
-
-
-
-
-
-
-
-//document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
-    /*document.getElementById('btn-log-out').addEventListener('click', function () {
-        firebase.auth().signOut()
-        .then(function () {
-            // Sign-out successful.
-        })
-        .catch(function (error) {
-            // An error happened
-        });
-    });*/
