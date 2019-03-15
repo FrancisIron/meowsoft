@@ -1,11 +1,24 @@
 html {
-    /*background-color: black;*/
+    background-color: #39796b;
+    color: white;
+}
+
+nya-color-main {
+    background-color: #004d40;
+}
+
+nya-color-light {
+    background-color: #39796b;
+}
+
+nya-color-dark {
+    background-color: #00251a;
 }
 
 body {
     background-image: url("./../resources/background.jpg");
     background-position: center;
-    background-size: cover;
+    /*background-size: cover;*/
     overflow: hidden;
 }
 
