@@ -38,6 +38,8 @@ body, div {
     background-color: #26a69a4a;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    display: block;
+    min-height: auto;
 }
 
 .sidenav {
@@ -86,6 +88,10 @@ body, div {
 
 .nya-ml28 {
     margin-left: 28% !important;
+}
+
+#tabs-wrapper {
+    width: 100%;
 }
 
 .tabs {
