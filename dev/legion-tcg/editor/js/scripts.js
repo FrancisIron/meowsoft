@@ -1,7 +1,11 @@
 $(document).ready(function () {
     /** Initialize MaterializeCSS Components **/
     // Tabs
-    M.Tabs.init($('.tabs'));
+    M.Tabs.init($('.tabs'), {
+        onShow: function () {
+            $('.tab').css('display', 'flex');
+        }
+    });
     // Sidenav
     M.Sidenav.init($('.sidenav'), {
         menuWidth: 300,
