@@ -9,6 +9,8 @@ $(document).ready(function () {
         loseOnClick: true
     });
     //M.ScrollSpy.init($('.scrollspy'));
+    // Modals
+    M.Modal.init($('.modal'));
     /** MaterializeCSS End **/
     /** Scripts **/
     $('#btn-card-delete').click(function () {
