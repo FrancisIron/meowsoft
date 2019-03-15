@@ -18,7 +18,7 @@ $(document).ready(function () {
     /** MaterializeCSS End **/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
-        $('input, textarea').text('');
+        $('input, textarea').val('');
     });
     $('#btn-card-save').click(function () {
         if (!($('#card-id').val())) {
