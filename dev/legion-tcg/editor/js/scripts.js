@@ -11,7 +11,7 @@ $(document).ready(function () {
     //M.ScrollSpy.init($('.scrollspy'));
     /** MaterializeCSS End **/
 
-    $('input').disableAutoFill();
+    $('input, textarea').disableAutoFill();
     onLoad();
 });
 
