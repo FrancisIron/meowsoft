@@ -105,6 +105,29 @@ function fnLoadSettings() {
         });
 }
 
+// Real-time Card Downloads
+function fnDownloadCard() {
+    console.log('DEBUG: fnDownloadCard()');
+    if (uid == null) { return; }
+    db.collection("lcgCards")
+        .onSnapshot(function (snapshot) {
+            snapshot.docChanges().forEach(function (change) {
+                if (change.type === "added") {
+                    console.log("New document: ", change.doc.data());
+                    M.toast({ html: '{user} added a new document' })
+                }
+                if (change.type === "modified") {
+                    console.log("Modified document: ", change.doc.data());
+                    M.toast({ html: '{user} updated a document' })
+                }
+                if (change.type === "removed") {
+                    console.log("Removed document: ", change.doc.data());
+                    M.toast({ html: '{user} removed a document' })
+                }
+            });
+        });
+}
+
 // Update Card
 function fnUpdateCard(card) {
     console.log('DEBUG: fnUpdateCard()');
@@ -134,12 +157,6 @@ function fnUpdateCID() {
     usersRef.doc('cards').set({
         cid: cid
     }, { merge: true });
-}
-
-// Download Card
-function fnDownloadCard() {
-    console.log('DEBUG: fnDownloadCard()');
-    if (uid == null) { return; }
 }
 
 /** oAuth buttons **/
