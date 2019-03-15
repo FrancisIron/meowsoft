@@ -80,6 +80,10 @@ div {
     position: absolute;
 }
 
+.fieldset {
+    flex-direction: unset;
+}
+
 .nya-dh100 {
     height: 100%;
 }
