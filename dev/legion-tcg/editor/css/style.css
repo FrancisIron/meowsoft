@@ -246,3 +246,14 @@ div {
 #modal-delete-confirm {
     margin: 6px 8px 6px 10px;
 }
+
+/* Mobile Overwrite */
+@media (max-width:601px) {
+    .scroll-list-item {
+        margin: 5px 0px;
+    }
+
+    .n-trigger-card > a.btn {
+        padding: 0 10px;
+    }
+}
