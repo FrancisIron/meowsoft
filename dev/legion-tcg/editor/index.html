@@ -40,7 +40,7 @@
             <div class="nya-fg1">
                 <div id="tabs-wrapper" class="row nya-fg1">
                     <div id="header" class="col s12 m12">
-                        <h5 class="tcgtitle">Card Editor [v 0.4.2]</h5>
+                        <h5 class="tcgtitle">Card Editor [v 0.4.3]</h5>
                         <ul id="slide-out" class="sidenav">
                             <li>
                                 <div class="user-view">
@@ -72,94 +72,100 @@
                     <div id="tab1" class="col s12 m12 nya-fg1">
                         <div class="row nya-fg1">
                             <div class="col s3 m3">
-                                <div><h6>Card List</h6></div>
+                                <div class="tab-title">Card List</div>
                                 <div id="card-scroll-list" class="list-scrollbar nya-fg1"></div>
                             </div>
                             <div class="col s9 m9">
                                 <div id="card-editor">
-                                    <div>
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <input id="card-id" type="number" disabled="">
-                                                <label for="card-id">Id</label>
-                                            </div>
-                                            <div class="input-field col s10">
-                                                <input id="card-name" type="text">
-                                                <label for="card-name">Nombre</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s2">
-                                                <input id="card-rarity" type="number" min="0" max="9">
-                                                <label for="card-rarity">Rareza</label>
-                                            </div>
-                                            <div class="input-field col s5">
-                                                <select id="card-type">
-                                                    <option value="" disabled selected>Choose a Type</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                </select>
-                                                <label>Tipo</label>
-                                                <!--<input id="card-type" type="text">
-                                <label for="card-type">Tipo</label>-->
-                                            </div>
-                                            <div class="input-field col s5">
-                                                <input id="card-faction" type="text">
-                                                <label for="card-faction">Faccion</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s3">
-                                                <input type="number" min="0" max="9" id="card-value">
-                                                <label for="card-value">Valor/Costo</label>
-                                            </div>
-                                            <div class="input-field col s3">
-                                                <input type="number" min="0" max="99" id="card-damage">
-                                                <label for="card-damage">Ataque</label>
-                                            </div>
-                                            <div class="input-field col s3">
-                                                <input id="card-defense" type="number" min="0" max="99">
-                                                <label for="card-defense">Defensa</label>
-                                            </div>
-                                            <div class="input-field col s3">
-                                                <input type="number" min="0" id="card-health" max="99">
-                                                <label for="card-health">Salud</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <textarea id="card-descriptionES" class="materialize-textarea"></textarea>
-                                                <label for="card-descriptionES">Descripcion (Español)</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <textarea id="card-descriptionEN" class="materialize-textarea"></textarea>
-                                                <label for="card-descriptionEN">Descripcion (English)</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="card-abilities" type="text">
-                                                <label for="card-abilities">Habilidades</label>
-                                            </div>
-                                        </div>
-                                        <div class="row" hidden>
-                                            <div class="file-field input-field">
-                                                <div class="btn">
-                                                    <span>File</span>
-                                                    <input type="file">
+                                    <div class="row">
+                                        <div class="col s12 m12">
+                                            <div class="tab-title">Card Attributes</div>
+                                            <div class="row">
+                                                <div class="input-field col s2">
+                                                    <input id="card-id" type="number" disabled="">
+                                                    <label for="card-id">Id</label>
                                                 </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
+                                                <div class="input-field col s10">
+                                                    <input id="card-name" type="text">
+                                                    <label for="card-name">Nombre</label>
                                                 </div>
                                             </div>
-                                            <div class="input-field col s6">
-                                                <input id="card-illustration" type="text">
-                                                <label for="card-illustration">Ilustracion</label>
+                                            <div class="row">
+                                                <div class="input-field col s2">
+                                                    <input id="card-rarity" type="number" min="0" max="9">
+                                                    <label for="card-rarity">Rareza</label>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <select id="card-type">
+                                                        <option value="Undefined" selected>Undefined</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                    </select>
+                                                    <label>Tipo</label>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <select id="card-faction">
+                                                        <option value="Undefined" selected>Undefined</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                    </select>
+                                                    <label>Faccion</label>
+                                                </div>
                                             </div>
-                                            <div class="input-field col s6">
-                                                <input id="card-frame-illustration" type="text">
-                                                <label for="card-frame-illustration">Diseño de Fondo</label>
+                                            <div class="row">
+                                                <div class="input-field col s3">
+                                                    <input type="number" min="0" max="9" id="card-value">
+                                                    <label for="card-value">Valor/Costo</label>
+                                                </div>
+                                                <div class="input-field col s3">
+                                                    <input type="number" min="0" max="99" id="card-damage">
+                                                    <label for="card-damage">Ataque</label>
+                                                </div>
+                                                <div class="input-field col s3">
+                                                    <input id="card-defense" type="number" min="0" max="99">
+                                                    <label for="card-defense">Defensa</label>
+                                                </div>
+                                                <div class="input-field col s3">
+                                                    <input type="number" min="0" id="card-health" max="99">
+                                                    <label for="card-health">Salud</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <textarea id="card-descriptionES" class="materialize-textarea"></textarea>
+                                                    <label for="card-descriptionES">Descripcion (Español)</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <textarea id="card-descriptionEN" class="materialize-textarea"></textarea>
+                                                    <label for="card-descriptionEN">Descripcion (English)</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="card-abilities" type="text">
+                                                    <label for="card-abilities">Habilidades</label>
+                                                </div>
+                                            </div>
+                                            <div class="row" hidden>
+                                                <div class="file-field input-field">
+                                                    <div class="btn">
+                                                        <span>File</span>
+                                                        <input type="file">
+                                                    </div>
+                                                    <div class="file-path-wrapper">
+                                                        <input class="file-path validate" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="card-illustration" type="text">
+                                                    <label for="card-illustration">Ilustracion</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="card-frame-illustration" type="text">
+                                                    <label for="card-frame-illustration">Diseño de Fondo</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

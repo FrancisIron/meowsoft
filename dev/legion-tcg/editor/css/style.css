@@ -149,7 +149,7 @@ div {
 .list-scrollbar {
     overflow-y: scroll;
     display: block;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
 }
 
 .end-button-container {
