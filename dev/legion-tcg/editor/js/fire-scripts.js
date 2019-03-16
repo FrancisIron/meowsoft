@@ -147,10 +147,8 @@ function fnDownloadCards() {
                 }
                 if (change.type === "removed") {
                     //console.log("Removed document: ", change.doc.data());
-                    var card = fnDownloadCard("lcgCardsBackup", change.doc.data()['id']);
-                    if (card == null) { return; }
+                    fnRemovedDocument("lcgCardsBackup", change.doc.data()['id']);
                     removeCardListItem(change.doc.data());
-                    M.toast({ html: '@' + card['removedBy'] + ' removed card ' + card['id']})
                 }
             });
         });
@@ -206,11 +204,27 @@ function fnDownloadDocument(dbid,documentid) {
         });
 }
 
+// Get Removed Document
+function fnRemovedDocument(dbid, documentid) {
+    //console.log('DEBUG: fnRemovedDocument()');
+    if (uid == null) { return; }
+    db.collection(dbid).doc(documentid)
+        .get().then(function (doc) {
+            if (doc.exists) {
+                M.toast({ html: '@' + doc.data()['removedBy'] + ' removed card ' + doc.data()['id'] })
+            } else {
+                console.log("Could not find document " + dbid + '@' + documentid);
+            }
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
+}
+
 // Backup Card
 function fnBackupCard(cardNumber) {
     //console.log('DEBUG: fnBackupCard()');
     if (uid == null) { return; }
-    var card = fnDownloadDocument("lcgCards",cardNumber);
+    var card = _cards['cardNumber'];//fnDownloadDocument("lcgCards",cardNumber);
     if (card == null) { return; }
     db.collection("lcgCardsBackup")
         .doc(card['id']).set({
