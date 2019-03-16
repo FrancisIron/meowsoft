@@ -70,7 +70,7 @@ function saveCardBtn() {
 }
 
 function deleteCardBtn() {
-    if (!($.isNumeric($('#card-id').val()))) {
+    if (!($('#card-id').val())) {
         //console.log('DEBUG: card-id is empty');
         M.toast({ html: 'Current document hasn\'t been saved' });
     } else {
