@@ -74,17 +74,17 @@ function saveCardBtn() {
         $('#card-id + label').addClass('active');
     }
     var card = {
-        id: $('#card-id').val(),
-        name: $('#card-name').val(),
-        descriptionEN: $('#card-descriptionEN').val(),
-        descriptionES: $('#card-descriptionES').val(),
-        rarity: $('#card-rarity').val(),
-        type: $('#card-type').val(),
-        faction: $('#card-faction').val(),
-        value: $('#card-value').val(),
-        damage: $('#card-damage').val(),
-        defense: $('#card-defense').val(),
-        health: $('#card-health').val()
+        id: $.trim($('#card-id').val()),
+        name: $.trim($('#card-name').val()),
+        descriptionEN: $.trim($('#card-descriptionEN').val()),
+        descriptionES: $.trim($('#card-descriptionES').val()),
+        rarity: $.trim($('#card-rarity').val()),
+        type: $.trim($('#card-type').val()),
+        faction: $.trim($('#card-faction').val()),
+        value: $.trim($('#card-value').val()),
+        damage: $.trim($('#card-damage').val()),
+        defense: $.trim($('#card-defense').val()),
+        health: $.trim($('#card-health').val())
     };
     if (!card['descriptionEN']) card['descriptionEN'] = "";
     if (!card['descriptionES']) card['descriptionES'] = "";
