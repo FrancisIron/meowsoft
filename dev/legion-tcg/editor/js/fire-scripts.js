@@ -94,6 +94,7 @@ function fnLoadUserSettings(displayName, email, emailVerified, photoURL) {
                 } else {    // user can't view
                     $('btn-log-out').click();
                     M.Modal.getInstance($('#modal-no-view')).open();
+                    onLoad(false);
                 }
             } else {
                 // doc.data() will be undefined in this case
