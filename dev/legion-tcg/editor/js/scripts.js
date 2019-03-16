@@ -208,6 +208,8 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
         $(droplist).val(abilityTypes[i + 1]);
         $('#card-type').append(new Option(abilityTypes[i], abilityTypes[i]));
     }
+    // Re initialize selectors
+    M.FormSelect.init($('select'));
 }
 /** Settings-Editor Buttons END**/
 function onLoad(show) {
