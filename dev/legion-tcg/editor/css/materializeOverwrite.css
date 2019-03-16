@@ -14,7 +14,7 @@
     color: var(--n-color-light);
 }
 .tabs .tab.disabled a, .tabs .tab.disabled a:hover {
-    background-color: var(--n-color-main-t)
+    color: var(--n-color-main-t)
 }
 .tabs .indicator {
     background-color: var(--n-color-light)
