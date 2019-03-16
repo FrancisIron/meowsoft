@@ -122,11 +122,13 @@ function fnSaveUserSettings(name, email) {
 /** Legion-TCG **/
 // Real-time Settings
 function fnLoadSettings() {
-    //console.log('DEBUG: fnLoadSettings()');
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
             cid = doc.data()['cid'];
-            //console.log('DEBUG: current cid: ', cid);
+            var cardTypes = doc.data()['cardTypes'];
+            var cardFactions = doc.data()['cardFactions'];
+            var abilityTypes = doc.data()['abilityTypes'];
+            loadDroplistOptions(cardTypes, cardFactions, abilityTypes);
         });
 }
 
@@ -154,6 +156,17 @@ function fnDownloadCards() {
                 }
             });
         });
+}
+
+// Update CardType/Faction & AbilityType Data
+function fnUpdateCardSettings(cardTypes,cardFactions,abilityTypes) {
+    if (uid == null) { return; }
+    db.collection("lcgSettings")
+        .doc('cards').set({
+            cardTypes: cardTypes,
+            cardFactions: cardFactions,
+            abilityTypes: abilityTypes
+        }, { merge: true });
 }
 
 // Update Card ID

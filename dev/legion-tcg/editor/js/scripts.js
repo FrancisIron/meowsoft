@@ -1,7 +1,6 @@
 var _cards = {};
 
 $(document).ready(function () {
-    //console.log('DEBUG: initializing components');
     /** Initialize MaterializeCSS Components **/
     // Tabs
     M.Tabs.init($('.tabs'), {
@@ -44,16 +43,16 @@ $(document).ready(function () {
     /** jQuery.Alphanum End**/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
-        //console.log('DEBUG: btn-card-new pressed');
         clearAllInputs();
     });
     $('#btn-card-save').click(function () {
-        //console.log('DEBUG: btn-card-save pressed');
         saveCardBtn();
     });
     $('#btn-card-delete').click(function () {
-        //console.log('DEBUG: btn-card-delete pressed');
         deleteCardBtn();
+    });
+    $('#btn-settings-save').click(function () {
+        updateDroplistOptions();
     });
     /** Button Scripts End **/
     /** Load Ready **/
@@ -61,13 +60,14 @@ $(document).ready(function () {
     onLoad(false);
 });
 
+/** Card-Editor Buttons **/
 function clearAllInputs() {
     //console.log('DEBUG: clearing inputs');
     $('input, textarea').disableAutoFill();
     $('input, textarea').val('');
+    $('select').val([]);
     $('input + label, textarea + label').removeClass('active');
 }
-
 function saveCardBtn() {
     if (!($('#card-id').val())) {
         //console.log('DEBUG: card-id is empty');
@@ -93,7 +93,6 @@ function saveCardBtn() {
     //console.log('DEBUG: card data:', card);
     fnUpdateCard(card);
 }
-
 function deleteCardBtn() {
     if (!($('#card-id').val())) {
         //console.log('DEBUG: card-id is empty');
@@ -104,7 +103,6 @@ function deleteCardBtn() {
         M.Modal.getInstance($('#modal-delete')).open();
     }
 }
-
 function createCardListItem(card) {
     _cards[card['id']] = card;
     var container = $('#card-scroll-list');
@@ -119,11 +117,9 @@ function createCardListItem(card) {
         updateCardInputs(_cards[$(this).attr('value')]);
     });
 }
-
 function updateCardListItem(card) {
     _cards[card['id']] = card;
 }
-
 function removeCardListItem(card) {
     delete _cards[card['id']];
     $('#card-item-' + card['id']).parent().remove();
@@ -153,7 +149,67 @@ function updateCardInputs(card) {
     $('#card-defense').val(card['defense']);
     $('#card-health').val(card['health']);
 }
-
+/** Card-Editor Buttons END **/
+/** Settings-Editor Buttons **/
+function updateDroplistOptions() {
+    var droplistCardType = [];
+    var droplistCardFaction = [];
+    var droplistAbilityType = [];
+    var droplist = "";
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-card-type-" + i;
+        var text = $.trim($(droplist).val());
+        if (text.length > 0) droplistCardType.push(text);
+    }
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-card-faction-" + i;
+        var text = $.trim($(droplist).val());
+        if (text.length > 0) droplistCardFaction.push(text);
+    }
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-ability-type-" + i;
+        var text = $.trim($(droplist).val());
+        if (text.length > 0) droplistAbilityType.push(text);
+    }
+    fnUpdateCardSettings(droplistCardType, droplistCardFaction, droplistAbilityType);
+}
+function emptyDroplistOptions() {
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-card-type-" + i;
+        $(droplist).val('');
+    }
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-card-faction-" + i;
+        $(droplist).val('');
+    }
+    for (var i = 1; i <= 7; i++) {
+        droplist = "#settings-ability-type-" + i;
+        $(droplist).val('');
+    }
+}
+function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
+    //var cardTypeVal = $('#card-type').val();
+    $('#card-type').empty();
+    $('#card-faction').empty();
+    //$('#ability-type').empty();
+    emptyDroplistOptions();
+    for (var i = 0; i < cardTypes.length; i++) {
+        droplist = "#settings-card-type-" + (i+1);
+        $(droplist).val(cardTypes[i+1]);
+        $('#card-type').append(new Option(cardTypes[i], cardTypes[i]));
+    }
+    for (var i = 0; i < cardFactions.length; i++) {
+        droplist = "#settings-card-faction-" + (i + 1);
+        $(droplist).val(cardFactions[i + 1]);
+        $('#card-faction').append(new Option(cardFactions[i], cardFactions[i]));
+    }
+    for (var i = 0; i < abilityTypes.length; i++) {
+        droplist = "#settings-ability-type-" + (i + 1);
+        $(droplist).val(abilityTypes[i + 1]);
+        $('#card-type').append(new Option(abilityTypes[i], abilityTypes[i]));
+    }
+}
+/** Settings-Editor Buttons END**/
 function onLoad(show) {
     if (show) {
         // Show preloader
