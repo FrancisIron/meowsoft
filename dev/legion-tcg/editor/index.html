@@ -65,6 +65,7 @@
                                 <li class="tab col s3 m3 disabled"><a href="#tab3"></a></li>
                                 <li class="tab col s3 m3"><a class="active" href="#tab1">Cards</a></li>
                                 <li class="tab col s3 m3 disabled"><a href="#tab2">Abilities</a></li>
+                                <li class="tab col s1 m1"><a href="#tab9"><i class="material-icons small" style="vertical-align: middle;">settings</i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -93,8 +94,15 @@
                                                 <label for="card-rarity">Rareza</label>
                                             </div>
                                             <div class="input-field col s5">
-                                                <input id="card-type" type="text">
-                                                <label for="card-type">Tipo</label>
+                                                <select id="card-type">
+                                                    <option value="" disabled selected>Choose a Type</option>
+                                                    <option value="1">Option 1</option>
+                                                    <option value="2">Option 2</option>
+                                                    <option value="3">Option 3</option>
+                                                </select>
+                                                <label>Tipo</label>
+                                                <!--<input id="card-type" type="text">
+                                <label for="card-type">Tipo</label>-->
                                             </div>
                                             <div class="input-field col s5">
                                                 <input id="card-faction" type="text">
@@ -175,6 +183,125 @@
                     <div id="tab2" class="col s12">Test 2</div>
                     <div id="tab3" class="col s12">Test 3</div>
                     <div id="tab4" class="col s12">Test 4</div>
+                    <div id="tab9" class="col s12 m12 nya-fg1">
+                        <div class="row nya-fg1">
+                            <div class="col s1 m1"></div>
+                            <div class="col s10 m10">
+                                <div class="tab-title">Settings</div>
+                                <div id="settings-editor">
+                                    <div class="row">
+                                        <div class="col s4 m4">
+                                            <div class="tab-title">Card Types</div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-type-1">
+                                                    <label for="settings-type-1">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-2">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-3">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-4">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-5">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-6">Type</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input type="text" id="settings-faction-1">
+                                                    <label for="settings-type-7">Type</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s4 m4">
+                                            <div class="tab-title">Card Factions</div>
+                                            <div class="row">
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-1">
+                                                        <label for="settings-faction-1">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-2">
+                                                        <label for="settings-faction-2">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-3">
+                                                        <label for="settings-faction-3">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-4">
+                                                        <label for="settings-faction-4">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-5">
+                                                        <label for="settings-faction-5">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-6">
+                                                        <label for="settings-faction-6">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input type="text" id="settings-faction-7">
+                                                        <label for="settings-faction-7">Faction Name</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s4 m4">
+                                            <div class="tab-title">Ability Types</div>
+                                            <div class="row"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col end-button-container">
+                                        <div class="row">
+                                            <div class="col s4 m4"></div>
+                                            <div class="col s4 m4">
+                                                <a class="waves-effect waves-light btn --n-color-light" id="btn-settings-save"><i class="material-icons left">check</i>Guardar</a>
+                                            </div>
+                                            <div class="col s4 m4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s1 m1">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

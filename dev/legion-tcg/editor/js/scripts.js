@@ -18,6 +18,8 @@ $(document).ready(function () {
     //M.ScrollSpy.init($('.scrollspy'));
     // Modals
     M.Modal.init($('.modal'));
+    // Select
+    M.FormSelect.init('select');
     /** MaterializeCSS End **/
     /** jQuery.Alphanum Validators **/
     $("input#card-name").alphanum({

@@ -141,6 +141,11 @@ div {
     flex-grow: 1;
 }
 
+.tab-title {
+    font-size: x-large;
+    margin-bottom: 5px;
+}
+
 .list-scrollbar {
     overflow-y: scroll;
     display: block;
