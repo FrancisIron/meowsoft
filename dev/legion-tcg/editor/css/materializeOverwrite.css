@@ -10,6 +10,9 @@
     --n-color-light-t: #39796bcf;
 }
 /**Tabs**/
+.tabs .tab a, .tabs .tab a {
+    color: var(--n-color-light-t);
+}
 .tabs .tab a:hover, .tabs .tab a.active {
     color: var(--n-color-light);
 }

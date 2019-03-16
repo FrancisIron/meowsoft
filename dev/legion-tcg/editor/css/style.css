@@ -162,7 +162,7 @@ div {
     padding-left: 2rem;
 }
 
-#card-editor {
+#card-editor, #settings-editor {
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -195,30 +195,7 @@ div {
     width: 100%;
 }
 
-/** Google **//*
-#btn-sign-in-google {
-    background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png');
-    background-size: 191px 46px;
-    height: 46px;
-    width: 191px;
-    background-position: center;
-    background-color: transparent;
-    border-style: none;
-}
-
-    #btn-sign-in-google:hover {
-        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_focus_web.png');
-    }
-
-    #btn-sign-in-google:active {
-        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_pressed_web.png');
-    }
-
-    #btn-sign-in-google:disabled {
-        background-image: url('/resources/assets/google_signin_buttons/web/1x/btn_google_signin_dark_disabled_web.png');
-    }
-*/
-
+/**Modals & Preloader**/
 .preloader-container {
     margin: auto;
     background: white;
@@ -252,7 +229,7 @@ div {
     margin: 6px 8px 6px 10px;
 }
 
-/* Mobile Overwrite */
+/** Mobile Overwrite **/
 @media (max-width:601px) {
     .scroll-list-item {
         margin: 5px 0px;
