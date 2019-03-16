@@ -62,7 +62,6 @@ $(document).ready(function () {
 
 /** Card-Editor Buttons **/
 function clearAllInputs() {
-    //console.log('DEBUG: clearing inputs');
     $('input, textarea').disableAutoFill();
     $('input, textarea').val('');
     $('select').val([]);
@@ -70,7 +69,6 @@ function clearAllInputs() {
 }
 function saveCardBtn() {
     if (!($('#card-id').val())) {
-        //console.log('DEBUG: card-id is empty');
         fnUpdateCID();
         $('#card-id').val(cid);
         $('#card-id + label').addClass('active');
@@ -90,12 +88,10 @@ function saveCardBtn() {
     };
     if (!card['descriptionEN']) card['descriptionEN'] = "";
     if (!card['descriptionES']) card['descriptionES'] = "";
-    //console.log('DEBUG: card data:', card);
     fnUpdateCard(card);
 }
 function deleteCardBtn() {
     if (!($('#card-id').val())) {
-        //console.log('DEBUG: card-id is empty');
         M.toast({ html: 'Current document hasn\'t been saved' });
     } else {
         $('#modal-delete-span').text('card #' + $('#card-id').val());
@@ -125,7 +121,6 @@ function removeCardListItem(card) {
     $('#card-item-' + card['id']).parent().remove();
 }
 function updateCardInputs(card) {
-    //$('#card-id').val().length
     $('#card-id + label').addClass('active');
     if (card['name'].length > 0) { $('#card-name + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
     if (card['descriptionEN'].length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-descriptionEN + label').removeClass('active'); }
@@ -233,7 +228,6 @@ function onLoad(show) {
     } else {
         // Hide preloader
         $("#preloader").fadeOut(1000, function () {
-            //$("#preloader").css("background", "#00000000");
             $("#preloader").hide();
         });
     }

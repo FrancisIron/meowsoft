@@ -1,4 +1,3 @@
-// Get a reference to the database service
 var db = null;
 var uid = null;
 var ucv = null;
@@ -9,21 +8,17 @@ var cid = 0;
 $(document).ready(function () {
     // FirebaseUI config.
     var uiConfig = {
-        //signInSuccessUrl: 'https://meowsoft.net/dev/legion-tcg/editor/',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ]//, signInSuccess: function () { return false; },
-        //signInSuccessUrl: '/dev/legion-tcg/editor/'
+        ]
     };
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
 });
-
 function initApp() {
     // Listening for auth state changes.
-    // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
         onLoad(true);
         if (user) {
@@ -35,11 +30,9 @@ function initApp() {
             var photoURL = user.photoURL;
             //var isAnonymous = user.isAnonymous;
             //var providerData = user.providerData;
-            // [START_EXCLUDE]
             fnLoadUserSettings(displayName, email, emailVerified, photoURL);
         } else {
             // User is signed out.
-            // [START_EXCLUDE]
             uid = null;
             ucv = null;
             uce = null;
@@ -49,10 +42,7 @@ function initApp() {
             db.collection("lcgSettings").onSnapshot(function () { });
             fnSignOut();
         }
-        // [START_EXCLUDE]
-        //document.getElementById('btn-sign-in-google').disabled = false;
     });
-    //document.getElementById('btn-sign-in-google').addEventListener('click', toggleSignIn, false);
     document.getElementById('btn-log-out').addEventListener('click', function () {
         firebase.auth().signOut()
         .then(function () {
@@ -85,8 +75,6 @@ function fnLoadUserSettings(displayName, email, emailVerified, photoURL) {
                 ucv = doc.data()["tcgView"];
                 uce = doc.data()["tcgEdit"];
                 umeowname = doc.data()["userMeowName"];
-                //console.log('DEBUG: fnLoadUserSettings finished');
-                //console.log("Document data:", doc.data());
                 if (ucv) {  // user can view
                     fnSignIn(displayName, email, emailVerified, photoURL);
                     fnLoadSettings();
@@ -134,23 +122,19 @@ function fnLoadSettings() {
 
 // Real-time Card Downloads
 function fnDownloadCards() {
-    //console.log('DEBUG: fnDownloadCards()');
     if (uid == null) { return; }
     db.collection("lcgCards")
         .onSnapshot(function (snapshot) {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
-                    //console.log("New document: ", change.doc.data());
                     createCardListItem(change.doc.data());
                     M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
                 }
                 if (change.type === "modified") {
-                    //console.log("Modified document: ", change.doc.data());
                     updateCardListItem(change.doc.data());
                     M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card #' + change.doc.data()['id'] });
                 }
                 if (change.type === "removed") {
-                    //console.log("Removed document: ", change.doc.data());
                     fnRemovedDocument("lcgCardsBackup", change.doc.data()['id']);
                     removeCardListItem(change.doc.data());
                 }
@@ -171,7 +155,6 @@ function fnUpdateCardSettings(cardTypes,cardFactions,abilityTypes) {
 
 // Update Card ID
 function fnUpdateCID() {
-    //console.log('DEBUG: fnUpdateCID()');
     if (uid == null) { return; }
     cid++;
     db.collection("lcgSettings")
@@ -182,7 +165,6 @@ function fnUpdateCID() {
 
 // Update Card
 function fnUpdateCard(card) {
-    //console.log('DEBUG: fnUpdateCard()');
     if (uid == null) { return; }
     db.collection("lcgCards")
         .doc(card['id']).set({
@@ -203,7 +185,6 @@ function fnUpdateCard(card) {
 
 // Get Document
 function fnDownloadDocument(dbid,documentid) {
-    //console.log('DEBUG: fnDownloadCard()');
     if (uid == null) { return; }
     db.collection(dbid).doc(documentid)
         .get().then(function (doc) {
@@ -221,7 +202,6 @@ function fnDownloadDocument(dbid,documentid) {
 
 // Get Removed Document
 function fnRemovedDocument(dbid, documentid) {
-    //console.log('DEBUG: fnRemovedDocument()');
     if (uid == null) { return; }
     db.collection(dbid).doc(documentid)
         .get().then(function (doc) {
@@ -237,9 +217,8 @@ function fnRemovedDocument(dbid, documentid) {
 
 // Backup Card
 function fnBackupCard(cardNumber) {
-    //console.log('DEBUG: fnBackupCard()');
     if (uid == null) { return; }
-    var card = _cards[cardNumber];//fnDownloadDocument("lcgCards",cardNumber);
+    var card = _cards[cardNumber];
     if (card == null) { return; }
     db.collection("lcgCardsBackup")
         .doc(card['id']).set({
@@ -274,7 +253,6 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
     $("#div-login").fadeOut(500, function () {
         $("#div-login").hide();
     });
-    //$(".user-view").css("border-bottom-style", "outset");
     $("#user-profile-image").html('<img class="circle profile-image" alt="" src="' + photoURL + '">');
     $("#user-profile-name").html('<span class="name">' + displayName + '</span>');
     $("#user-profile-email").html('<span class="email">' + email + '</span>');
