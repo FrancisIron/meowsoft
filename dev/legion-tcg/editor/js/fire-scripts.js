@@ -138,12 +138,12 @@ function fnDownloadCards() {
                 if (change.type === "added") {
                     //console.log("New document: ", change.doc.data());
                     createCardListItem(change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' added a new card: ID' + change.doc.data()['id'] });
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
                 }
                 if (change.type === "modified") {
                     //console.log("Modified document: ", change.doc.data());
                     updateCardListItem(change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card ' + change.doc.data()['id'] });
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card #' + change.doc.data()['id'] });
                 }
                 if (change.type === "removed") {
                     //console.log("Removed document: ", change.doc.data());
@@ -241,7 +241,7 @@ function fnBackupCard(cardNumber) {
             damage: card['damage'],
             defense: card['defense'],
             health: card['health']
-        }, { merge: true });
+        }/*, { merge: true }*/);
     fnRemoveCard(cardNumber);
 }
 
