@@ -163,7 +163,7 @@ div {
 }
 
 #card-editor, #settings-editor {
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
     display: flex;
     flex-direction: column;
     flex-grow: 1;
