@@ -223,7 +223,7 @@ function fnRemovedDocument(dbid, documentid) {
 // Backup Card
 function fnBackupCard(cardNumber) {
     //console.log('DEBUG: fnBackupCard()');
-    cardNumber = $.trim(cardNumber);
+    cardNumber = parseInt($.trim(cardNumber));
     if (uid == null) { return; }
     var card = _cards['cardNumber'];//fnDownloadDocument("lcgCards",cardNumber);
     if (card == null) { return; }
