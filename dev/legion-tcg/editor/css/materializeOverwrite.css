@@ -9,6 +9,16 @@
     --n-color-light: #39796b;
     --n-color-light-t: #39796bcf;
 }
+/**Tabs**/
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: var(--n-color-light);
+}
+.tabs .tab.disabled a, .tabs .tab.disabled a:hover {
+    background-color: var(--n-color-main-t)
+}
+.tabs .indicator {
+    background-color: var(--n-color-light)
+}
 /** Inputs **/
 /*Label*/
 label {
