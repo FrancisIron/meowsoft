@@ -93,6 +93,7 @@ function fnLoadUserSettings(displayName, email, emailVerified, photoURL) {
                     fnDownloadCards();
                 } else {    // user can't view
                     $('btn-log-out').click();
+                    M.Modal.getInstance($('#modal-no-view')).open();
                 }
             } else {
                 // doc.data() will be undefined in this case

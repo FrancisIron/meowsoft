@@ -40,7 +40,7 @@
             <div class="nya-fg1">
                 <div id="tabs-wrapper" class="row nya-fg1">
                     <div id="header" class="col s12 m12">
-                        <h5 class="tcgtitle">Card Editor [v 0.4.1]</h5>
+                        <h5 class="tcgtitle">Card Editor [v 0.4.2]</h5>
                         <ul id="slide-out" class="sidenav">
                             <li>
                                 <div class="user-view">
@@ -182,12 +182,21 @@
     <div name="modals">
         <div id="modal-delete" class="modal">
             <div class="modal-content">
-                <h4 class="red-text"><i class="material-icons left red-text">report</i>Warning!</h4>
+                <h4 class="red-text"><!--<i class="material-icons left red-text">report</i>-->Warning!</h4>
                 <p>Confirm to delete <span id="modal-delete-span"></span>.</p>
             </div>
             <div class="modal-footer">
                 <a class="modal-close btn waves-effect waves-green btn-flat white-text">Cancel</a>
                 <a id="modal-delete-confirm" class="modal-close btn waves-effect waves-green btn-flat red-text">Delete</a>
+            </div>
+        </div>
+        <div id="modal-no-view" class="modal">
+            <div class="modal-content">
+                <h4 class="red-text"><!--<i class="material-icons left red-text">report</i>-->Alert!</h4>
+                <p>Your account does not have permissions to use this feature, update after enabling display permissions.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close btn waves-effect waves-green btn-flat red-text">Close</a>
             </div>
         </div>
     </div>
