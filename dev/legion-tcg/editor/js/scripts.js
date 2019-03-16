@@ -1,3 +1,5 @@
+var _cards = {};
+
 $(document).ready(function () {
     //console.log('DEBUG: initializing components');
     /** Initialize MaterializeCSS Components **/
@@ -78,6 +80,30 @@ function deleteCardBtn() {
         $('#modal-delete-confirm').on('click', function () { fnBackupCard($('#card-id').val()); });
         M.Modal.getInstance($('#modal-delete')).open();
     }
+}
+
+function createCardListItem(card) {
+    _cards[card['id']] = card;
+    var container = $('#card-scroll-list');
+    container.append('<div class="scroll-list-item n-trigger-card">'
+        + '<a id="card-item-' + card['id'] + '" class= "waves-effect waves-light btn --n-color-light" >'
+        + '<i class="material-icons left">crop_portrait</i>'
+        + card['id'] + '</a ></div >');
+    updateCardInputs(card);
+}
+
+function updateCardListItem(card) {
+    _cards[card['id']] = card;
+    updateCardInputs(card);
+}
+
+function removeCardListItem(card) {
+    delete _cards[card['id']];
+
+}
+
+updateCardInputs(card){
+
 }
 
 function onLoad(show) {

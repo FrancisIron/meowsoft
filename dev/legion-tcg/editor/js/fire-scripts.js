@@ -137,16 +137,19 @@ function fnDownloadCards() {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
                     //console.log("New document: ", change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' added a new card: ID' + change.doc.data()['id'] })
+                    createCardListItem(change.doc.data());
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' added a new card: ID' + change.doc.data()['id'] });
                 }
                 if (change.type === "modified") {
                     //console.log("Modified document: ", change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card ' + change.doc.data()['id']})
+                    updateCardListItem(change.doc.data());
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card ' + change.doc.data()['id'] });
                 }
                 if (change.type === "removed") {
                     //console.log("Removed document: ", change.doc.data());
                     var card = fnDownloadCard("lcgCardsBackup", change.doc.data()['id']);
                     if (card == null) { return; }
+                    removeCardListItem(change.doc.data());
                     M.toast({ html: '@' + card['removedBy'] + ' removed card ' + card['id']})
                 }
             });
