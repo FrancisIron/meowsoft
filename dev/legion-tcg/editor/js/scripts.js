@@ -102,7 +102,7 @@ function removeCardListItem(card) {
 
 }
 
-updateCardInputs(card){
+function updateCardInputs(card) {
 
 }
 
