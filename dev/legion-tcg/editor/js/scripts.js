@@ -130,15 +130,15 @@ function updateCardInputs(card) {
     //$('#card-id').val().length
     $('#card-id + label').addClass('active');
     if (card['name'].length > 0) { $('#card-name + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['descriptionEN'].length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['descriptionES'].length > 0) { $('#card-descriptionES + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['rarity'].length > 0) { $('#card-rarity + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['type'].length > 0) { $('#card-type + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['faction'].length > 0) { $('#card-faction + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['value'].length > 0) { $('#card-value + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['damage'].length > 0) { $('#card-damage + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['defense'].length > 0) { $('#card-defense + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['health'].length > 0) { $('#card-health + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
+    if (card['descriptionEN'].length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-descriptionEN + label').removeClass('active'); }
+    if (card['descriptionES'].length > 0) { $('#card-descriptionES + label').addClass('active'); } else { $('#card-descriptionES + label').removeClass('active'); }
+    if (card['rarity'].length > 0) { $('#card-rarity + label').addClass('active'); } else { $('#card-rarity + label').removeClass('active'); }
+    if (card['type'].length > 0) { $('#card-type + label').addClass('active'); } else { $('#card-type + label').removeClass('active'); }
+    if (card['faction'].length > 0) { $('#card-faction + label').addClass('active'); } else { $('#card-faction + label').removeClass('active'); }
+    if (card['value'].length > 0) { $('#card-value + label').addClass('active'); } else { $('#card-value + label').removeClass('active'); }
+    if (card['damage'].length > 0) { $('#card-damage + label').addClass('active'); } else { $('#card-damage + label').removeClass('active'); }
+    if (card['defense'].length > 0) { $('#card-defense + label').addClass('active'); } else { $('#card-defense + label').removeClass('active'); }
+    if (card['health'].length > 0) { $('#card-health + label').addClass('active'); } else { $('#card-health + label').removeClass('active'); }
     $('#card-id').val(card['id']);
     $('#card-name').val(card['name']);
     $('#card-descriptionEN').val(card['descriptionEN']);
