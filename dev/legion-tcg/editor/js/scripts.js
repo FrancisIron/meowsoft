@@ -33,7 +33,7 @@ $(document).ready(function () {
     /** Button Scripts End **/
     /** Load Ready **/
     clearAllInputs();
-    onLoad();
+    onLoad(false);
 });
 
 function clearAllInputs() {
@@ -80,11 +80,18 @@ function deleteCardBtn() {
     }
 }
 
-function onLoad() {
-    // Destroy preloader
-    $("#preloader").fadeOut(1000, function () {
-        $("#preloader").css("background", "#00000000");
-        $("#preloader").hide();
-    });
+function onLoad(show) {
+    if (show) {
+        // Show preloader
+        $("#preloader").fadeIn(1000, function () {
+            $("#preloader").show();
+        });
+    } else {
+        // Hide preloader
+        $("#preloader").fadeOut(1000, function () {
+            //$("#preloader").css("background", "#00000000");
+            $("#preloader").hide();
+        });
+    }
 }
 

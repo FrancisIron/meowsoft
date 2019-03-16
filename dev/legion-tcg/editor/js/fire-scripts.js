@@ -25,24 +25,18 @@ function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
+        onLoad(true);
         if (user) {
             // User is signed in.
+            uid = user.uid;
             var displayName = user.displayName;
             var email = user.email;
             var emailVerified = user.emailVerified;
             var photoURL = user.photoURL;
             //var isAnonymous = user.isAnonymous;
-            uid = user.uid;
             //var providerData = user.providerData;
             // [START_EXCLUDE]
-            if (fnLoadUserSettings(displayName, email)) {
-                console.log('DEBUG: ucv ok');
-                fnSignIn(displayName, email, emailVerified, photoURL);
-                fnLoadSettings();
-                fnDownloadCards();
-            } else {
-                //$('btn-log-out').click();
-            }
+            fnLoadUserSettings(displayName, email, emailVerified, photoURL);
         } else {
             // User is signed out.
             // [START_EXCLUDE]
@@ -76,7 +70,7 @@ window.onload = function () {
 
 /** Custom Scripts **/
 /** User Settings **/
-function fnLoadUserSettings(name, email) {
+function fnLoadUserSettings(displayName, email, emailVerified, photoURL) {
     if (uid == null) { return; }
     db.collection("users").doc(uid)
         .get().then(function (doc) {
@@ -89,12 +83,17 @@ function fnLoadUserSettings(name, email) {
                     return;
                 }
                 ucv = doc.data()["tcgView"];
-                console.log('DEBUG: ucv assigned: '+ucv);
                 uce = doc.data()["tcgEdit"];
                 umeowname = doc.data()["userMeowName"];
                 //console.log('DEBUG: fnLoadUserSettings finished');
                 //console.log("Document data:", doc.data());
-                return ucv;
+                if (ucv) {  // user can view
+                    fnSignIn(displayName, email, emailVerified, photoURL);
+                    fnLoadSettings();
+                    fnDownloadCards();
+                } else {    // user can't view
+                    $('btn-log-out').click();
+                }
             } else {
                 // doc.data() will be undefined in this case
                 fnSaveUserSettings(name, email);
@@ -252,6 +251,7 @@ function fnSignIn(displayName, email, emailVerified, photoURL) {
             $("#div-main").show();
         });
     }, 100);
+    onLoad(false);
 }
 
 function fnSignOut() {
@@ -266,4 +266,5 @@ function fnSignOut() {
             $("#div-login").show();
         });
     }, 100);
+    onLoad(false);
 }
