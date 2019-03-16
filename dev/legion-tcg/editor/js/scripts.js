@@ -107,6 +107,9 @@ function removeCardListItem(card) {
 }
 
 function updateCardInputs(card) {
+    $('#card-id + label, #card-name + label, #card-descriptionEN + label, #card-descriptionES + label,'
+        +   '#card - rarity + label, #card - type + label, #card - faction + label, #card - value + label,'
+        +   '#card - damage + label, #card - defense + label, #card - health + label').addClass('active');
     $('#card-id').val(card['id']);
     $('#card-name').val(card['name']);
     $('#card-descriptionEN').val(card['descriptionEN']);
