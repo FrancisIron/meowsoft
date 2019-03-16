@@ -217,9 +217,9 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
         $(droplist).next().addClass('active');
         //$('#ability-type').append(new Option(abilityTypes[i], abilityTypes[i]));
     }
-    $('#card-type').val() = cardTypeVal;
-    $('#card-faction').val() = cardFactionVal;
-    //$('#ability-type').val() = abilityTypeVal;
+    $('#card-type').val(cardTypeVal);
+    $('#card-faction').val(cardFactionVal);
+    //$('#ability-type').val(abilityTypeVal);
     // Re initialize selectors
     M.FormSelect.init($('select'));
 }
