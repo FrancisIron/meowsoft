@@ -19,6 +19,27 @@ $(document).ready(function () {
     // Modals
     M.Modal.init($('.modal'));
     /** MaterializeCSS End **/
+    /** jQuery.Alphanum Validators **/
+    $("input#card-name").alphanum({
+        allowNewline: false
+    });
+    $("input#card-rarity, input#card-value").numeric({
+        allowPlus: false,
+        allowMinus: false,
+        allowThouSep: false,
+        allowDecSep: false,
+        allowLeadingSpaces: false,
+        maxDigits: 1
+    });
+    $("input#card-damage, input#card-defense, input#card-health").numeric({
+        allowPlus: false,
+        allowMinus: false,
+        allowThouSep: false,
+        allowDecSep: false,
+        allowLeadingSpaces: false,
+        maxDigits: 2
+    });
+    /** jQuery.Alphanum End**/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
         //console.log('DEBUG: btn-card-new pressed');
