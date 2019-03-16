@@ -70,11 +70,11 @@ function saveCardBtn() {
 }
 
 function deleteCardBtn() {
-    if (!($('#card-id').val())) {
+    if (!($.isNumeric($('#card-id').val()))) {
         //console.log('DEBUG: card-id is empty');
         M.toast({ html: 'Current document hasn\'t been saved' });
     } else {
-        $('#modal-delete-span').text();
+        $('#modal-delete-span').text('card #' + $('#card-id').val());
         $('#modal-delete-confirm').on('click', function () { fnBackupCard($('#card-id').val()); });
         M.Modal.getInstance($('#modal-delete')).open();
     }

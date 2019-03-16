@@ -224,3 +224,17 @@ div {
     width: 100px;
     height: 100px;
 }
+
+.modal-content {
+    text-align: center;
+    background-color: var(--n-color-main);
+}
+
+.modal .modal-footer {
+    display: block;
+    background-color: var(--n-color-main);
+}
+
+#modal-delete-confirm {
+    margin: 6px 8px 6px 10px;
+}
