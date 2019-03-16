@@ -130,8 +130,8 @@ function updateCardInputs(card) {
     //$('#card-id').val().length
     $('#card-id + label').addClass('active');
     if (card['name'].length > 0) { $('#card-name + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['descriptionEN'].val().length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
-    if (card['descriptionES'].val().length > 0) { $('#card-descriptionES + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
+    if (card['descriptionEN'].length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
+    if (card['descriptionES'].length > 0) { $('#card-descriptionES + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
     if (card['rarity'].length > 0) { $('#card-rarity + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
     if (card['type'].length > 0) { $('#card-type + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
     if (card['faction'].length > 0) { $('#card-faction + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
