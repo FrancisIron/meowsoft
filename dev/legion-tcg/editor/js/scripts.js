@@ -177,14 +177,17 @@ function emptyDroplistOptions() {
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-type-" + i;
         $(droplist).val('');
+        $(droplist).next().removeClass('active');
     }
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-faction-" + i;
         $(droplist).val('');
+        $(droplist).next().removeClass('active');
     }
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-ability-type-" + i;
         $(droplist).val('');
+        $(droplist).next().removeClass('active');
     }
 }
 function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
@@ -193,19 +196,23 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
     $('#card-faction').empty();
     //$('#ability-type').empty();
     emptyDroplistOptions();
+    var droplist = "";
     for (var i = 0; i < cardTypes.length; i++) {
         droplist = "#settings-card-type-" + (i+1);
-        $(droplist).val(cardTypes[i+1]);
+        $(droplist).val(cardTypes[i]);
+        $(droplist).next().addClass('active');
         $('#card-type').append(new Option(cardTypes[i], cardTypes[i]));
     }
     for (var i = 0; i < cardFactions.length; i++) {
         droplist = "#settings-card-faction-" + (i + 1);
-        $(droplist).val(cardFactions[i + 1]);
+        $(droplist).val(cardFactions[i]);
+        $(droplist).next().addClass('active');
         $('#card-faction').append(new Option(cardFactions[i], cardFactions[i]));
     }
     for (var i = 0; i < abilityTypes.length; i++) {
         droplist = "#settings-ability-type-" + (i + 1);
-        $(droplist).val(abilityTypes[i + 1]);
+        $(droplist).val(abilityTypes[i]);
+        $(droplist).next().addClass('active');
         $('#card-type').append(new Option(abilityTypes[i], abilityTypes[i]));
     }
     // Re initialize selectors
