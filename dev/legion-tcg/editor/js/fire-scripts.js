@@ -210,7 +210,7 @@ function fnDownloadDocument(dbid,documentid) {
 function fnBackupCard(cardNumber) {
     //console.log('DEBUG: fnBackupCard()');
     if (uid == null) { return; }
-    var card = fnDownloadCard("lcgCards",cardNumber);
+    var card = fnDownloadDocument("lcgCards",cardNumber);
     if (card == null) { return; }
     db.collection("lcgCardsBackup")
         .doc(card['id']).set({

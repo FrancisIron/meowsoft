@@ -50,7 +50,7 @@ function saveCardBtn() {
         //console.log('DEBUG: card-id is empty');
         fnUpdateCID();
         $('#card-id').val(cid);
-        $('#card-id').addClass('active');
+        $('#card-id + label').addClass('active');
     }
     var card = {
         id: $('#card-id').val(),
@@ -86,24 +86,38 @@ function createCardListItem(card) {
     _cards[card['id']] = card;
     var container = $('#card-scroll-list');
     container.append('<div class="scroll-list-item n-trigger-card">'
-        + '<a id="card-item-' + card['id'] + '" class= "waves-effect waves-light btn --n-color-light" >'
+        + '<a id="card-item-' + card["id"] + '" class= "waves-effect waves-light btn --n-color-light" value="' + card["id"] + '">'
         + '<i class="material-icons left">crop_portrait</i>'
-        + card['id'] + '</a ></div >');
-    updateCardInputs(card);
+        + card["id"] + '</a ></div >');
+    var btnId = "#card-item-" + card['id'];
+    $(btnId).on('click', function () {
+        $('.n-trigger-card > .-n-active').removeClass('-n-active');
+        $(this).addClass('-n-active');
+        updateCardInputs(_cards[$(this).attr('value')]);
+    });
 }
 
 function updateCardListItem(card) {
     _cards[card['id']] = card;
-    updateCardInputs(card);
 }
 
 function removeCardListItem(card) {
     delete _cards[card['id']];
-
+    $('#card-item-' + card['id']).parent().remove();
 }
 
 function updateCardInputs(card) {
-
+    $('#card-id').val(card['id']);
+    $('#card-name').val(card['name']);
+    $('#card-descriptionEN').val(card['descriptionEN']);
+    $('#card-descriptionES').val(card['descriptionES']);
+    $('#card-rarity').val(card['rarity']);
+    $('#card-type').val(card['type']);
+    $('#card-faction').val(card['faction']);
+    $('#card-value').val(card['value']);
+    $('#card-damage').val(card['damage']);
+    $('#card-defense').val(card['defense']);
+    $('#card-health').val(card['health']);
 }
 
 function onLoad(show) {

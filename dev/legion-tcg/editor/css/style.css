@@ -2,12 +2,12 @@
 /**Colors**/
 .--n-color-text {color: var(--n-color-text);}
 .--n-color-text-d {color: var(--n-color-text-d);}
-.--n-color-main {background: var(--n-color-main);}
-.--n-color-main-t {background: var(--n-color-main-t);}
-.--n-color-dark {background: var(--n-color-dark);}
-.--n-color-dark-t {background: var(--n-color-dark-t);}
-.--n-color-light {background: var(--n-color-light);}
-.--n-color-light-t {background: var(--n-color-light-t);}
+.--n-color-main {background-color: var(--n-color-main);}
+.--n-color-main-t {background-color: var(--n-color-main-t);}
+.--n-color-dark {background-color: var(--n-color-dark);}
+.--n-color-dark-t {background-color: var(--n-color-dark-t);}
+.--n-color-light {background-color: var(--n-color-light);}
+.--n-color-light-t {background-color: var(--n-color-light-t);}
 /**------**/
 
 html, input, a {
@@ -22,6 +22,10 @@ html, input, a {
 
 #main_div, #side-options-wrapper, .sidenav {
     background-color: var(--n-color-light-t);
+}
+
+.--n-color-light.-n-active {
+    background-color: #264d44cc;
 }
 
 .input-field > label {

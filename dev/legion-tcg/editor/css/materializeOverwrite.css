@@ -1,7 +1,7 @@
 /**Color Variables**/
 :root {
     --n-color-text: white;
-    --n-color-text-d: color: #d1d1d1;
+    --n-color-text-d: #d1d1d1;
     --n-color-main: #004d40;
     --n-color-main-t: #004d40cf;
     --n-color-dark: #00251a;
