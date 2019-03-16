@@ -36,13 +36,15 @@ function initApp() {
             //var providerData = user.providerData;
             // [START_EXCLUDE]
             fnLoadUserSettings(displayName, email);
-            //if (ucv) {
+            console.log('DEBUG: ucv at check-in ' + ucv);
+            if (ucv) {
+                console.log('DEBUG: ucv ok');
                 fnSignIn(displayName, email, emailVerified, photoURL);
                 fnLoadSettings();
                 fnDownloadCards();
-            //} else {
+            } else {
                 //$('btn-log-out').click();
-            //}
+            }
         } else {
             // User is signed out.
             // [START_EXCLUDE]
@@ -89,6 +91,7 @@ function fnLoadUserSettings(name, email) {
                     return;
                 }
                 ucv = doc.data()["tcgView"];
+                console.log('DEBUG: ucv assigned: '+ucv);
                 uce = doc.data()["tcgEdit"];
                 umeowname = doc.data()["userMeowName"];
                 //console.log('DEBUG: fnLoadUserSettings finished');
