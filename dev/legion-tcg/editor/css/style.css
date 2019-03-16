@@ -97,6 +97,10 @@ div {
     position: absolute;
 }
 
+.nya-fg1 {
+    flex-grow:1;
+}
+
 .flex-unset {
     flex-direction: unset;
 }
