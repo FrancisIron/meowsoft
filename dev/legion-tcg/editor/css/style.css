@@ -10,7 +10,7 @@
 .--n-color-light-t {background-color: var(--n-color-light-t);}
 /**------**/
 
-html, input, a {
+html, input, textarea, a {
     color: var(--n-color-text);
 }
 
