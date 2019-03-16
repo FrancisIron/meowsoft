@@ -224,7 +224,9 @@ function fnRemovedDocument(dbid, documentid) {
 function fnBackupCard(cardNumber) {
     console.log('DEBUG: fnBackupCard()');
     if (uid == null) { return; }
+    console.log('DEBUG: cardNumber: ', cardNumber);
     var card = _cards['cardNumber'];//fnDownloadDocument("lcgCards",cardNumber);
+    console.log('DEBUG: _cards:', _cards);
     console.log('DEBUG: card:', card);
     if (card == null) { return; }
     db.collection("lcgCardsBackup")
