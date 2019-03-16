@@ -191,7 +191,9 @@ function emptyDroplistOptions() {
     }
 }
 function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
-    //var cardTypeVal = $('#card-type').val();
+    var cardTypeVal = $('#card-type').val();
+    var cardFactionVal = $('#card-faction').val();
+    //var abilityTypeVal = $('#ability-type').val();
     $('#card-type').empty();
     $('#card-faction').empty();
     //$('#ability-type').empty();
@@ -213,8 +215,11 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
         droplist = "#settings-ability-type-" + (i + 1);
         $(droplist).val(abilityTypes[i]);
         $(droplist).next().addClass('active');
-        $('#card-type').append(new Option(abilityTypes[i], abilityTypes[i]));
+        //$('#ability-type').append(new Option(abilityTypes[i], abilityTypes[i]));
     }
+    $('#card-type').val() = cardTypeVal;
+    $('#card-faction').val() = cardFactionVal;
+    //$('#ability-type').val() = abilityTypeVal;
     // Re initialize selectors
     M.FormSelect.init($('select'));
 }
