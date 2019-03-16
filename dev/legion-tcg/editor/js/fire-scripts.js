@@ -35,9 +35,7 @@ function initApp() {
             uid = user.uid;
             //var providerData = user.providerData;
             // [START_EXCLUDE]
-            fnLoadUserSettings(displayName, email);
-            console.log('DEBUG: ucv at check-in ' + ucv);
-            if (ucv) {
+            if (fnLoadUserSettings(displayName, email)) {
                 console.log('DEBUG: ucv ok');
                 fnSignIn(displayName, email, emailVerified, photoURL);
                 fnLoadSettings();
@@ -96,6 +94,7 @@ function fnLoadUserSettings(name, email) {
                 umeowname = doc.data()["userMeowName"];
                 //console.log('DEBUG: fnLoadUserSettings finished');
                 //console.log("Document data:", doc.data());
+                return ucv;
             } else {
                 // doc.data() will be undefined in this case
                 fnSaveUserSettings(name, email);
