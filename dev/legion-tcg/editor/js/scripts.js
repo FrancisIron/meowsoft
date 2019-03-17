@@ -64,8 +64,10 @@ $(document).ready(function () {
 function clearAllInputs() {
     $('input, textarea').disableAutoFill();
     $('input, textarea').val('');
-    $('select').val([]);
     $('input + label, textarea + label').removeClass('active');
+    $('select').val([]);
+    // Re initialize selectors
+    M.FormSelect.init($('select'));
 }
 function saveCardBtn() {
     if (!($('#card-id').val())) {
