@@ -143,6 +143,8 @@ function updateCardInputs(card) {
     $('#card-damage').val(card['damage']);
     $('#card-defense').val(card['defense']);
     $('#card-health').val(card['health']);
+    // Re initialize selectors
+    M.FormSelect.init($('select'));
 }
 /** Card-Editor Buttons END **/
 /** Settings-Editor Buttons **/
