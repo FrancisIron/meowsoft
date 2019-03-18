@@ -262,6 +262,7 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
         droplistConfig = "#settings-card-type-" + (i + 1) + "-attributes";
         $(droplist).val(cardTypes[i]['name']);
         $(droplist).next().addClass('active');
+        $(droplistConfig).next().addClass('active');
         var config = "";
         if (cardTypes[i]['hasFaction']) { config += "1-"; } else { config += "0-"; };
         if (cardTypes[i]['canAttack']) { config += "1-"; } else { config += "0-"; };
