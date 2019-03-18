@@ -213,8 +213,8 @@ function updateDroplistOptions() {
                 settings['canDefend'] = false;
                 settings['hasHealth'] = false;
             }
+            droplistCardType.push(settings);
         }
-        droplistCardType.push(settings);
     }
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-faction-" + i;
