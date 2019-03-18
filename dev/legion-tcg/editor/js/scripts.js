@@ -200,7 +200,7 @@ function updateDroplistOptions() {
             var config = $.trim($(droplistConfig).val());
             if (config.length > 0) {
                 var regex = new RegExp('(0|1)-(0|1)-(0|1)-(0|1)');
-                if (regex.test(droplistConfig)) {
+                if (regex.test(config)) {
                     config = config.split("-");
                     settings['hasFaction'] = (config[0] == 1);
                     settings['canAttack'] = (config[1] == 1);
