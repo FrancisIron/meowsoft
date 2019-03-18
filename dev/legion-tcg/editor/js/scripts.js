@@ -269,7 +269,7 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
         if (cardTypes[i]['canDefend']) { config += "1-"; } else { config += "0-"; };
         if (cardTypes[i]['hasHealth']) { config += "1"; } else { config += "0"; };
         $(droplistConfig).val(config);
-        $('#card-type').append(new Option(cardTypes[i], cardTypes[i]));
+        $('#card-type').append(new Option(cardTypes[i]['name'], cardTypes[i]['name']));
     }
     for (var i = 0; i < cardFactions.length; i++) {
         droplist = "#settings-card-faction-" + (i + 1);
