@@ -70,20 +70,7 @@ $(document).ready(function () {
     /** Button Scripts End **/
     /** Other Config Scripts **/
     $('#card-type').on('change', function () {
-        var settings = [false, false, false, false];
-        for (var i = 0; i < _settingsCardsType.length; i++) {
-            if (_settingsCardsType[i]['name'] == $(this).val()) {
-                if (_settingsCardsType[i]['hasFaction']) { settings[0] = true; }
-                if (_settingsCardsType[i]['canAttack']) { settings[1] = true; }
-                if (_settingsCardsType[i]['canDeffend']) { settings[2] = true; }
-                if (_settingsCardsType[i]['hasHealth']) { settings[3] = true; }
-                break;
-            }
-        }
-        $('#card-faction').prop('disabled', settings[0]);
-        $('#card-damage').prop('disabled', settings[1]);
-        $('#card-defense').prop('disabled', settings[2]);
-        $('#card-health').prop('disabled', settings[3]);
+        onCardTypeChange($(this));
     });
     /** Load Ready **/
     clearAllInputs();
@@ -175,15 +162,15 @@ function updateCardInputs(card) {
     $('#card-damage').val(card['damage']);
     $('#card-defense').val(card['defense']);
     $('#card-health').val(card['health']);
-    onCardTypeChange();
+    //onCardTypeChange();
     // Re initialize selectors
     M.FormSelect.init($('select'));
 }
-function onCardTypeChange() {
+function onCardTypeChange(drop) {
     var settings = [false, false, false, false];
     for (var i = 0; i < _settingsCardsType.length; i++) {
         var config = _settingsCardsType[i];
-        if (config['name'] == $(this).val()) {
+        if (config['name'] == $(drop).val()) {
             if (config['hasFaction']) { settings[0] = true; }
             if (config['canAttack']) { settings[1] = true; }
             if (config['canDeffend']) { settings[2] = true; }
