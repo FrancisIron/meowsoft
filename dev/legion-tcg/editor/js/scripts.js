@@ -165,7 +165,7 @@ function updateCardInputs(card) {
     //onCardTypeChange();
     $('#card-type').trigger('change');
     // Re initialize selectors
-    M.FormSelect.init($('select'));
+    //M.FormSelect.init($('select'));
 }
 function onCardTypeChange(drop) {
     var settings = [false, false, false, false];
@@ -174,15 +174,17 @@ function onCardTypeChange(drop) {
         if (config['name'] == $(drop).val()) {
             if (config['hasFaction']) { settings[0] = true; }
             if (config['canAttack']) { settings[1] = true; }
-            if (config['canDeffend']) { settings[2] = true; }
+            if (config['canDefend']) { settings[2] = true; }
             if (config['hasHealth']) { settings[3] = true; }
             break;
         }
     }
-    $('#card-faction').prop('disabled', settings[0]);
-    $('#card-damage').prop('disabled', settings[1]);
-    $('#card-defense').prop('disabled', settings[2]);
-    $('#card-health').prop('disabled', settings[3]);
+    $('#card-faction').prop('disabled', !settings[0]);
+    $('#card-damage').prop('disabled', !settings[1]);
+    $('#card-defense').prop('disabled', !settings[2]);
+    $('#card-health').prop('disabled', !settings[3]);
+    // Re initialize selectors
+    M.FormSelect.init($('select'));
 }
 /** Card-Editor Buttons END **/
 /** Settings-Editor Buttons **/
