@@ -1,4 +1,5 @@
 var _cards = {};
+var _settingsCardsType = {};
 
 $(document).ready(function () {
     /** Initialize MaterializeCSS Components **/
@@ -40,6 +41,18 @@ $(document).ready(function () {
         allowLeadingSpaces: false,
         maxDigits: 2
     });
+    $("input.settings-attr").alphanum({
+        allow: '01-',
+        allowSpace: false,
+        allowNewline: false,
+        allowNumeric: false,
+        allowUpper: false,
+        allowLower: false,
+        allowCaseless: false,
+        allowLatin: false,
+        allowOtherCharSets: false,
+        maxLength: NaN
+    });
     /** jQuery.Alphanum End**/
     /** Button Scripts **/
     $('#btn-card-new').click(function () {
@@ -55,6 +68,23 @@ $(document).ready(function () {
         updateDroplistOptions();
     });
     /** Button Scripts End **/
+    /** Other Config Scripts **/
+    $('#card-type').on('change', function () {
+        var settings = [false, false, false, false];
+        for (var i = 0; i < _settingsCardsType.length; i++) {
+            if (_settingsCardsType[i]['name'] == $(this).val()) {
+                if (_settingsCardsType[i]['hasFaction']) { settings[0] = true; }
+                if (_settingsCardsType[i]['canAttack']) { settings[1] = true; }
+                if (_settingsCardsType[i]['canDeffend']) { settings[2] = true; }
+                if (_settingsCardsType[i]['hasHealth']) { settings[3] = true; }
+                break;
+            }
+        }
+        $('#card-faction').prop('disabled', settings[0]);
+        $('#card-damage').prop('disabled', settings[1]);
+        $('#card-defense').prop('disabled', settings[2]);
+        $('#card-health').prop('disabled', settings[3]);
+    });
     /** Load Ready **/
     clearAllInputs();
     onLoad(false);
@@ -145,8 +175,25 @@ function updateCardInputs(card) {
     $('#card-damage').val(card['damage']);
     $('#card-defense').val(card['defense']);
     $('#card-health').val(card['health']);
+    onCardTypeChange();
     // Re initialize selectors
     M.FormSelect.init($('select'));
+}
+function onCardTypeChange() {
+    var settings = [false, false, false, false];
+    for (var i = 0; i < _settingsCardsType.length; i++) {
+        if (_settingsCardsType[i]['name'] == $(this).val()) {
+            if (_settingsCardsType[i]['hasFaction']) { settings[0] = true; }
+            if (_settingsCardsType[i]['canAttack']) { settings[1] = true; }
+            if (_settingsCardsType[i]['canDeffend']) { settings[2] = true; }
+            if (_settingsCardsType[i]['hasHealth']) { settings[3] = true; }
+            break;
+        }
+    }
+    $('#card-faction').prop('disabled', settings[0]);
+    $('#card-damage').prop('disabled', settings[1]);
+    $('#card-defense').prop('disabled', settings[2]);
+    $('#card-health').prop('disabled', settings[3]);
 }
 /** Card-Editor Buttons END **/
 /** Settings-Editor Buttons **/
@@ -156,9 +203,30 @@ function updateDroplistOptions() {
     var droplistAbilityType = [];
     var droplist = "";
     for (var i = 1; i <= 7; i++) {
+        var settings = {};
         droplist = "#settings-card-type-" + i;
-        var text = $.trim($(droplist).val());
-        if (text.length > 0) droplistCardType.push(text);
+        droplistConfig = "#settings-card-type-" + i + "-attributes";
+        var name = $.trim($(droplist).val());
+        if (name.length > 0) {
+            settings['name'] = name;
+            var config = $.trim($(droplistConfig).val());
+            if (config.length > 0) {
+                var regex = new RegExp('(0|1)-(0|1)-(0|1)-(0|1)');
+                if (regex.test(droplistConfig)) {
+                    config = config.split("-");
+                    settings['hasFaction'] = (config[0] == 1);
+                    settings['canAttack'] = (config[1] == 1);
+                    settings['canDefend'] = (config[2] == 1);
+                    settings['hasHealth'] = (config[3] == 1);
+                }
+            } else {
+                settings['hasFaction'] = false;
+                settings['canAttack'] = false;
+                settings['canDefend'] = false;
+                settings['hasHealth'] = false;
+            }
+        }
+        droplistCardType.push(settings);
     }
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-faction-" + i;
@@ -175,8 +243,11 @@ function updateDroplistOptions() {
 function emptyDroplistOptions() {
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-type-" + i;
+        droplistConfig = "#settings-card-type-" + i + "-attributes";
         $(droplist).val('');
+        $(droplistConfig).val('');
         $(droplist).next().removeClass('active');
+        $(droplistConfig).next().removeClass('active');
     }
     for (var i = 1; i <= 7; i++) {
         droplist = "#settings-card-faction-" + i;
@@ -199,9 +270,16 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
     emptyDroplistOptions();
     var droplist = "";
     for (var i = 0; i < cardTypes.length; i++) {
-        droplist = "#settings-card-type-" + (i+1);
-        $(droplist).val(cardTypes[i]);
+        droplist = "#settings-card-type-" + (i + 1);
+        droplistConfig = "#settings-card-type-" + (i + 1) + "-attributes";
+        $(droplist).val(cardTypes[i]['name']);
         $(droplist).next().addClass('active');
+        var config = "";
+        if (cardTypes[i]['hasFaction']) { config += "1-"; } else { config += "0-"; };
+        if (cardTypes[i]['canAttack']) { config += "1-"; } else { config += "0-"; };
+        if (cardTypes[i]['canDefend']) { config += "1-"; } else { config += "0-"; };
+        if (cardTypes[i]['hasHealth']) { config += "1"; } else { config += "0"; };
+        $(droplistConfig).val(config);
         $('#card-type').append(new Option(cardTypes[i], cardTypes[i]));
     }
     for (var i = 0; i < cardFactions.length; i++) {

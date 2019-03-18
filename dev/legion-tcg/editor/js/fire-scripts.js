@@ -113,10 +113,10 @@ function fnLoadSettings() {
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
             cid = doc.data()['cid'];
-            var cardTypes = doc.data()['cardTypes'];
+            _settingsCardsType = doc.data()['cardTypes'];
             var cardFactions = doc.data()['cardFactions'];
             var abilityTypes = doc.data()['abilityTypes'];
-            loadDroplistOptions(cardTypes, cardFactions, abilityTypes);
+            loadDroplistOptions(_settingsCardsType, cardFactions, abilityTypes);
         });
 }
 
