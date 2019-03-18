@@ -163,6 +163,7 @@ function updateCardInputs(card) {
     $('#card-defense').val(card['defense']);
     $('#card-health').val(card['health']);
     //onCardTypeChange();
+    $('#card-type').trigger('change');
     // Re initialize selectors
     M.FormSelect.init($('select'));
 }
