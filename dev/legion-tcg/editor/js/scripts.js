@@ -182,11 +182,12 @@ function updateCardInputs(card) {
 function onCardTypeChange() {
     var settings = [false, false, false, false];
     for (var i = 0; i < _settingsCardsType.length; i++) {
-        if (_settingsCardsType[i]['name'] == $(this).val()) {
-            if (_settingsCardsType[i]['hasFaction']) { settings[0] = true; }
-            if (_settingsCardsType[i]['canAttack']) { settings[1] = true; }
-            if (_settingsCardsType[i]['canDeffend']) { settings[2] = true; }
-            if (_settingsCardsType[i]['hasHealth']) { settings[3] = true; }
+        var config = _settingsCardsType[i];
+        if (config['name'] == $(this).val()) {
+            if (config['hasFaction']) { settings[0] = true; }
+            if (config['canAttack']) { settings[1] = true; }
+            if (config['canDeffend']) { settings[2] = true; }
+            if (config['hasHealth']) { settings[3] = true; }
             break;
         }
     }
