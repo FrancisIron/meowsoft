@@ -150,6 +150,8 @@ div {
     overflow-y: scroll;
     display: block;
     /*margin-top: 30px;*/
+    scrollbar-width: thin;
+    scrollbar-color: var(--n-color-main) transparent;
 }
 
 .end-button-container {
