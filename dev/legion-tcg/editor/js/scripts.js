@@ -1,4 +1,3 @@
-var _userLoaded = false;
 var _cards = {};
 var _settingsCardsType = {};
 
@@ -314,7 +313,6 @@ function loadDroplistOptions(cardTypes, cardFactions, abilityTypes) {
 function onLoad(show) {
     if (show) {
         // Show preloader
-        _userLoaded = false;
         $("#preloader").fadeIn(1000, function () {
             $("#preloader").show();
         });
@@ -322,9 +320,6 @@ function onLoad(show) {
         // Hide preloader
         $("#preloader").fadeOut(1000, function () {
             $("#preloader").hide();
-            if (uid != null) {
-                _userLoaded = true;
-            }
         });
     }
 }

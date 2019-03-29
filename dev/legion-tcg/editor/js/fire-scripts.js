@@ -126,9 +126,11 @@ function fnDownloadCards() {
     db.collection("lcgCards")
         .onSnapshot(function (snapshot) {
             snapshot.docChanges().forEach(function (change) {
-                if (change.type === "added" && _userLoaded) {
+                if (change.type === "added") {
                     createCardListItem(change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
+                    if (parseInt(change.doc.data()['id']) >= uid) {
+                        M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
+                    }
                 }
                 if (change.type === "modified") {
                     updateCardListItem(change.doc.data());
