@@ -181,6 +181,10 @@ div {
     margin-bottom: 0rem;
 }
 
+i.left {
+    margin-right: 10px;
+}
+
 #toast-container {
     min-width: 10%;
     top: auto !important;
