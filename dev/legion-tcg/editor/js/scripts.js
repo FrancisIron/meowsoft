@@ -129,7 +129,7 @@ function createCardListItem(card) {
         + '<i class="material-icons left">crop_portrait</i>'
         + '<span class="left">' + card["id"] + '</span>'
         + '<span class="left" style="padding:0px 5px">-</span>'
-        + '<span class="left" style="text-align:left">' + card["nameES"] + '</span></a ></div > ');
+        + '<span class="left card-item-name" style="text-align:left">' + card["nameES"] + '</span></a ></div > ');
     var btnId = "#card-item-" + card['id'];
     $(btnId).on('click', function () {
         $('.n-trigger-card > .-n-active').removeClass('-n-active');
@@ -139,6 +139,8 @@ function createCardListItem(card) {
 }
 function updateCardListItem(card) {
     _cards[card['id']] = card;
+    var button = "#card-item-" + card['id'];
+    $('#card-scroll-list').find($(button).find($(".card-item-name")).html(card['nameES']);
 }
 function removeCardListItem(card) {
     delete _cards[card['id']];
