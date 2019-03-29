@@ -128,7 +128,7 @@ function fnDownloadCards() {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
                     createCardListItem(change.doc.data());
-                    if (parseInt(change.doc.data()['id']) >= uid) {
+                    if (parseInt(change.doc.data()['id']) >= cid) {
                         M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
                     }
                 }
