@@ -124,11 +124,12 @@ function createCardListItem(card) {
     _cards[card['id']] = card;
     var container = $('#card-scroll-list');
     container.append('<div class="scroll-list-item n-trigger-card">'
-        + '<a id="card-item-' + card["id"] + '" class= "waves-effect waves-light btn --n-color-light" value="' + card["id"] + '">'
+        + '<a id="card-item-' + card["id"] + '" class= "waves-effect waves-light btn --n-color-light" value="'
+        + card["id"] + '" style="display:flex">'
         + '<i class="material-icons left">crop_portrait</i>'
         + '<span class="left">' + card["id"] + '</span>'
         + '<span class="left" style="padding:0px 5px">-</span>'
-        + '<span class="left">' + card["nameES"] + '</span></a ></div > ');
+        + '<span class="left" style="text-align:left">' + card["nameES"] + '</span></a ></div > ');
     var btnId = "#card-item-" + card['id'];
     $(btnId).on('click', function () {
         $('.n-trigger-card > .-n-active').removeClass('-n-active');
