@@ -89,11 +89,15 @@ function clearAllInputs() {
 function saveCardBtn() {
     if (!($('#card-id').val())) {
         fnUpdateCID();
+        var cidLabel = cid;
+        while (cidLabel.length < 3) { cidLabel = "0" + cidLabel; }
         $('#card-id').val(cid);
         $('#card-id + label').addClass('active');
     }
+    var cardId = $.trim($('#card-id').val());
+    while (cardId.length < 3) { cardId = "0" + cardId; }
     var card = {
-        id: $.trim($('#card-id').val()),
+        id: cardId,
         nameEN: $.trim($('#card-nameEN').val()),
         nameES: $.trim($('#card-nameES').val()),
         descriptionEN: $.trim($('#card-descriptionEN').val()),
