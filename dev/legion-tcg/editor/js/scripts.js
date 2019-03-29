@@ -140,7 +140,7 @@ function createCardListItem(card) {
 function updateCardListItem(card) {
     _cards[card['id']] = card;
     var button = "#card-item-" + card['id'];
-    $('#card-scroll-list').find($(button).find($(".card-item-name")).html(card['nameES']);
+    $('#card-scroll-list').find($(button)).find($(".card-item-name")).html(card['nameES']);
 }
 function removeCardListItem(card) {
     delete _cards[card['id']];
