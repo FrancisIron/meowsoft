@@ -3,6 +3,7 @@ var uid = null;
 var ucv = null;
 var uce = null;
 var umeowname = null;
+var signInCID = null;
 var cid = 0;
 
 $(document).ready(function () {
@@ -113,6 +114,7 @@ function fnLoadSettings() {
     db.collection("lcgSettings").doc("cards")
         .onSnapshot(function (doc) {
             cid = doc.data()['cid'];
+            if (signInCID == null) { signInCID = cid; }
             _settingsCardsType = doc.data()['cardTypes'];
             var cardFactions = doc.data()['cardFactions'];
             var abilityTypes = doc.data()['abilityTypes'];
@@ -128,7 +130,7 @@ function fnDownloadCards() {
             snapshot.docChanges().forEach(function (change) {
                 if (change.type === "added") {
                     createCardListItem(change.doc.data());
-                    if (parseInt(change.doc.data()['id']) >= cid) {
+                    if (parseInt(change.doc.data()['id']) > signInCID) {
                         M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
                     }
                 }
