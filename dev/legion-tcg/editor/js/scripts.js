@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("input#card-name").alphanum({
         allowNewline: false
     });
-    $("input#card-rarity, input#card-value").numeric({
+    $("input#card-rarity, input#card-limit, input#card - value").numeric({
         allowPlus: false,
         allowMinus: false,
         allowThouSep: false,
@@ -94,10 +94,12 @@ function saveCardBtn() {
     }
     var card = {
         id: $.trim($('#card-id').val()),
-        name: $.trim($('#card-name').val()),
+        nameEN: $.trim($('#card-nameEN').val()),
+        nameES: $.trim($('#card-nameES').val()),
         descriptionEN: $.trim($('#card-descriptionEN').val()),
         descriptionES: $.trim($('#card-descriptionES').val()),
         rarity: $.trim($('#card-rarity').val()),
+        limit: $.trim($('#card-limit').val()),
         type: $.trim($('#card-type').val()),
         faction: $.trim($('#card-faction').val()),
         value: $.trim($('#card-value').val()),
@@ -124,7 +126,9 @@ function createCardListItem(card) {
     container.append('<div class="scroll-list-item n-trigger-card">'
         + '<a id="card-item-' + card["id"] + '" class= "waves-effect waves-light btn --n-color-light" value="' + card["id"] + '">'
         + '<i class="material-icons left">crop_portrait</i>'
-        + card["id"] + '</a ></div >');
+        + '<span class="left">' + card["id"] + '</span>'
+        + '<span class="left" style="padding:0px 5px">-</span>'
+        + '<span class="left">' + card["nameES"] + '</span></a ></div > ');
     var btnId = "#card-item-" + card['id'];
     $(btnId).on('click', function () {
         $('.n-trigger-card > .-n-active').removeClass('-n-active');
@@ -141,10 +145,12 @@ function removeCardListItem(card) {
 }
 function updateCardInputs(card) {
     $('#card-id + label').addClass('active');
-    if (card['name'].length > 0) { $('#card-name + label').addClass('active'); } else { $('#card-name + label').removeClass('active'); }
+    if (card['nameEN'].length > 0) { $('#card-nameEN + label').addClass('active'); } else { $('#card-nameEN + label').removeClass('active'); }
+    if (card['nameES'].length > 0) { $('#card-nameES + label').addClass('active'); } else { $('#card-nameES + label').removeClass('active'); }
     if (card['descriptionEN'].length > 0) { $('#card-descriptionEN + label').addClass('active'); } else { $('#card-descriptionEN + label').removeClass('active'); }
     if (card['descriptionES'].length > 0) { $('#card-descriptionES + label').addClass('active'); } else { $('#card-descriptionES + label').removeClass('active'); }
     if (card['rarity'].length > 0) { $('#card-rarity + label').addClass('active'); } else { $('#card-rarity + label').removeClass('active'); }
+    if (card['limit'].length > 0) { $('#card-limit + label').addClass('active'); } else { $('#card-limit + label').removeClass('active'); }
     if (card['type'].length > 0) { $('#card-type + label').addClass('active'); } else { $('#card-type + label').removeClass('active'); }
     if (card['faction'].length > 0) { $('#card-faction + label').addClass('active'); } else { $('#card-faction + label').removeClass('active'); }
     if (card['value'].length > 0) { $('#card-value + label').addClass('active'); } else { $('#card-value + label').removeClass('active'); }
@@ -152,10 +158,12 @@ function updateCardInputs(card) {
     if (card['defense'].length > 0) { $('#card-defense + label').addClass('active'); } else { $('#card-defense + label').removeClass('active'); }
     if (card['health'].length > 0) { $('#card-health + label').addClass('active'); } else { $('#card-health + label').removeClass('active'); }
     $('#card-id').val(card['id']);
-    $('#card-name').val(card['name']);
+    $('#card-nameEN').val(card['nameEN']);
+    $('#card-nameES').val(card['nameES']);
     $('#card-descriptionEN').val(card['descriptionEN']);
     $('#card-descriptionES').val(card['descriptionES']);
     $('#card-rarity').val(card['rarity']);
+    $('#card-limit').val(card['limit']);
     $('#card-type').val(card['type']);
     $('#card-faction').val(card['faction']);
     $('#card-value').val(card['value']);

@@ -132,7 +132,7 @@ function fnDownloadCards() {
                 }
                 if (change.type === "modified") {
                     updateCardListItem(change.doc.data());
-                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card #' + change.doc.data()['id'] });
+                    M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' updated card #' + change.doc.data()['id'] + ' - ' + change.doc.data()['nameES'] });
                 }
                 if (change.type === "removed") {
                     fnRemovedDocument("lcgCardsBackup", change.doc.data()['id']);
@@ -170,10 +170,12 @@ function fnUpdateCard(card) {
         .doc(card['id']).set({
             lastEditedBy: umeowname,
             id: card['id'],
-            name: card['name'],
+            nameEN: card['nameEN'],
+            nameES: card['nameES'],
             descriptionEN: card['descriptionEN'],
             descriptionES: card['descriptionES'],
             rarity: card['rarity'],
+            limit: card['limit'],
             type: card['type'],
             faction: card['faction'],
             value: card['value'],
@@ -225,10 +227,12 @@ function fnBackupCard(cardNumber) {
             removedBy: umeowname,
             lastEditedBy: card['lastEditedBy'],
             id: card['id'],
-            name: card['name'],
+            nameEN: card['nameEN'],
+            nameES: card['nameES'],
             descriptionEN: card['descriptionEN'],
             descriptionES: card['descriptionES'],
             rarity: card['rarity'],
+            limit: card['limit'],
             type: card['type'],
             faction: card['faction'],
             value: card['value'],

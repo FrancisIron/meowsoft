@@ -39,7 +39,7 @@
             <div class="nya-fg1">
                 <div id="tabs-wrapper" class="row nya-fg1">
                     <div id="header" class="col s12 m12">
-                        <h5 class="tcgtitle">Card Editor [v 0.4.5]</h5>
+                        <h5 class="tcgtitle">Card Editor [v 0.5.0]</h5>
                         <ul id="slide-out" class="sidenav">
                             <li>
                                 <div class="user-view">
@@ -84,9 +84,13 @@
                                                     <input id="card-id" type="number" disabled="">
                                                     <label for="card-id">Id</label>
                                                 </div>
-                                                <div class="input-field col s10">
-                                                    <input id="card-name" type="text">
-                                                    <label for="card-name">Nombre</label>
+                                                <div class="input-field col s5">
+                                                    <input id="card-nameES" type="text">
+                                                    <label for="card-nameES">Nombre (Español)</label>
+                                                </div>
+                                                <div class="input-field col s5">
+                                                    <input id="card-nameEN" type="text">
+                                                    <label for="card-nameEN">Nombre (English)</label>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -94,13 +98,17 @@
                                                     <input id="card-rarity" type="number" min="0" max="9">
                                                     <label for="card-rarity">Rareza</label>
                                                 </div>
-                                                <div class="input-field col s5">
+                                                <div class="input-field col s2">
+                                                    <input id="card-limit" type="number" min="0" max="6">
+                                                    <label for="card-limit">Limite</label>
+                                                </div>
+                                                <div class="input-field col s4">
                                                     <select id="card-type">
                                                         <option value="Undefined" selected>Undefined</option>
                                                     </select>
                                                     <label>Tipo</label>
                                                 </div>
-                                                <div class="input-field col s5">
+                                                <div class="input-field col s4">
                                                     <select id="card-faction" disabled>
                                                         <option value="Undefined" selected>Undefined</option>
                                                     </select>
