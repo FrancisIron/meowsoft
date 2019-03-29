@@ -126,7 +126,7 @@ function fnDownloadCards() {
     db.collection("lcgCards")
         .onSnapshot(function (snapshot) {
             snapshot.docChanges().forEach(function (change) {
-                if (change.type === "added") {
+                if (change.type === "added" && _userLoaded) {
                     createCardListItem(change.doc.data());
                     M.toast({ html: '@' + change.doc.data()['lastEditedBy'] + ' created a card, #' + change.doc.data()['id'] });
                 }
