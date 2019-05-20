@@ -107,7 +107,7 @@
 			
 		</style>
 	</head>
-	<body>
+	<body onload="updateClock(); setInterval('updateClock()', 1000 );">
 		<div>
 			<div class="top-panel">
 				<a href="#" onclick="onHome();return false;" class="top-button mouse-over-333" >MeowSoft Dev Team</a>
@@ -145,7 +145,7 @@
 			<p style="width: 100%;">
 				&nbsp;
 				<span id="powered-by-owo">Powered by <a href="https://owo.cl" target="_blank">OwO</a></span>
-				<span id="clock" onload="updateClock(); setInterval('updateClock()', 1000 );">00:00</span>
+				<span id="clock">00:00</span>
 				<span id="C-Meowsoft">© 2019 Meowsoft.</span>
 				&nbsp;
 			</p>
