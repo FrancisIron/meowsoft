@@ -128,12 +128,12 @@
 		</header>
 		<header class="backimage" id="projects" style="display:none;">
 			<div class="home-main-panel">
-				<h1 class="">projects.</h1>
+				<h1 class="">Projects.</h1>
 			</div>
 		</header>
 		<header class="backimage" id="contact" style="display:none;">
 			<div class="home-main-panel">
-				<h1 class="">contact.</h1>
+				<h1 class="">Contact.</h1>
 			</div>
 		</header>
 
@@ -156,7 +156,9 @@
     					projects.style.display = "none";
     					contact.style.display = "none";
     					home.style.display = "block";
-  				} 
+  				} else {
+					location.reload();				   
+				}				    
 			}
 			function onAbout() {
   				var home = document.getElementById("home");
