@@ -62,6 +62,12 @@
 				color: greenyellow;
       			}
 			
+			#C-Meowsoft {
+				right: 0;
+				position: absolute;
+				margin: auto 50px;
+			}
+			
 			.mouse-over-333:hover {
 				background-color: #333;
 			}
@@ -87,11 +93,9 @@
 				background-position: center;
 			}
 			
-		@media only screen and (max-width: 1000px) {
-      			#C-Meowsoft {
-				display: inline-block;
-				margin-left: 50%;
-				text-align: right !important;;
+		@media only screen and (max-width: 600px) {
+      			#clock {
+				display: none;
       			}
   		}
 			
@@ -139,8 +143,11 @@
 
 		<footer class="bottom-panel">
 			<p style="width: 100%;">
+				&nbsp;
 				<span id="powered-by-owo">Powered by <a href="https://owo.cl" target="_blank">OwO</a></span>
+				<span id="clock" onload="updateClock(); setInterval('updateClock()', 1000 );">00:00</span>
 				<span id="C-Meowsoft">© 2019 Meowsoft.</span>
+				&nbsp;
 			</p>
 		</footer>
 	</body>
@@ -195,6 +202,14 @@
     					projects.style.display = "none";
     					contact.style.display = "block";
   				} 
+			}
+			function updateClock(){
+				let time = new Date();
+				let hours = time.getHours();
+				hours = (hours < 10 ? "0" : "") + hours;
+				let minutes = time.getMinutes();
+				minutes = (minutes < 10 ? "0" : "") + minutes;
+				document.getElementById("clock").firstChild.nodeValue = hours + ":" + minutes;
 			}
 		</script>
 	</div>
