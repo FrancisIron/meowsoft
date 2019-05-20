@@ -106,12 +106,12 @@
 	<body>
 		<div>
 			<div class="top-panel">
-				<a href="./" class="top-button mouse-over-333" >MeowSoft Dev Team</a>
+				<a href="#" onclick="onHome();return false;" class="top-button mouse-over-333" >MeowSoft Dev Team</a>
 				<!-- Right-sided navbar links. Hide them on small screens -->
 				<div style="float: right;" class="">
-					<a href="#" onclick="onAbout()";return false; class="top-button mouse-over-333" >About</a>
-					<a href="#proyects" class="top-button mouse-over-333" >Proyects</a>
-					<a href="#contact" class="top-button mouse-over-333" >Contact</a>
+					<a href="#" onclick="onAbout();return false;" class="top-button mouse-over-333" >About</a>
+					<a href="#" onclick="onProjects();return false;" class="top-button mouse-over-333" >Proyects</a>
+					<a href="#" onclick="onContact();return false;"" class="top-button mouse-over-333" >Contact</a>
 				</div>
 			</div>
 		</div>
@@ -126,6 +126,16 @@
 				<h1 class="">About.</h1>
 			</div>
 		</header>
+		<header class="backimage" id="projects" style="display:none;">
+			<div class="home-main-panel">
+				<h1 class="">projects.</h1>
+			</div>
+		</header>
+		<header class="backimage" id="contact" style="display:none;">
+			<div class="home-main-panel">
+				<h1 class="">contact.</h1>
+			</div>
+		</header>
 
 		<footer class="bottom-panel">
 			<p style="width: 100%;">
@@ -136,6 +146,18 @@
 	</body>
 	<div style="display:none">
 		<script>
+			function onHome() {
+				var home = document.getElementById("home");
+  				var about = document.getElementById("about");
+  				var projects = document.getElementById("projects");
+  				var contact = document.getElementById("contact");
+  				if (home.style.display === "none") {
+    					about.style.display = "none";
+    					projects.style.display = "none";
+    					contact.style.display = "none";
+    					home.style.display = "block";
+  				} 
+			}
 			function onAbout() {
   				var home = document.getElementById("home");
   				var about = document.getElementById("about");
@@ -146,6 +168,30 @@
     					projects.style.display = "none";
     					contact.style.display = "none";
     					about.style.display = "block";
+  				} 
+			}
+			function onProjects() {
+  				var home = document.getElementById("home");
+  				var about = document.getElementById("about");
+  				var projects = document.getElementById("projects");
+  				var contact = document.getElementById("contact");
+  				if (projects.style.display === "none") {
+    					home.style.display = "none";
+    					about.style.display = "none";
+    					contact.style.display = "none";
+    					projects.style.display = "block";
+  				} 
+			}
+			function onContact() {
+  				var home = document.getElementById("home");
+  				var about = document.getElementById("about");
+  				var projects = document.getElementById("projects");
+  				var contact = document.getElementById("contact");
+  				if (contact.style.display === "none") {
+    					home.style.display = "none";
+    					about.style.display = "none";
+    					projects.style.display = "none";
+    					contact.style.display = "block";
   				} 
 			}
 		</script>
