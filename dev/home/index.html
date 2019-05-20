@@ -97,19 +97,24 @@
 	<body>
 		<div>
 			<div class="top-panel">
-				<a href="#home" class="top-button mouse-over-333" >MeowSoft Dev Team</a>
+				<a href="./" class="top-button mouse-over-333" >MeowSoft Dev Team</a>
 				<!-- Right-sided navbar links. Hide them on small screens -->
 				<div style="float: right;" class="">
-					<a href="#about" class="top-button mouse-over-333" >About</a>
+					<a href="#" onclick="onAbout();return false; class="top-button mouse-over-333" >About</a>
 					<a href="#proyects" class="top-button mouse-over-333" >Proyects</a>
 					<a href="#contact" class="top-button mouse-over-333" >Contact</a>
 				</div>
 			</div>
 		</div>
 
-		<header class="backimage" /*style="max-width:100%;min-width:500px;"*/ id="home">
+		<header class="backimage" id="home">
 			<div class="home-main-panel">
 				<h1 class="">Welcome to the Meowsoft Development Team website.</h1>
+			</div>
+		</header>
+		<header class="backimage" id="about" style="display:none;">
+			<div class="home-main-panel">
+				<h1 class="">About.</h1>
 			</div>
 		</header>
 
@@ -120,4 +125,20 @@
 			</p>
 		</footer>
 	</body>
+	<div style="display:none">
+		<script>
+			function onAbout() {
+  				var home = document.getElementById("home");
+  				var about = document.getElementById("about");
+  				var projects = document.getElementById("projects");
+  				var contact = document.getElementById("contact");
+  				if (about.style.display !== "none") {
+    					home.style.display = "none";
+    					projects.style.display = "none";
+    					contact.style.display = "none";
+    					about.style.display = "block";
+  				} 
+			}
+		</script>
+	</div>
 </html>
