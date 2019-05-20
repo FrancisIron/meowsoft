@@ -9,6 +9,7 @@
 				background-color: #333;
 				color: #777;
 				margin: 0;
+				overflow: hidden;
 			}
 			h1, h2, h3, h4, h5, h6 {
 				font-family: "Playfair Display";
@@ -24,7 +25,6 @@
 			}
 			
 			.top-button {
-				background-color: #000;
 				border: none;
 				display: inline-block;
 				padding: 8px 16px;
@@ -39,6 +39,7 @@
 			}
 			
 			.bottom-panel {
+				background-color: #000;
 				position: absolute;
 				bottom: 0;
 				width: 100%;
@@ -69,11 +70,12 @@
 			
 			.backimage {
 				background-image: url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131");
-				transform: translateY(-50px);
+				/*transform: translateY(-50px);*/
 				z-index: -1;
 				/*max-height: 90%;*/
 				width: auto;
 				height: 100%;
+				overflow: hidden;
 				background-size: cover;
 			}
 			
