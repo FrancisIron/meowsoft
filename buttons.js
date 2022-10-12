@@ -1,6 +1,6 @@
-mal = document.getElementById('mal');
+mal = document.getElementById('anilist');
 mal.onclick = function(){
-	window.location.href = "https://myanimelist.net/";
+	window.location.href = "https://anilist.co/";
 };
 
 drive = document.getElementById('drive');
