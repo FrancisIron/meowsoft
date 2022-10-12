@@ -101,6 +101,10 @@ body, html {height: 100%}
     text-decoration: none;
 }
 
+#footer{
+	width: 100%;
+}
+
 /*Ajuste en caso de pantallas de entre 2000-2010*/
 @media screen and (max-width: 1400px){
 	.parent-buttons{
