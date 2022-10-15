@@ -1,0 +1,222 @@
+body {
+    font-family: "Times New Roman", Georgia, Serif;
+    background-color: #333;
+    color: #777;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+
+.top-panel {
+    background-color: #000;
+    letter-spacing: 4px;
+    padding: 8px 16px;
+    /*width: 100%;*/
+    overflow: hidden;
+}
+
+.top-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.bottom-panel {
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #777;
+}
+
+#powered-by-owo {
+    left: 0;
+    position: absolute;
+    margin: auto 50px;
+}
+
+#powered-by-owo a {
+    color: #777;
+    text-decoration: none;
+}
+
+#powered-by-owo a:hover {
+    color: greenyellow;
+}
+
+#C-Meowsoft {
+    right: 0;
+    position: absolute;
+    margin: auto 50px;
+}
+
+.mouse-over-333:hover {
+    background-color: #333;
+}
+
+.home-main-panel {
+    background-color: #000;
+    padding: 12px 30px;
+    opacity: 0.60;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+}
+
+.contact-panel {
+    display: block;
+    background-color: silver;
+    height: 100%;
+    padding: 64px;
+}
+
+input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #777;
+    width: 100%;
+    background-color: transparent;
+}
+
+.background-image {
+    /*background-image: url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131");*/
+    background-image: url("./../assets/background.jpg");
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: unset;
+    transform: scaleX(-1);
+
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.intro-div {
+    background-color: #000;
+    position:absolute;
+    z-index:100;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.intro-div span{
+    font-size: 3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-clip-image {
+    background-image: url("./../assets/background.jpg");
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: unset;
+    position:absolute;
+    z-index:105;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform: scaleX(-1);
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-clip { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%); }
+/*.background-clip { clip-path: polygon(78% 0, 93% 0, 82% 100%, 67% 100%);}*/
+.background-clip-anim { animation: 1.5s polygon forwards; }
+/*.clip-anim-reverse { animation: 1s polygon reverse; }*/
+@keyframes polygon {
+    /* 0% { clip-path: (107% 100%, 122% 100%, 133% 100%, 118% 100%);} */
+    /*0% { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);}*/
+    /*80% { clip-path: polygon(-10% 0%, 0% 0%, -25% 100%, -35% 100%); }*/
+    /*100% { clip-path: polygon(125% 0%, 135% 0%, 110% 100%, 100% 100%); }*/
+    0% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
+    50% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
+    100% { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%);}
+}
+
+.fade-in-anim {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+.fade-out-anim {
+    opacity: 0;
+    animation: fade-out 2s forwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes fade-out {
+    0% { opacity: 1;}
+    75% { opacity: 1;}
+    99% { opacity: 0; height: 100%; width: 100%;}
+    100% { opacity: 0; height: 0; width: 0;}
+}
+
+@media only screen and (max-width: 850px) {
+    #clock {
+        left: 0;
+        position: absolute;
+        margin: auto 50px;
+    }
+    /* TODO: Tablet Portrait Mode */
+    /* @media (min-aspect-ratio: 4/3) ?? */
+    @media only screen and (min-height: 750px) {
+        .background-clip { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%); }
+        @keyframes polygon {
+            0% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
+            50% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
+            100% { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%);}
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /*polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%)*/
+    .background-clip { clip-path: polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%); }
+    @keyframes polygon {
+        0% { clip-path: polygon(-7% 0%, -22% 0%, -33% 100%, -18% 100%);}
+        50% { clip-path: polygon(-7% 0%, -22% 0%, -33% 100%, -18% 100%);}
+        100% { clip-path: polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%);}
+    }
+}
