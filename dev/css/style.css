@@ -201,9 +201,13 @@ body {
     flex-direction: column;
     width: 100%;
     min-height: 90px;
-    padding: 0 50px;
+    /*padding: 0 50px;*/
     opacity: 0.6;
     justify-content: center;
+}
+
+.contents-lower-panel h1 {
+    margin: 0 50px;
 }
 
 
@@ -261,6 +265,10 @@ body {
 
     .message { 
          margin: 5% 2% auto 55%;
+    }
+
+    .contents-lower-panel h1 {
+        margin: 0 25px;
     }
 
     .bottom-panel-text {
