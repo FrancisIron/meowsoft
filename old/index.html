@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>MEOWSOFT SEARCH ALIVE!</title>
+    <title>Meowsoft</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./css/w3.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="buttons.css">
+    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
 </head>
 
 <body onload="updateClock(); setInterval('updateClock()', 1000 );">
@@ -16,7 +17,7 @@
                 <span id="clock">
                 </span>
             </div>
-            <h1 class="w3-jumbo barcode parent">MeowSoft</h1>
+            <h1 class="w3-jumbo barcode parent">Meowsoft</h1>
 
             <div class="parent">
                 <input id="search" class="searchfield" type="text" list="commands">
@@ -25,7 +26,7 @@
             <datalist id="commands"></datalist>
 
             <div class="parent-buttons">
-                <button class="item button" id="mal">MAL</button>
+                <button class="item button" id="anilist">Anilist</button>
                 <button class="item button" id="drive">Drive</button>
                 <button class="item button" id="youtube">Youtube</button>
                 <button class="item button" id="gmail">Gmail</button>
@@ -34,12 +35,13 @@
             </div>
         </div>
     </div>
-    <div class="w3-display-bottomleft w3-padding-large text-white">
-        Powered by <a href="https://owo.cl" target="_blank">OwO</a>
+    <div id="footer" class="w3-display-bottomleft w3-padding-large text-white">
+        <span>Powered by <a href="https://owo.cl" target="_blank">OwO</a></span>
+        <span class="w3-display-middle">Meowsoft @ 2018~2022</span>
     </div>
-    <script src="./js/buttons.js"></script>
-    <script src="./js/search.js"></script>
-    <script src="./js/clock.js"></script>
+    <script src="buttons.js"></script>
+    <script src="search.js"></script>
+    <script src="clock.js"></script>
 </body>
 </html>
 

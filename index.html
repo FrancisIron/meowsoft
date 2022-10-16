@@ -1,47 +1,89 @@
-﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>Meowsoft</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="w3.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="buttons.css">
-    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
-</head>
-
-<body onload="updateClock(); setInterval('updateClock()', 1000 );">
-    <div class="bgimg display-container text-white">
-        <div class="center">
-            <div class="parent">
-                <span id="clock">
-                </span>
-            </div>
-            <h1 class="w3-jumbo barcode parent">Meowsoft</h1>
-
-            <div class="parent">
-                <input id="search" class="searchfield" type="text" list="commands">
-            </div>
-
-            <datalist id="commands"></datalist>
-
-            <div class="parent-buttons">
-                <button class="item button" id="anilist">Anilist</button>
-                <button class="item button" id="drive">Drive</button>
-                <button class="item button" id="youtube">Youtube</button>
-                <button class="item button" id="gmail">Gmail</button>
-                <button class="item button" id="reddit">Reddit</button>
-                <button class="item button" id="chan">4Chan</button>
-            </div>
+	<head>
+		<title>Meowsoft</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
+        <link rel="icon" type="image/x-icon" href="./resources/favicon.ico">
+		<!--<script src="https://cdn.tailwindcss.com"></script>-->
+	</head>
+	<body onload="updateClock(); setInterval('updateClock()', 1000 );">
+        <div class="intro-div fade-out-anim">
+            <div class="background-clip-image background-clip-anim"></div>
+            <span class="fade-in-anim">Meowsoft</span>
         </div>
-    </div>
-    <div id="footer" class="w3-display-bottomleft w3-padding-large text-white">
-        <span>Powered by <a href="https://owo.cl" target="_blank">OwO</a></span>
-        <span class="w3-display-middle">Meowsoft @ 2018~2022</span>
-    </div>
-    <script src="buttons.js"></script>
-    <script src="search.js"></script>
-    <script src="clock.js"></script>
-</body>
+        <div class="background-image background-clip"></div>
+		<div class="body">
+			<div class="top-panel">
+				<a href="#" onclick="onHome();return false;" class="logo bg-main-hover" >Meowsoft</a>
+				<!-- Right-sided navbar links. Hide them on small screens -->
+				<div class="menu-headers">
+					<!--<a href="#" onclick="onAbout();return false;" class="top-button bg-main-hover" >About</a>-->
+					<!--<a href="#" onclick="onProjects();return false;" class="top-button bg-main-hover" >Projects</a>
+					<a href="#" onclick="onContact();return false;" class="top-button bg-main-hover" >Contact</a>-->
+				</div>
+			</div>
+			<header class="contents" id="home">
+				<div class="contents contents-clip">
+					<div class="message">
+						<h2>News</h2>
+						<p>Our cats are rebuilding this site, we'll be back soon.</p>
+					</div>
+				</div>
+				<div class="contents-lower-panel">
+					<h1 class="">Site under construction</h1>
+				</div>
+			</header>
+			<header class="contents" id="about" style="display:none;">
+				<div class="contents contents-clip">
+					<div class="message">
+						<h1>About us</h1>
+						<p>We are a team of developers with experience on education-related websites and a wide variety of desktop and server-side applications.</p>
+					</div>
+				</div>
+				<div class="contents-lower-panel">
+					<h1 class="">About</h1>
+				</div>
+			</header>
+			<header class="contents" id="projects" style="display:none;">
+				<div class="contents contents-clip">
+					<div class="message">
+						Content Here
+					</div>
+				</div>
+				<div class="contents-lower-panel">
+					<h1 class="">Projects</h1>
+				</div>
+			</header>
+			<header id="contact" class="contact-panel" style="display:none;">
+				<div class="contents contents-clip">
+					<div class="message">
+						Content Here
+					</div>
+				</div>
+				<div class="contents-lower-panel">
+					<h1 class="">Contact</h1>
+				</div>
+				<!--<div>
+					<h1>Contact</h1><br>
+					<p>Lets get in touch and talk about your next project.</p>
+					<p>You can also contact us by phone nya-meow or email devteam@meowsoft.net, or you can send us a message here:</p>
+					<form action="/action_page.php" target="_blank">
+							<p><input type="text" placeholder="Name" required="" name="Name"></p>
+							<p><input type="text" placeholder="Email" required="" name="Email"></p>
+							<p><input type="text" placeholder="Message or Special requirements" required="" name="Message"></p>
+							<p><button type="submit" class="top-button" style="background: #0009;">SEND MESSAGE</button></p>
+					</form>
+				</div>-->
+			</header>
+			<footer class="bottom-panel">
+				<span id="clock" class="bottom-panel-text">00:00</span>
+				<span id="C-Meowsoft" class="bottom-panel-text">© 2018~2022 Meowsoft</span>
+			</footer>
+		</div>
+        <script src="./resources/js/main.js"></script>
+	</body>
 </html>
-
