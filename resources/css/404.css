@@ -20,7 +20,6 @@ body {
     overflow: hidden;
     background-size: cover;
     background-position: unset;
-    background-color: black;
     transform: scaleX(-1);
     position:absolute;
     z-index:-1;
@@ -56,7 +55,6 @@ body {
     overflow: hidden;
     background-size: cover;
     background-position: unset;
-    background-color: black;
     position:absolute;
     z-index:105;
     top:0;
@@ -192,7 +190,6 @@ h1, h2 {
     .background-clip { clip-path: polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%); }
 
     .fade-in-anim {
-        /*transform: rotate(82.5deg) translateX(-10%) translateY(-9%);*/
         transform: translateX(+40%) translateY(+30%);
         writing-mode: sideways-lr;
     }
