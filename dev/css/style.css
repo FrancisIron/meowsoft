@@ -249,6 +249,11 @@ body {
         clip-path: none;
     }
 
+    .fade-in-anim {
+        transform: translateX(+40%) translateY(+30%);
+        writing-mode: sideways-lr;
+    }
+
     /*polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%)*/
     .background-clip { clip-path: polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%); }
 
