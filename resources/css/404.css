@@ -20,8 +20,8 @@ body {
     overflow: hidden;
     background-size: cover;
     background-position: unset;
+    background-color: black;
     transform: scaleX(-1);
-
     position:absolute;
     z-index:-1;
     top:0;
@@ -56,6 +56,7 @@ body {
     overflow: hidden;
     background-size: cover;
     background-position: unset;
+    background-color: black;
     position:absolute;
     z-index:105;
     top:0;
