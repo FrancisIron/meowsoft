@@ -1,5 +1,5 @@
 function onHome() {
-    var home = document.getElementById("home");
+      var home = document.getElementById("home");
       var about = document.getElementById("about");
       var projects = document.getElementById("projects");
       var contact = document.getElementById("contact");
@@ -7,7 +7,7 @@ function onHome() {
             about.style.display = "none";
             projects.style.display = "none";
             contact.style.display = "none";
-            home.style.display = "block";
+            home.style.display = "flex";
       } else {
         location.reload();				   
     }				    
@@ -21,7 +21,7 @@ function onAbout() {
             home.style.display = "none";
             projects.style.display = "none";
             contact.style.display = "none";
-            about.style.display = "block";
+            about.style.display = "flex";
       } 
 }
 function onProjects() {
@@ -33,7 +33,7 @@ function onProjects() {
             home.style.display = "none";
             about.style.display = "none";
             contact.style.display = "none";
-            projects.style.display = "block";
+            projects.style.display = "flex";
       } 
 }
 function onContact() {
@@ -45,7 +45,7 @@ function onContact() {
             home.style.display = "none";
             about.style.display = "none";
             projects.style.display = "none";
-            contact.style.display = "block";
+            contact.style.display = "flex";
       } 
 }
 function updateClock(){
