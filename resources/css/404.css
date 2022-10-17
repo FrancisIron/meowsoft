@@ -11,6 +11,11 @@ body {
     color: var(--text-color);
     margin: 0;
     overflow: hidden;
+    font-size: 16px;
+}
+
+p, a {
+    font-size: 1.3rem;
 }
 
 .background-image {
