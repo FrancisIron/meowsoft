@@ -41,6 +41,10 @@ input {
     transition: background-color 0.3s linear, color 0.3s linear;
 }
 
+body, html {
+    overflow: hidden;
+}
+
 body {
     font-family: "Times New Roman", Georgia, Serif;
     background-color: var(--color-bg-main);
