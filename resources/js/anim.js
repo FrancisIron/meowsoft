@@ -6,4 +6,6 @@ $(document).ready(function(){
         var droplet = $("<span class='anim-droplet' style='top:"+posY+";left:"+posX+";'></span>").appendTo($(this));    
         setTimeout(function() {droplet.remove();}, 1500);
     });
+    /** Ripple */
+    
 });

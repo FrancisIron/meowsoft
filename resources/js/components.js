@@ -1,44 +1,33 @@
 $(document).ready(function(){
     /** Navigation Drawer **/
     //#region
-    // $(".nav-drawer-toggle, .nav-drawer-scrim").click(function(e){
-    //     if ($(this).hasClass("active")){
-    //         $(this).parent().find(".nav-drawer-toggle").removeClass("active");
-    //         $(this).parent().find(".nav-drawer-scrim").removeClass("active");
-    //         $(this).parent().find(".nav-drawer-contents").removeClass("active");
-    //         $(this).parent().find(".nav-drawer-scrim").addClass("inactive");
-    //         $(this).parent().find(".nav-drawer-contents").addClass("inactive");
-    //     } else {
-    //         $(this).parent().find(".nav-drawer-toggle").addClass("active");
-    //         $(this).parent().find(".nav-drawer-scrim").removeClass("inactive");
-    //         $(this).parent().find(".nav-drawer-contents").removeClass("inactive");
-    //         $(this).parent().find(".nav-drawer-scrim").addClass("active");
-    //         $(this).parent().find(".nav-drawer-contents").addClass("active");
-    //     }
-    // });
+    $("body").on("click",".nav-drawer-toggle, .nav-drawer-scrim", function(e){
+        let drawer = $(this).closest(".nav-drawer");
+        
+        drawer.find(".nav-drawer-toggle").toggleClass("active");
+        drawer.find(".nav-drawer-scrim").toggleClass("active");
+        drawer.find(".nav-drawer-contents").toggleClass("active inactive");
+    });
     //#endregion
     /** Toggle Theme **/
     //#region
-    // const btn_theme = document.getElementsByClassName('theme-selector')[0];
-    // if (!document.documentElement.classList.contains('theme_dark')) {
-    //     btn_theme.classList.remove('theme_dark');
-    // }
-    // btn_theme.addEventListener('click', e => {
-    //     e.preventDefault();
-    //     // Add .theme_dark to :root and .theme-selector
-    //     document.documentElement.classList.toggle('theme_dark');
-    //     btn_theme.classList.toggle('theme_dark');
-    //     // Set theme in local storage
-    //     if (document.documentElement.classList.contains('theme_dark')) {
-    //         localStorage.setItem('theme', 'dark');
-    //     } else {
-    //         localStorage.setItem('theme', 'light');
-    //     }
-    // });
+    if ($("html").hasClass("theme_light")){
+        $(".theme-selector").addClass("theme_light");
+    }
+    $("body").on("click", ".theme-selector", function() {
+        $(".theme-selector").toggleClass("theme_light");
+        $("html").toggleClass("theme_light");
+        // Set theme in local storage
+        if ($("html").hasClass("theme_light")) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    });
     //#endregion
 });
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("ready");
+    return;
     //#region on Document Ready () {}
     if (document.documentElement.classList.contains('theme_light')) {
         const meow_theme_selector = document.getElementsByClassName('theme-selector');
@@ -50,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //#region on Click {Component}
     document.addEventListener('click',function(e){
         if(e.target){
+            console.log("e.target is valid");
             if (e.target.matches(".theme-selector")){
-                e.preventDefault();
                 // Get all theme-selectors
                 const meow_theme_selector = document.getElementsByClassName('theme-selector');
                 // Add .theme_dark to :root and .theme-selector
