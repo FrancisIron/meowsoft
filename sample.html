@@ -8,9 +8,11 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap">
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 		<!-- Frameworks -->
-		<!-- null -->
+		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 		<!-- Meowsoft CSS -->
 		<script>if (localStorage.getItem('theme') == 'light') { document.documentElement.classList.add('theme_light');}</script>
         <link rel="stylesheet" type="text/css" href="./resources/css/components.css">
@@ -28,18 +30,18 @@
 			<div class="top-panel">
 				<a href="#" onclick="onHome();return false;" class="logo bg-main-hover" >Meowsoft</a>
 				<div class="nav-bar">
-					<!-- <a href="#" onclick="onAbout();return false;" class="top-button bg-main-hover" >About</a> -->
-					<!-- <a href="#" onclick="onProjects();return false;" class="top-button bg-main-hover" >Projects</a> -->
+					<a href="#" onclick="onAbout();return false;" class="top-button bg-main-hover" >About</a>
+					<a href="#" onclick="onProjects();return false;" class="top-button bg-main-hover" >Projects</a>
 					<!-- <a href="#" onclick="onContact();return false;" class="top-button bg-main-hover" >Contact</a> -->
 					<button class="theme-selector animated">
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
 					</button>
 					<div class="nav-drawer">
-						<!-- <button class="nav-drawer-toggle animated">
+						<button class="nav-drawer-toggle animated">
 							<span class="anim-hov-grad"></span>
 							<span class="material-symbols-outlined icon"></span>
-						</button> -->
+						</button>
 						<div class="nav-drawer-scrim"></div>
 						<div class="nav-drawer-contents inactive anim-drawer-edge">
 							<div class="nav-drawer-title">
@@ -88,14 +90,14 @@
 					</div>
 				</div>
 				<div class="contents-lower-panel">
-					<h1 class="">Site under construction</h1>
+					<h1>Site under construction</h1>
 				</div>
 			</header>
 			<header id="about" class="contents" style="display:none;">
 				<div class="contents contents-clip">
 					<div class="message">
 						<h1>About us</h1>
-						<p>We are a team of developers with experience on education-related websites and a wide variety of desktop and server-side applications.</p>
+						<p>Content Here...</p>
 					</div>
 				</div>
 				<div class="contents-lower-panel">
@@ -107,6 +109,26 @@
 					<div class="message">
 						<h1>Projects</h1>
 						<p>Content Here...</p>
+						<button>
+							<span class="btn__label">Meowsoft default button</span>
+						</button>
+						<button class="animated">
+							<span class="anim-hov-grad"></span>
+							<span class="btn__label">default gradient button</span>
+						</button>
+						<button class="animated">
+							<span class="anim-hov-edge"></span>
+							<span class="btn__label">default edge button</span>
+						</button>
+						<button class="animated notdefault">
+							<span class="anim-hov-edge"></span>
+							<span class="btn__label">Meowsoft edge button</span>
+						</button>
+						<button class="animated notdefault">
+							<span class="anim-hov-grad"></span>
+							<span class="anim-active-droplet"></span>
+							<span class="btn__label">gradient droplet button</span>
+						</button>
 					</div>
 				</div>
 				<div class="contents-lower-panel">
@@ -118,11 +140,47 @@
 					<div class="message">
 						<h1>Contact</h1>
 						<p>Content Here...</p>
+						<button>
+							<span class="btn__label">Meowsoft default button</span>
+						</button>
+						<button class="animated">
+							<span class="anim-hov-grad"></span>
+							<span class="btn__label">default gradient button</span>
+						</button>
+						<button class="animated">
+							<span class="anim-hov-edge"></span>
+							<span class="btn__label">default edge button</span>
+						</button>
+						<button class="animated notdefault">
+							<span class="anim-hov-edge"></span>
+							<span class="btn__label">Meowsoft edge button</span>
+						</button>
+						<button class="animated notdefault">
+							<span class="anim-hov-grad"></span>
+							<span class="anim-active-droplet"></span>
+							<span class="btn__label">gradient droplet button</span>
+						</button>
+						<button class="animated notdefault">
+							<span class="anim-hov-edge"></span>
+							<span class="anim-active-droplet"></span>
+							<span class="btn__label">edge droplet button</span>
+						</button>
 					</div>
 				</div>
 				<div class="contents-lower-panel">
-					<h1 class="">Site under construction</h1>
+					<h1>Site under construction</h1>
 				</div>
+				<!--<div>
+					<h1>Contact</h1><br>
+					<p>Lets get in touch and talk about your next project.</p>
+					<p>You can also contact us by phone nya-meow or email devteam@meowsoft.net, or you can send us a message here:</p>
+					<form action="/action_page.php" target="_blank">
+							<p><input type="text" placeholder="Name" required="" name="Name"></p>
+							<p><input type="text" placeholder="Email" required="" name="Email"></p>
+							<p><input type="text" placeholder="Message or Special requirements" required="" name="Message"></p>
+							<p><button type="submit" class="top-button" style="background: #0009;">SEND MESSAGE</button></p>
+					</form>
+				</div>-->
 			</header>
 			<footer class="bottom-panel">
 				<span id="clock" class="bottom-panel-text">00:00</span>

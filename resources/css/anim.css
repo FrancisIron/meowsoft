@@ -1,0 +1,147 @@
+/** Animated **/
+.animated {
+  overflow: hidden;
+}
+/** hov-grad: Gradient **/
+/*#region*/
+.anim-hov-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  border-radius: 4px;
+  border-style: hidden;
+}
+
+.animated:hover > .anim-hov-grad{
+    animation: 1s anim-hov-grad forwards;
+}
+
+@keyframes anim-hov-grad {
+  0% { opacity: 0; background: linear-gradient(0deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  20% { opacity: 0.2; background: linear-gradient(27deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  40% { opacity: 0.4; background: linear-gradient(54deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  60% { opacity: 0.6; background: linear-gradient(81deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  70% { opacity: 0.7; background: linear-gradient(94deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  80% { opacity: 0.8; background: linear-gradient(108deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  90% { opacity: 0.9; background: linear-gradient(121deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  100% { opacity: 1; background: linear-gradient(135deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+}
+/*#endregion*/
+/** hov-edge: Edge **/
+/*#region*/
+.animated:hover > .anim-hov-edge {
+  border-left: var(--color-anim-grad-main) 1px solid;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  filter: blur(0.5px);
+}
+
+.anim-hov-edge:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  border-radius: 4px;
+  border-style: hidden;
+}
+  
+.animated:hover > .anim-hov-edge:after {
+  background-color: var(--color-anim-grad-main);
+  animation: 1s anim-hov-edge forwards;
+}
+/*                    1TR   > 1BR     > 1BL     > 1TL   > 2TR   > 2BR     > 2BL     > 2TL   */
+/* clip-path: polygon(85% 0%, 75% 100%, 70% 100%, 80% 0%, 90% 0%, 80% 100%, 85% 100%, 95% 0%);*/
+
+@keyframes anim-hov-edge {
+  0% { clip-path: polygon(-15% 0%, -25% 100%, -30% 100%, -20% 0%, -10% 0%, -20% 100%, -15% 100%, -5% 0%);}
+  100% { clip-path: polygon(85% 0%, 75% 100%, 70% 100%, 80% 0%, 90% 0%, 80% 100%, 85% 100%, 95% 0%);}
+}
+
+.animated.notdefault > .anim-hov-edge:before  {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  transition: all 0.8s;
+  transform: translate(15%, -100%);
+  background: var(--color-anim-grad-main);
+  clip-path: polygon(40% 0%, 35% 0%, 25% 100%, 30% 100%, 45% -50%, 55% -50%, 45% 50%, 50% 50%, 60% -50%, 25% -50%, 15% 50%, 20% 50%, 30% -50%, 45% -50%);
+}
+  
+.animated.notdefault:active > .anim-hov-edge:before {
+  opacity: 1;
+  transition: 0s;
+  transform: translate(-15%,100%);
+}
+/*#endregion*/
+/** active-droplet: Droplet JS **/
+/*#region*/
+.animated > .anim-active-droplet {
+    /**/
+}
+
+.anim-droplet {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: --color-anim-droplet;
+    border-width: 1px;
+    transform: translate(-50%, -50%); 
+} 
+.anim-droplet:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    z-index: 0;
+    backdrop-filter: blur(3px);
+} 
+.anim-droplet {
+    animation: 1.5s anim-droplet ease-out forwards;
+}
+
+@keyframes anim-droplet {
+    from {opacity: 1; width: 5px;height: 5px; }
+    to {opacity: 0; width: 50px;height: 50px;}
+}
+/*#endregion*/
+/** nav-drawer: Edge **/
+/*#region*/
+.nav-drawer-contents.inactive.anim-drawer-edge{
+  animation: meow-anim-drawer-out-edge 0.7s forwards;
+}
+
+.nav-drawer-contents.active.anim-drawer-edge {
+  animation: meow-anim-drawer-in-edge 0.7s forwards;
+}
+
+@keyframes meow-anim-drawer-in-edge {
+  0% { opacity: 0; right: 0vw; clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0);}
+  30% { opacity: 1; clip-path: polygon(-15% 0%, 100% 0%, 100% 45px, 0% 45px);}
+  100% { opacity: 1; right: 0vw; clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 100%);}
+}
+@keyframes meow-anim-drawer-out-edge {
+  0% { opacity: 1; right: 0vw; clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 100%);}
+  30% { opacity: 1; clip-path: polygon(-15% 0%, 100% 0%, 100% 45px, 0% 45px);}
+  99% { opacity: 1; right: 0vw; clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0);}
+  100% { opacity: 0; right: -50vw; clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0);}
+}
+/*#endregion*/

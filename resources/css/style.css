@@ -1,56 +1,53 @@
-.home-main-panel {
-    background-color: #000;
-    padding: 12px 30px;
-    opacity: 0.60;
-    position: absolute;
-    bottom: 50px;
-    right: 0;
-    left: 0;
-}
-
-.contact-panel {
-    display: block;
-    background-color: silver;
-    height: 100%;
-    padding: 64px;
-}
-
 input {
     padding: 8px;
     display: block;
     border: none;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid --color-text-main;
     width: 100%;
     background-color: transparent;
 }
 
 /* New CSS */
 
+:root.theme_light {
+    --color-text-main: #2E8BC0;
+    --color-accent: #B1D4E0;
+    --color-bg-main: #265179;
+    --color-bg-sub: #060B24;
+    --color-bg-main-50: rgba(17,17,17,0.5);
+    --color-bg-sub-50: rgba(0,0,0,0.5);
+    --color-anim-grad-main: var(--color-bg-main);
+    --color-anim-grad-sub: var(--color-bg-sub);
+    --color-anim-droplet: rgb(104, 190, 224);
+    --hover-lighten: 1.4;
+    color-scheme: light;
+}
+
 :root {
-    --text-color: #777;
-    --text-selected: whitesmoke;
-    --bg-main-color: #111;
-    --bg-sub-color: #000;
-    --bg-main-color-25: rgba(17,17,17,0.25);
-    --bg-main-hover: #333;
+    --color-text-main: #777;
+    --color-accent: #555;;
+    --color-bg-main: #111;
+    --color-bg-sub: #000;
+    --color-bg-main-50: rgba(17,17,17,0.5);
+    --color-bg-sub-50: rgba(0,0,0,0.5);
+    --color-anim-grad-main:  var(--color-bg-main);
+    --color-anim-grad-sub: var(--color-bg-sub);
+    --color-anim-droplet: skyblue;
+    --hover-lighten: 1.4;
+    color-scheme: dark;
+}
+
+:root * {
+    transition: background-color 0.3s linear, color 0.3s linear;
 }
 
 body {
     font-family: "Times New Roman", Georgia, Serif;
-    background-color: var(--bg-main-color);
-    color: var(--text-color);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
     margin: 0;
     overflow: hidden;
     font-size: 16px;
-}
-
-h1, h2, h3 {
-    font-family: "Playfair Display";
-    letter-spacing: 5px;
-}
-
-p, a {
-    font-size: 1.3rem;
 }
 
 .background-image {
@@ -71,7 +68,7 @@ p, a {
 }
 
 .intro-div {
-    background-color: var(--bg-sub-color);
+    background-color: var(--color-bg-sub);
     position:absolute;
     z-index:100;
     top:0;
@@ -107,7 +104,7 @@ p, a {
 
 .background-clip { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%); }
 /*.background-clip { clip-path: polygon(78% 0, 93% 0, 82% 100%, 67% 100%);}*/
-.background-clip-anim { animation: 1.5s polygon forwards; }
+.background-clip-anim { animation: 1.5s bg-image forwards; }
 
 .fade-in-anim {
     opacity: 0;
@@ -134,10 +131,10 @@ p, a {
 }
 
 .top-panel {
-    background-color: var(--bg-sub-color);
+    background-color: var(--color-bg-sub);
     letter-spacing: 2;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     justify-content: space-between;
     min-height: 45px;
@@ -163,13 +160,8 @@ p, a {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   }
 
-.menu-headers {
-    float: right;
-    margin: auto 10px;
-}
-
 .bottom-panel {
-    background-color: var(--bg-sub-color);
+    background-color: var(--color-bg-sub);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -179,6 +171,7 @@ p, a {
 .bottom-panel-text {
     margin: auto 50px;
     text-align: end;
+    font-size: clamp(14px,2vmin,2vmin);
 }
 
 .contents {
@@ -198,7 +191,7 @@ p, a {
 }
 
 .contents-lower-panel {
-    background-color: var(--bg-sub-color);
+    background-color: var(--color-bg-sub);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -212,12 +205,12 @@ p, a {
     margin: 0 50px;
 }
 
-
+/* TODO: Remove this */
 .bg-main-hover:hover {
-    background-color: var(--bg-main-hover);
+    filter: brightness(var(--hover-lighten));
 }
 
-@keyframes polygon {
+@keyframes bg-image {
     /* 0% { clip-path: (107% 100%, 122% 100%, 133% 100%, 118% 100%);} */
     /*0% { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);}*/
     /*80% { clip-path: polygon(-10% 0%, 0% 0%, -25% 100%, -35% 100%); }*/
@@ -242,7 +235,7 @@ p, a {
     /* @media (min-aspect-ratio: 4/3) ?? */
     @media only screen and (min-height: 750px) {
         .background-clip { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%); }
-        @keyframes polygon {
+        @keyframes bg-image {
             0% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
             50% { clip-path: polygon(107% 0%, 122% 0%, 133% 100%, 118% 100%);}
             100% { clip-path: polygon(7% 0%, 22% 0%, 33% 100%, 18% 100%);}
@@ -277,7 +270,7 @@ p, a {
         margin: auto 25px;
     }
 
-    @keyframes polygon {
+    @keyframes bg-image {
         0% { clip-path: polygon(-7% 0%, -22% 0%, -33% 100%, -18% 100%);}
         50% { clip-path: polygon(-7% 0%, -22% 0%, -33% 100%, -18% 100%);}
         100% { clip-path: polygon(55% 0%, 90% 0%, 65% 100%, 30% 100%);}
