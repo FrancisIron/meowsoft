@@ -217,7 +217,6 @@ button:not(.notdefault):active:after {
   content: 'Menu';
   padding: 6px 25px;
   min-width: fit-content;
-  background-color: var(--color-bg-sub);
   font-size: clamp(17px,3vmin,3vmin);
   margin: auto 0;
   display: block;
