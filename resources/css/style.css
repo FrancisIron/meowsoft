@@ -19,7 +19,7 @@ input {
     --color-anim-grad-main: var(--color-bg-main);
     --color-anim-grad-sub: var(--color-bg-sub);
     --color-anim-droplet: rgb(104, 190, 224);
-    --hover-lighten: 1.4;
+    --hover-lighten: 1.2;
     color-scheme: light;
 }
 
@@ -33,7 +33,7 @@ input {
     --color-anim-grad-main:  var(--color-bg-main);
     --color-anim-grad-sub: var(--color-bg-sub);
     --color-anim-droplet: skyblue;
-    --hover-lighten: 1.4;
+    --hover-lighten: 1.2;
     color-scheme: dark;
 }
 
@@ -155,10 +155,11 @@ body {
 .top-button {
     display: inline-block;
     padding: 8px 20px;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    letter-spacing: clamp(1px,0.3vmin,0.3vmin);
+    /* text-decoration: none; */
+    /* color: inherit; */
+    /* cursor: pointer; */
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
   }
 
 .bottom-panel {
@@ -180,6 +181,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .contents-clip {

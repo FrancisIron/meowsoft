@@ -46,27 +46,26 @@ button:hover {
   cursor:pointer;
 }
 
-button:not(.animated):hover {
+button:not(.not-default-hover):hover {
   /* background-color: var(--color-bg-main-hover); */
   filter: brightness(var(--hover-lighten));
   transition: all .70s ease-in-out;
 }
 /* Replace :after? */
-button:not(.notdefault):after {
+button:not(.not-default-active):after {
   content: "";
-  background: var(--color-bg-main);
   display: block;
   position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px!important;
-  margin-top: -150%;
   opacity: 0;
-  transition: all 0.8s;
-  border-radius:50%;
+  transition: all 0.7s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-style: outset;
 }
   
-button:not(.notdefault):active:after {
+button:not(.not-default-active):active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
@@ -171,11 +170,11 @@ button:not(.notdefault):active:after {
   border-left: var(--color-bg-main) 2px ridge;
 }
 
-.nav-drawer-contents.inactive:not(.notdefault){
+.nav-drawer-contents.inactive:not(.not-default-active){
   animation: meow-drawer-out 0.7s forwards;
 }
 
-.nav-drawer-contents.active:not(.notdefault) {
+.nav-drawer-contents.active:not(.not-default-active) {
   animation: meow-drawer-in 0.7s forwards;
 }
 

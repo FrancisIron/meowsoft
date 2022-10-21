@@ -67,7 +67,7 @@
   100% { clip-path: polygon(85% 0%, 75% 100%, 70% 100%, 80% 0%, 90% 0%, 80% 100%, 85% 100%, 95% 0%);}
 }
 
-.animated.notdefault > .anim-hov-edge:before  {
+/* .animated.not-default-active > .anim-hov-edge:before  {
   content: "";
   display: block;
   position: absolute;
@@ -82,18 +82,78 @@
   clip-path: polygon(40% 0%, 35% 0%, 25% 100%, 30% 100%, 45% -50%, 55% -50%, 45% 50%, 50% 50%, 60% -50%, 25% -50%, 15% 50%, 20% 50%, 30% -50%, 45% -50%);
 }
   
-.animated.notdefault:active > .anim-hov-edge:before {
+.animated.not-default-active:active > .anim-hov-edge:before {
   opacity: 1;
   transition: 0s;
   transform: translate(-15%,100%);
+} */
+/*#endregion*/
+/** active-ripple: Ripple JS **/
+/*#region*/
+.anim-ripple {
+  position: absolute;
+  z-index: 0;
+  background-color: var(--color-anim-grad-main);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--color-anim-grad-sub);
+  border-width: 1px;
+  transform: translate(-50%, -50%); 
+  aspect-ratio: 1/1;
+} 
+.anim-ripple:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: 0;
+  backdrop-filter: blur(3px);
+} 
+.anim-ripple {
+  animation: 0.7s anim-ripple cubic-bezier(0.7, 0.3, 0.3, 0.8) forwards;
+}
+
+@keyframes anim-ripple {
+  from {opacity: 0.8; width: 5px; }
+  to {opacity: 0; width: 200%;}
+}
+/*#endregion*/
+/** active-edge: Edge JS **/
+/*#region*/
+.anim-edge-left, .anim-edge-right {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} 
+.anim-edge-left:before, .anim-edge-right:before    {
+  content: "";
+  display: block;
+  position: absolute;
+  aspect-ratio: 2/3;
+  opacity: 0.8;
+  top: 0;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+  background: var(--color-anim-grad-main);
+}
+.anim-edge-left:before {
+  /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0 50%, 25% 0%); */
+  clip-path: polygon(75% 0, 50% 50%, 75% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+.anim-edge-right:before  {
+  /* clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%); */
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 25% 100%, 50% 50%, 25% 0);
 }
 /*#endregion*/
 /** active-droplet: Droplet JS **/
 /*#region*/
-.animated > .anim-active-droplet {
-    /**/
-}
-
 .anim-droplet {
     position: absolute;
     z-index: 0;

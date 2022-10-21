@@ -28,16 +28,25 @@
         <div class="background-image background-clip"></div>
 		<div class="body">
 			<div class="top-panel">
-				<a href="#" onclick="onHome();return false;" class="logo bg-main-hover" >Meowsoft</a>
+				<button onclick="onHome();return false;" class="top-button animated not-default-active" >
+						<span class="anim-active-ripple"></span>
+						<span class="btn__label">Meowsoft</span>
+				</button>
 				<div class="nav-bar">
-					<a href="#" onclick="onAbout();return false;" class="top-button bg-main-hover" >About</a>
-					<a href="#" onclick="onProjects();return false;" class="top-button bg-main-hover" >Projects</a>
+					<button onclick="onAbout();return false;" class="top-button animated not-default-active" >
+							<span class="anim-active-ripple"></span>
+							<span class="btn__label">About</span>
+					</button>
+					<button onclick="onProjects();return false;" class="top-button animated not-default-active" >
+							<span class="anim-active-edge"></span>
+							<span class="btn__label">Projects</span>
+					</button>
 					<!-- <a href="#" onclick="onContact();return false;" class="top-button bg-main-hover" >Contact</a> -->
 					<button class="theme-selector animated">
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
 					</button>
-					<div class="nav-drawer">
+					<div class="nav-drawer" style="display: block;">
 						<button class="nav-drawer-toggle animated">
 							<span class="anim-hov-grad"></span>
 							<span class="material-symbols-outlined icon"></span>
@@ -110,24 +119,35 @@
 						<h1>Projects</h1>
 						<p>Content Here...</p>
 						<button>
-							<span class="btn__label">Meowsoft default button</span>
+							<span class="btn__label">default (hover / click)</span>
+						</button>
+						<button class="">
+							<span class="anim-active-ripple"></span>
+							<span class="btn__label">default / default + ripple</span>
 						</button>
 						<button class="animated">
 							<span class="anim-hov-grad"></span>
-							<span class="btn__label">default gradient button</span>
+							<span class="btn__label">gradient / default</span>
+						</button>
+						<button class="animated not-default-active">
+							<span class="anim-hov-grad anim-active-ripple"></span>
+							<span class="btn__label">gradient / ripple</span>
 						</button>
 						<button class="animated">
 							<span class="anim-hov-edge"></span>
-							<span class="btn__label">default edge button</span>
+							<span class="btn__label">edge / default</span>
 						</button>
-						<button class="animated notdefault">
-							<span class="anim-hov-edge"></span>
-							<span class="btn__label">Meowsoft edge button</span>
+						<button class="animated">
+							<span class="anim-active-edge"></span>
+							<span class="btn__label">default / default + edge</span>
 						</button>
-						<button class="animated notdefault">
-							<span class="anim-hov-grad"></span>
+						<button class="animated not-default-active">
+							<span class="anim-hov-edge anim-active-edge"></span>
+							<span class="btn__label">edge / edge</span>
+						</button>
+						<button class="animated">
 							<span class="anim-active-droplet"></span>
-							<span class="btn__label">gradient droplet button</span>
+							<span class="btn__label">default / default + droplet</span>
 						</button>
 					</div>
 				</div>
