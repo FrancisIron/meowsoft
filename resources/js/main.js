@@ -75,6 +75,7 @@ function updateTheme(value){
             case 1: $("html").toggleClass("theme_new_darkblue"); break;
             case 2: $("html").toggleClass("theme_new_deepblue"); break;
             case 3: $("html").toggleClass("theme_new_lightred"); break;
+            case 4: $("html").toggleClass("theme_new_pink"); break;
             default: break;
       }     
 }

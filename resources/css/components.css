@@ -93,7 +93,7 @@
   --color-gradient-b: #022F49;
 }
 
-:root.theme_new_lightred {  
+:root.theme_new_pink {  
   --color-text: #956771;
   --color-text-alt: #BF4F68;
   --color-text-focus: var(--color-bg-alt);
@@ -107,6 +107,22 @@
   --color-droplet: #68bee0;
   --color-gradient-a: var(--color-bg-focus);
   --color-gradient-b: #DB768C;
+}
+
+:root.theme_new_lightred {
+  --color-text: #f7e4de;
+  --color-text-alt: #BB775B;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #D5A1A1;
+  --color-bg-alt: #EC7E73;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #CA998A;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: light;
+  --color-droplet: #68bee0;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #D77369;
 }
 
 :root * {
