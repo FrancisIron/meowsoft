@@ -413,6 +413,7 @@ input:checked + .toggle-slider:before {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin: auto 0;
 }
 
 .nav-drawer-header {  
