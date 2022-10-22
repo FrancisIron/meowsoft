@@ -28,20 +28,21 @@
         <div class="background-image background-clip"></div>
 		<div class="body">
 			<div class="top-panel">
-				<button onclick="onHome();return false;" class="top-button animated not-default-active" >
+				<button onclick="onHome();return false;" class="nav-button animated not-default-active" data-nav-value="header">
 						<span class="anim-active-ripple"></span>
 						<span class="btn__label">Meowsoft</span>
 				</button>
-				<div class="nav-bar">
-					<button onclick="onAbout();return false;" class="top-button animated not-default-active" >
+				<div class="nav-bar" data-nav-value="header">
+					<span class="nav-selected"></span>
+					<button onclick="onAbout();return false;" class="nav-button animated not-default-active" >
 							<span class="anim-active-ripple"></span>
 							<span class="btn__label">About</span>
 					</button>
-					<button onclick="onProjects();return false;" class="top-button animated not-default-active" >
+					<button onclick="onProjects();return false;" class="nav-button animated not-default-active" >
 							<span class="anim-active-edge"></span>
 							<span class="btn__label">Projects</span>
 					</button>
-					<!-- <a href="#" onclick="onContact();return false;" class="top-button bg-main-hover" >Contact</a> -->
+					<!-- <a href="#" onclick="onContact();return false;" class="nav-button bg-main-hover" >Contact</a> -->
 					<button class="theme-selector animated">
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>

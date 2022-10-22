@@ -25,6 +25,34 @@ $(document).ready(function(){
         }
     });
     //#endregion
+    /** Navitagion Bar **/
+    //#region
+    $("body").on("click", ".nav-button", function(e) {
+        let parent = $(this).parent(); 
+        let selected;
+
+        if (!parent.hasClass("nav-bar")){
+            let nav_value = $(this).attr("data-nav-value");
+            selected = $(".nav-bar[data-nav-value="+nav_value+"]").find(".nav-selected");
+            selected.animate({left: 0, width: 0, opacity: 0}, 300);
+            return;
+        }
+        
+        var posX = $(this).offset().left;
+        var posY = $(this).offset().top;
+        var btnWidth = $(this).outerWidth();
+        selected = parent.find(".nav-selected");
+        selected.animate({top: posY, left: posX, width: btnWidth, opacity: 1}, 300);
+    });
+    //#endregion
+    //#region
+    //#endregion
+    //#region
+    //#endregion
+    //#region
+    //#endregion
+    //#region
+    //#endregion
 });
 document.addEventListener("DOMContentLoaded", function() {
     return;

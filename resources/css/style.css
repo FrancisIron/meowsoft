@@ -109,16 +109,6 @@ input {
     color: inherit;
 }
 
-.top-button {
-    display: inline-block;
-    padding: 8px 20px;
-    letter-spacing: clamp(1px,0.3vmin,0.3vmin);
-    /* text-decoration: none; */
-    /* color: inherit; */
-    /* cursor: pointer; */
-    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
-  }
-
 .bottom-panel {
     background-color: var(--color-bg-alt);
     width: 100%;

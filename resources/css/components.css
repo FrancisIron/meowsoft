@@ -295,6 +295,29 @@ input:checked + .toggle-slider:before {
   margin: auto 10px;
 }
 
+.nav-selected {
+  content: "";
+  opacity: 0;
+  height: 0.5vh;
+  position: absolute;
+  width: 10vw;
+  margin-top: 35px;
+  left: 0;
+  background-color: var(--color-accent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 8px 20px;
+  letter-spacing: clamp(1px,0.3vmin,0.3vmin);
+  /* text-decoration: none; */
+  /* color: inherit; */
+  /* cursor: pointer; */
+  /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+}
+
 @media only screen and (max-width: 600px) {
   .nav-bar > *:not(.nav-drawer) {
     display: none;
