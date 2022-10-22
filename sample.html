@@ -71,6 +71,17 @@
 								</div>
 							</div>
 							<div class="nav-drawer-items">
+								<span>Other Themes</span>
+								<button onclick="updateTheme(1);">
+									<span class="btn__label">Sample Theme A</span>
+								</button>
+								<button onclick="updateTheme(2);">
+									<span class="btn__label">Sample Theme B</span>
+								</button>
+								<button onclick="updateTheme(3);">
+									<span class="btn__label">Sample Theme C</span>
+								</button>
+								<div class="divider"></div>
 								<span>Sample Miau Section</span>
 								<button>
 									<span class="btn__label">Sample Meow Button</span>
@@ -107,6 +118,8 @@
 					<div class="message">
 						<h1>About us</h1>
 						<p>Content Here...</p>
+						<input placeholder="Default input">
+						<input class="">
 					</div>
 				</div>
 				<div class="contents-lower-panel">
@@ -125,11 +138,11 @@
 							<span class="anim-active-ripple"></span>
 							<span class="btn__label">default / default + ripple</span>
 						</button>
-						<button class="animated">
+						<button class="animated not-default-hover">
 							<span class="anim-hov-grad"></span>
 							<span class="btn__label">gradient / default</span>
 						</button>
-						<button class="animated not-default-active">
+						<button class="animated not-default-active not-default-hover">
 							<span class="anim-hov-grad anim-active-ripple"></span>
 							<span class="btn__label">gradient / ripple</span>
 						</button>

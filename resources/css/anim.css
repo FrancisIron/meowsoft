@@ -20,20 +20,20 @@
 }
 
 @keyframes anim-hov-grad {
-  0% { opacity: 0; background: linear-gradient(0deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  20% { opacity: 0.2; background: linear-gradient(27deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  40% { opacity: 0.4; background: linear-gradient(54deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  60% { opacity: 0.6; background: linear-gradient(81deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  70% { opacity: 0.7; background: linear-gradient(94deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  80% { opacity: 0.8; background: linear-gradient(108deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  90% { opacity: 0.9; background: linear-gradient(121deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
-  100% { opacity: 1; background: linear-gradient(135deg, var(--color-anim-grad-main) 0%, var(--color-anim-grad-sub) 100%);}
+  0% { opacity: 0; background: linear-gradient(0deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  20% { opacity: 0.2; background: linear-gradient(27deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  40% { opacity: 0.4; background: linear-gradient(54deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  60% { opacity: 0.6; background: linear-gradient(81deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  70% { opacity: 0.7; background: linear-gradient(94deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  80% { opacity: 0.8; background: linear-gradient(108deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  90% { opacity: 0.9; background: linear-gradient(121deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
+  100% { opacity: 1; background: linear-gradient(135deg, var(--color-gradient-a) 0%, var(--color-gradient-b) 100%);}
 }
 /*#endregion*/
 /** hov-edge: Edge **/
 /*#region*/
 .animated:hover > .anim-hov-edge {
-  border-left: var(--color-anim-grad-main) 1px solid;
+  border-left: var(--color-gradient-b) 1px solid;
   content: "";
   top: 0;
   bottom: 0;
@@ -56,7 +56,7 @@
 }
   
 .animated:hover > .anim-hov-edge:after {
-  background-color: var(--color-anim-grad-main);
+  background-color: var(--color-gradient-b);
   animation: 1s anim-hov-edge forwards;
 }
 /*                    1TR   > 1BR     > 1BL     > 1TL   > 2TR   > 2BR     > 2BL     > 2TL   */
@@ -78,7 +78,7 @@
   opacity: 0.5;
   transition: all 0.8s;
   transform: translate(15%, -100%);
-  background: var(--color-anim-grad-main);
+  background: var(--color-gradient-a);
   clip-path: polygon(40% 0%, 35% 0%, 25% 100%, 30% 100%, 45% -50%, 55% -50%, 45% 50%, 50% 50%, 60% -50%, 25% -50%, 15% 50%, 20% 50%, 30% -50%, 45% -50%);
 }
   
@@ -93,10 +93,10 @@
 .anim-ripple {
   position: absolute;
   z-index: 0;
-  background-color: var(--color-anim-grad-main);
+  background-color: var(--color-gradient-a);
   border-radius: 50%;
   border-style: solid;
-  border-color: var(--color-anim-grad-sub);
+  border-color: var(--color-gradient-b);
   border-width: 1px;
   transform: translate(-50%, -50%); 
   aspect-ratio: 1/1;
@@ -141,7 +141,7 @@
   top: 0;
   bottom: 0;
   transform: translate(-50%, 0%);
-  background: var(--color-anim-grad-main);
+  background: var(--color-gradient-b);
 }
 .anim-edge-left:before {
   /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0 50%, 25% 0%); */
@@ -159,7 +159,7 @@
     z-index: 0;
     border-radius: 50%;
     border-style: solid;
-    border-color: --color-anim-droplet;
+    border-color: --color-droplet;
     border-width: 1px;
     transform: translate(-50%, -50%); 
 } 

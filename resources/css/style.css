@@ -1,54 +1,11 @@
 input {
     padding: 8px;
     display: block;
-    border: none;
-    border-bottom: 1px solid --color-text-main;
     width: 100%;
     background-color: transparent;
 }
 
 /* New CSS */
-
-:root.theme_light {
-    --color-text-main: #2E8BC0;
-    --color-accent: #B1D4E0;
-    --color-bg-main: #265179;
-    --color-bg-sub: #060B24;
-    --color-bg-main-50: rgba(17,17,17,0.5);
-    --color-bg-sub-50: rgba(0,0,0,0.5);
-    --color-anim-grad-main: var(--color-bg-main);
-    --color-anim-grad-sub: var(--color-bg-sub);
-    --color-anim-droplet: rgb(104, 190, 224);
-    --hover-lighten: 1.2;
-    color-scheme: light;
-}
-
-:root {
-    --color-text-main: #777;
-    --color-accent: #555;;
-    --color-bg-main: #111;
-    --color-bg-sub: #000;
-    --color-bg-main-50: rgba(17,17,17,0.5);
-    --color-bg-sub-50: rgba(0,0,0,0.5);
-    --color-anim-grad-main:  var(--color-bg-main);
-    --color-anim-grad-sub: var(--color-bg-sub);
-    --color-anim-droplet: skyblue;
-    --hover-lighten: 1.2;
-    color-scheme: dark;
-}
-
-:root * {
-    transition: background-color 0.3s linear, color 0.3s linear;
-}
-
-body {
-    font-family: "Times New Roman", Georgia, Serif;
-    background-color: var(--color-bg-main);
-    color: var(--color-text-main);
-    margin: 0;
-    overflow: hidden;
-    font-size: 16px;
-}
 
 .background-image {
     /*background-image: url("https://images.unsplash.com/photo-1518791841217-8f162f1e1131");*/
@@ -68,7 +25,7 @@ body {
 }
 
 .intro-div {
-    background-color: var(--color-bg-sub);
+    background-color: var(--color-bg-alt);
     position:absolute;
     z-index:100;
     top:0;
@@ -132,7 +89,7 @@ body {
 }
 
 .top-panel {
-    background-color: var(--color-bg-sub);
+    background-color: var(--color-bg-alt);
     letter-spacing: 2;
     width: 100%;
     /* overflow: hidden; */
@@ -163,7 +120,7 @@ body {
   }
 
 .bottom-panel {
-    background-color: var(--color-bg-sub);
+    background-color: var(--color-bg-alt);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -194,7 +151,7 @@ body {
 }
 
 .contents-lower-panel {
-    background-color: var(--color-bg-sub);
+    background-color: var(--color-bg-alt);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -210,7 +167,7 @@ body {
 
 /* TODO: Remove this */
 .bg-main-hover:hover {
-    filter: brightness(var(--hover-lighten));
+    filter: brightness(var(--brightness));
 }
 
 @keyframes bg-image {
