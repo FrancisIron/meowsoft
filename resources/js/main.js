@@ -78,3 +78,7 @@ function updateTheme(value){
             default: break;
       }     
 }
+
+function toggleNavMode(){
+      $(".nav-drawer-contents").toggleClass("anim-drawer-edge");
+}

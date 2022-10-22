@@ -4,6 +4,16 @@
 /*#region*/
 /* https://paletton.com/ */
 :root {
+  --font-size-extra: clamp(21px,3.6vmin,3.6vmin);
+  --font-size-bigger: clamp(19px,3.1vmin,3.1vmin);
+  --font-size-big: clamp(24px,2.8vmin,2.8vmin);
+  --font-size-medium: clamp(17px,2.6vmin,2.6vmin);
+  --font-size-small: clamp(16px,2.4vmin,2.4vmin);
+  --font-family-body: "Times New Roman", Times, serif;
+  --font-family-display: "Playfair Display", Playfair, serif;
+}
+
+:root {
   --color-text: #777;
   --color-text-alt: #999;
   --color-text-focus: var(--color-bg-alt);
@@ -74,7 +84,7 @@
   --color-bg: #02111B;
   --color-bg-alt: #041D2D;
   --color-bg-hover: var(--color-text);
-  --color-bg-focus: #011622;
+  --color-bg-focus: #04273c;
   --color-accent: var(--color-text);
   --brightness: 1.2;
   color-scheme: light;
@@ -106,11 +116,12 @@
 /** Material Symbols @ Override **/
 .material-symbols-outlined {
   position: relative;
+  font-size: var(--font-size-big);
 }
 /** Standard Elements **/
 /*#region*/
 body {
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: var(--font-family-body);
   background-color: var(--color-bg);
   color: var(--color-text);
   margin: 0;
@@ -118,22 +129,25 @@ body {
   font-size: 16px;
 }
 h1, h2, h3 {
-  font-family: "Playfair Display";
+  font-family: var(--font-family-display);
   letter-spacing: clamp(1px,0.5vmin,0.5vmin);
   color: var(--color-text-alt);
 }
 h1 {
-  font-size: clamp(21px,3.6vmin,3.6vmin);
+  /* font-size: clamp(21px,3.6vmin,3.6vmin); */
+  font-size: var(--font-size-extra);
 }
-
 h2 {
-  font-size: clamp(19px,3.1vmin,3.1vmin);
+  /* font-size: clamp(19px,3.1vmin,3.1vmin); */
+  font-size: var(--font-size-bigger);
 }
 body, span, p, a, i {
-  font-size: clamp(17px,2.6vmin,2.6vmin);
+  /* font-size: clamp(17px,2.6vmin,2.6vmin); */
+  font-size: var(--font-size-medium);
 }
 .icon::after {
-  font-size: clamp(24px,2.8vmin,2.8vmin);
+  /* font-size: clamp(24px,2.8vmin,2.8vmin); */
+  font-size: var(--font-size-big);
 }
 *:focus {
   outline: none;
@@ -145,6 +159,8 @@ input {
   color: var(--color-text);
   border: none;
   border-bottom: var(--color-accent) 1px outset;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-medium);
 }
 /*#endregion*/
 /** Button **/
@@ -155,8 +171,8 @@ button {
   padding: 6px 10px;
   border-radius: 4px;
   border-style: hidden;
-  font-size: clamp(16px,2.8vmin,2.8vmin);
-  font-family: "Times New Roman", Georgia, Serif;
+  font-size: var(--font-size-medium);
+  font-family: 'Times New Roman', Times, serif;
   background-color: var(--color-bg-alt);
   color: var(--color-text);
   overflow: hidden;
@@ -289,6 +305,8 @@ input:checked + .toggle-slider:before {
 /*#region*/
 .nav-drawer{
   display: none;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .nav-drawer-toggle {
@@ -416,7 +434,7 @@ input:checked + .toggle-slider:before {
 
 @media only screen and (max-width: 600px) {
   .nav-drawer{
-    display: block;
+    display: flex;
   }
 }
 /*#endregion*/

@@ -46,7 +46,7 @@
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
 					</button>
-					<div class="nav-drawer" style="display: block;">
+					<div class="nav-drawer" style="display: flex;">
 						<button class="nav-drawer-toggle animated">
 							<span class="anim-hov-grad"></span>
 							<span class="material-symbols-outlined icon"></span>
@@ -85,12 +85,9 @@
 									<span class="btn__label">Sample Theme C</span>
 								</button>
 								<div class="divider"></div>
-								<span>Sample Miau Section</span>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
-								</button>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
+								<span>Other Actions</span>
+								<button onclick="toggleNavMode();">
+									<span class="btn__label">Toggle Nav Drawer Mode</span>
 								</button>
 								<div class="divider"></div>
 								<span>Sample Miau Section</span>
@@ -121,14 +118,14 @@
 					<div class="message">
 						<h1>About us</h1>
 						<p>Content Here...</p>
-						<input placeholder="Default input">
-						<input value="work in progress..">
+						<input placeholder="Default input" autocomplete="off">
+						<input value="work in progress.." autocomplete="off">
 						<label class="toggle">
-							<input type="checkbox">
+							<input type="checkbox" autocomplete="off">
 							<span class="toggle-slider"></span>
 						</label>
 						<label class="toggle">
-							<input type="checkbox" checked="true">
+							<input type="checkbox" autocomplete="off" checked>
 							<span class="toggle-slider"></span>
 						</label>
 					</div>
