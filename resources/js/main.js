@@ -69,6 +69,7 @@ function updateTheme(value){
             $("html").removeClass("theme_new_darkblue");
             $("html").removeClass("theme_new_deepblue");
             $("html").removeClass("theme_new_lightred");
+            $("html").removeClass("theme_new_pink");
         });
       switch (value) {
             case 0: $("html").toggleClass("theme_new_blue"); break;
