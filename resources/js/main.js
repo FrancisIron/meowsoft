@@ -60,15 +60,18 @@ function updateClock(){
 function updateTheme(value){
       $("html").removeClass("theme_light");
       $(".theme-selector").removeClass("theme_light");
+      $("html").removeClass("theme_new_blue");
       $("html").removeClass("theme_new_darkblue");
       $("html").removeClass("theme_new_deepblue");
       $("html").removeClass("theme_new_lightred");
       $("body").on("click", ".theme-selector", function() {
+            $("html").removeClass("theme_new_blue");
             $("html").removeClass("theme_new_darkblue");
             $("html").removeClass("theme_new_deepblue");
             $("html").removeClass("theme_new_lightred");
         });
       switch (value) {
+            case 0: $("html").toggleClass("theme_new_blue"); break;
             case 1: $("html").toggleClass("theme_new_darkblue"); break;
             case 2: $("html").toggleClass("theme_new_deepblue"); break;
             case 3: $("html").toggleClass("theme_new_lightred"); break;

@@ -93,10 +93,10 @@
 .anim-ripple {
   position: absolute;
   z-index: 0;
-  background-color: var(--color-gradient-a);
+  background-color: var(--color-gradient-b);
   border-radius: 50%;
   border-style: solid;
-  border-color: var(--color-gradient-b);
+  border-color: var(--color-gradient-a);
   border-width: 1px;
   transform: translate(-50%, -50%); 
   aspect-ratio: 1/1;

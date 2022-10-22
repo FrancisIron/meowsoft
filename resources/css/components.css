@@ -34,6 +34,22 @@
   --color-gradient-b: #1E7DA1;
 }
 
+:root.theme_new_blue {
+  --color-text: #83a8b9;
+  --color-text-alt: #488aa8;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #113C51;
+  --color-bg-alt: #032536;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #27556C;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: light;
+  --color-droplet: #68bee0;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #477286;
+}
+
 :root.theme_new_darkblue {
   --color-text: #159BCE;
   --color-text-alt: #0078BF;
