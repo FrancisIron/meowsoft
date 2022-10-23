@@ -96,6 +96,7 @@ input {
     display: flex;
     justify-content: space-between;
     min-height: 45px;
+    height: calc(var(--font-size-medium) * 2 + 10px);
 }
 
 .logo {  
@@ -121,14 +122,6 @@ input {
     margin: auto 50px;
     text-align: end;
     font-size: clamp(14px,2vmin,2vmin);
-}
-
-.contents {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
 }
 
 .contents-clip {

@@ -25,15 +25,15 @@ $(document).ready(function(){
         }
     });
     //#endregion
-    /** Navitagion Bar **/
+    /** Navigation Bar **/
     //#region
     $("body").on("click", ".nav-button", function(e) {
         let parent = $(this).parent(); 
         let selected;
 
         if (!parent.hasClass("nav-bar")){
-            let nav_value = $(this).attr("data-nav-value");
-            selected = $(".nav-bar[data-nav-value="+nav_value+"]").find(".nav-selected");
+            let navValue = $(this).attr("data-nav-value");
+            selected = $(".nav-bar[data-nav-value="+navValue+"]").find(".nav-selected");
             selected.animate({left: 0, width: 0, opacity: 0}, 300);
             return;
         }
@@ -41,11 +41,34 @@ $(document).ready(function(){
         var posX = $(this).offset().left;
         var posY = $(this).offset().top;
         var btnWidth = $(this).outerWidth();
+
         selected = parent.find(".nav-selected");
+        posY += $(this).outerHeight() - selected.outerHeight();
+
         selected.animate({top: posY, left: posX, width: btnWidth, opacity: 1}, 300);
     });
     //#endregion
+    /** Navigation Tab */
     //#region
+    $("body").on("click", ".nav-button", function(e) {
+        let parent = $(this).parent(); let navValue; 
+        let tabValue = $(this).attr("data-nav-tab");
+
+        if (!parent.hasClass("nav-bar")){
+            navValue = $(this).attr("data-nav-value");
+        } else {
+            navValue = parent.attr("data-nav-value");
+        }
+
+        let container = $(".nav-tab-container[data-nav-value="+navValue+"]");
+        let newTab = container.find("[data-nav-tab="+tabValue+"]");
+        if (newTab == null) { return; }
+
+        // let not = container.find(".nav-tab-contents").not("[data-nav-tab="+tabValue+"]")
+        container.find(".nav-tab-contents.active").removeClass("active").addClass("inactive");
+        newTab.removeClass("inactive").addClass("active");
+        console.log(newTab);
+    });
     //#endregion
     //#region
     //#endregion

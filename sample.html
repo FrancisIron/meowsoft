@@ -28,21 +28,24 @@
         <div class="background-image background-clip"></div>
 		<div class="body">
 			<div class="top-panel">
-				<button onclick="onHome();return false;" class="nav-button animated not-default-active" data-nav-value="header">
+				<button class="nav-button animated not-default-active" data-nav-value="header" data-nav-tab="home">
 						<span class="anim-active-ripple"></span>
 						<span class="btn__label">Meowsoft</span>
 				</button>
 				<div class="nav-bar" data-nav-value="header">
 					<span class="nav-selected"></span>
-					<button onclick="onAbout();return false;" class="nav-button animated not-default-active" >
+					<button class="nav-button animated not-default-active" data-nav-tab="about">
 							<span class="anim-active-ripple"></span>
 							<span class="btn__label">About</span>
 					</button>
-					<button onclick="onProjects();return false;" class="nav-button animated not-default-active" >
+					<button class="nav-button animated not-default-active" data-nav-tab="projects">
 							<span class="anim-active-edge"></span>
 							<span class="btn__label">Projects</span>
 					</button>
-					<!-- <a href="#" onclick="onContact();return false;" class="nav-button bg-main-hover" >Contact</a> -->
+					<button class="nav-button animated" data-nav-tab="contact">
+							<span class="anim-active-droplet"></span>
+							<span class="btn__label">Contact</span>
+					</button>
 					<button class="theme-selector animated">
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
@@ -89,9 +92,12 @@
 									<span class="btn__label">Sample Theme E</span>
 								</button>
 								<div class="divider"></div>
-								<span>Other Actions</span>
+								<span>Nav Options</span>
 								<button onclick="toggleNavMode();">
 									<span class="btn__label">Toggle Nav Drawer Mode</span>
+								</button>
+								<button onclick="toggleNavHeader();">
+									<span class="btn__label">Toggle Nav Drawer Header</span>
 								</button>
 								<div class="divider"></div>
 								<span>Sample Miau Section</span>
@@ -106,19 +112,17 @@
 					</div>
 				</div>
 			</div>
-			<header class="contents" id="home">
-				<div class="contents contents-clip">
+			<div class="nav-tab-container" data-nav-value="header">
+				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
 						<h2>News</h2>
 						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-			</header>
-			<header id="about" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header>
+				<header id="about" class="nav-tab-contents" data-nav-tab="about">
 					<div class="message">
 						<h1>About us</h1>
 						<p>Content Here...</p>
@@ -133,13 +137,11 @@
 							<span class="toggle-slider"></span>
 						</label>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-			</header>
-			<header id="projects" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header>
+				<header id="projects" class="nav-tab-contents" data-nav-tab="projects">
 					<div class="message">
 						<h1>Projects</h1>
 						<p>Content Here...</p>
@@ -175,13 +177,11 @@
 							<span class="btn__label">default / default + droplet</span>
 						</button>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-			</header>
-			<header id="contact" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header>
+				<header id="contact" class="nav-tab-contents">
 					<div class="message">
 						<h1>Contact</h1>
 						<p>Content Here...</p>
@@ -211,22 +211,22 @@
 							<span class="btn__label">edge droplet button</span>
 						</button>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-				<!--<div>
-					<h1>Contact</h1><br>
-					<p>Lets get in touch and talk about your next project.</p>
-					<p>You can also contact us by phone nya-meow or email devteam@meowsoft.net, or you can send us a message here:</p>
-					<form action="/action_page.php" target="_blank">
-							<p><input type="text" placeholder="Name" required="" name="Name"></p>
-							<p><input type="text" placeholder="Email" required="" name="Email"></p>
-							<p><input type="text" placeholder="Message or Special requirements" required="" name="Message"></p>
-							<p><button type="submit" class="top-button" style="background: #0009;">SEND MESSAGE</button></p>
-					</form>
-				</div>-->
-			</header>
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+					<!--<div>
+						<h1>Contact</h1><br>
+						<p>Lets get in touch and talk about your next project.</p>
+						<p>You can also contact us by phone nya-meow or email devteam@meowsoft.net, or you can send us a message here:</p>
+						<form action="/action_page.php" target="_blank">
+								<p><input type="text" placeholder="Name" required="" name="Name"></p>
+								<p><input type="text" placeholder="Email" required="" name="Email"></p>
+								<p><input type="text" placeholder="Message or Special requirements" required="" name="Message"></p>
+								<p><button type="submit" class="top-button" style="background: #0009;">SEND MESSAGE</button></p>
+						</form>
+					</div>-->
+				</header>
+			</div>
 			<footer class="bottom-panel">
 				<span id="clock" class="bottom-panel-text">00:00</span>
 				<span id="C-Meowsoft" class="bottom-panel-text">© 2018~2022 Meowsoft</span>
@@ -244,3 +244,4 @@
 		</div>
 	</body>
 </html>
+<!-- © 2022 Meowsoft -->

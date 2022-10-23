@@ -19,27 +19,40 @@
         <link rel="icon" type="image/x-icon" href="./resources/favicon.ico">
 	</head>
 	<body onload="updateClock(); setInterval('updateClock()', 1000 );">
-        <div class="intro-div fade-out-anim">
-            <div class="background-clip-image background-clip-anim"></div>
-            <span class="fade-in-anim">Meowsoft</span>
-        </div>
-        <div class="background-image background-clip"></div>
+		<div class="intro-div fade-out-anim">
+			<div class="background-clip-image background-clip-anim"></div>
+			<span class="fade-in-anim">Meowsoft</span>
+		</div>
+		<div class="background-image background-clip"></div>
 		<div class="body">
 			<div class="top-panel">
-				<button onclick="onHome();return false;" class="top-button animated not-default-active" >
+				<button class="nav-button animated not-default-active" data-nav-value="header" data-nav-tab="home">
 						<span class="anim-active-ripple"></span>
 						<span class="btn__label">Meowsoft</span>
 				</button>
-				<div class="nav-bar">
+				<div class="nav-bar" data-nav-value="header">
+					<span class="nav-selected"></span>
+					<!-- <button class="nav-button animated not-default-active" data-nav-tab="about">
+							<span class="anim-active-ripple"></span>
+							<span class="btn__label">About</span>
+					</button>
+					<button class="nav-button animated not-default-active" data-nav-tab="projects">
+							<span class="anim-active-edge"></span>
+							<span class="btn__label">Projects</span>
+					</button>
+					<button class="nav-button animated" data-nav-tab="contact">
+							<span class="anim-active-droplet"></span>
+							<span class="btn__label">Contact</span>
+					</button> -->
 					<button class="theme-selector animated">
 							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
 					</button>
-					<div class="nav-drawer">
-						<!-- <button class="nav-drawer-toggle animated">
+					<div class="nav-drawer" style="display: none;">
+						<button class="nav-drawer-toggle animated">
 							<span class="anim-hov-grad"></span>
 							<span class="material-symbols-outlined icon"></span>
-						</button> -->
+						</button>
 						<div class="nav-drawer-scrim"></div>
 						<div class="nav-drawer-contents inactive anim-drawer-edge">
 							<div class="nav-drawer-title">
@@ -67,63 +80,48 @@
 								<button>
 									<span class="btn__label">Sample Meow Button</span>
 								</button>
-								<div class="divider"></div>
-								<span>Sample Miau Section</span>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
-								</button>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
-								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<header class="contents" id="home">
-				<div class="contents contents-clip">
+			<div class="nav-tab-container" data-nav-value="header">
+				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
 						<h2>News</h2>
 						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1 class="">Site under construction</h1>
-				</div>
-			</header>
-			<header id="about" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header>
+				<!-- <header id="about" class="nav-tab-contents" data-nav-tab="about">
 					<div class="message">
 						<h1>About us</h1>
-						<p>We are a team of developers with experience on education-related websites and a wide variety of desktop and server-side applications.</p>
+						<p>Content Here...</p>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-			</header>
-			<header id="projects" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header>
+				<header id="projects" class="nav-tab-contents" data-nav-tab="projects">
 					<div class="message">
 						<h1>Projects</h1>
 						<p>Content Here...</p>
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1>Site under construction</h1>
-				</div>
-			</header>
-			<header id="contact" class="contents" style="display:none;">
-				<div class="contents contents-clip">
+				</header>
+				<header id="contact" class="nav-tab-contents">
 					<div class="message">
 						<h1>Contact</h1>
 						<p>Content Here...</p>
 					</div>
-				</div>
-				<div class="contents-lower-panel">
-					<h1 class="">Site under construction</h1>
-				</div>
-			</header>
+					<div class="contents-lower-panel">
+						<h1>Site under construction</h1>
+					</div>
+				</header> -->
+			</div>
 			<footer class="bottom-panel">
 				<span id="clock" class="bottom-panel-text">00:00</span>
 				<span id="C-Meowsoft" class="bottom-panel-text">© 2018~2022 Meowsoft</span>
@@ -141,3 +139,4 @@
 		</div>
 	</body>
 </html>
+<!-- © 2022 Meowsoft -->
