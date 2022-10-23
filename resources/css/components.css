@@ -432,13 +432,14 @@ input:checked + .toggle-slider:before {
   justify-content: space-between;
   padding-right: 10px;
   min-height: 45px;
+  height: calc(var(--font-size-medium) * 2 + 3px);
 }
 
 .nav-drawer-title::before {
   content: 'Menu';
   padding: 6px 25px;
   min-width: fit-content;
-  font-size: clamp(17px,3vmin,3vmin);
+  font-size: var(--font-size-medium);
   margin: auto 0;
   display: block;
 }
