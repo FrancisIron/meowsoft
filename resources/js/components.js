@@ -19,6 +19,10 @@ $(document).ready(function(){
     $("body").on("click", ".theme-selector", function() {
         $(".theme-selector").toggleClass("light dark");
         $("html").toggleClass("light dark");
+        if ($("html").hasClass("light dark")) {
+            $(".theme-selector").removeClass("light");
+            $("html").removeClass("light");
+        }
         // Set theme in local storage
         if ($("html").hasClass("light")) {
             localStorage.setItem('theme', 'light');

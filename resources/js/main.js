@@ -8,8 +8,8 @@ function updateClock(){
 }
 
 function updateTheme(value){
-      $("html").removeClass("theme_light");
-      $(".theme-selector").removeClass("theme_light");
+      $("html").removeClass("light dark");
+      $(".theme-selector").removeClass("light dark");
       $("html").removeClass("theme_new_blue");
       $("html").removeClass("theme_new_darkblue");
       $("html").removeClass("theme_new_deepblue");

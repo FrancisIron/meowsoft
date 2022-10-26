@@ -408,8 +408,11 @@ input:checked + .toggle-slider.var:before {
 }
 
 /*#endregion*/
-/** Toggle Theme JS **/
+/** Toggle Theme **/
 /*#region*/
+.theme-selector > .icon::after {
+  content: "help";
+}
 :root.dark .theme-selector > .icon::after {
   content: "dark_mode";
 }
