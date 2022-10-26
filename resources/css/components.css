@@ -1,14 +1,29 @@
 /** testing **/
-.message button { margin: 10px; width: 200px;}
+/*#region*/
+/* .message button { margin: 10px; width: 200px;} */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.row > * {
+  margin: 0 5px;
+}
+/*#endregion*/
 /** :root Variables **/
 /*#region*/
 /* https://paletton.com/ */
 :root {
-  --font-size-extra: clamp(21px,3.6vmin,3.6vmin);
-  --font-size-bigger: clamp(19px,3.1vmin,3.1vmin);
-  --font-size-big: clamp(24px,2.8vmin,2.8vmin);
-  --font-size-medium: clamp(17px,2.6vmin,2.6vmin);
-  --font-size-small: clamp(16px,2.4vmin,2.4vmin);
+  --font-size-extra: clamp(21px,3.4vmin,3.4vmin);
+  --font-size-bigger: clamp(19px,2.9vmin,2.9vmin);
+  --font-size-big: clamp(24px,2.6vmin,2.6vmin);
+  --font-size-medium: clamp(17px,2.4vmin,2.4vmin);
+  --font-size-small: clamp(16px,2.2vmin,2.2vmin);
+  --font-size-tiny: clamp(12px,1.8vmin,1.8vmin);
   --font-family-body: "Times New Roman", Times, serif;
   --font-family-display: "Playfair Display", Playfair, serif;
 }
@@ -125,15 +140,75 @@
   --color-gradient-b: #D77369;
 }
 
+/** New Themes **/
+/* Abyssal Paws */
+:root.dark {
+  --color-text: #3D829B;
+  --color-text-alt: #165479;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #082739;
+  --color-bg-alt: #030D13;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #031A27;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: dark;
+  --color-droplet: #68bee0;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #095786;
+}
+
+/* Fluffy Sands */
+:root.light {
+  --color-text-alt: #BF6921;
+  --color-text: #864712;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #FBC08E;
+  --color-bg-alt: #D79259;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #DB8A46;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: light;
+  --color-droplet: #68bee0;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #CA6842;
+}
+
+/* Void Tail */
+:root.oled {
+  --color-text: #777;
+  --color-text-alt: #999;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #1c1b22;
+  --color-bg-alt: #000;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #555;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: oled;
+  --color-droplet: skyblue;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #211f27;
+}
+
 :root * {
   transition: background-color 0.3s linear, color 0.3s linear;
 }
 /*#endregion*/
 /** Material Symbols @ Override **/
-.material-symbols-outlined {
+/*#region*/
+.material-symbols-outlined, .icon {
   position: relative;
   font-size: var(--font-size-big);
+  z-index: 5;
 }
+/*#endregion*/
+/** Standard Clases **/
+/*#region*/
+.full-size { width: 100%; height: 100%;}
+.w100 { width: 100%; }
+/*#endregion*/
 /** Standard Elements **/
 /*#region*/
 body {
@@ -177,6 +252,39 @@ input {
   border-bottom: var(--color-accent) 1px outset;
   font-family: var(--font-family-body);
   font-size: var(--font-size-medium);
+}
+
+.input-label {
+  position: relative;
+  display: block;
+  min-height: 2.5em;
+}
+.input-label::after {
+  position: absolute;
+  content: attr(data-label);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.65;
+  font-size: var(--font-size-small);
+  display: inline;
+  transition: 0.3s;
+  width: max-content;
+  padding-left: 6px;
+  transform: translateY(35%);
+  pointer-events: none;
+}
+.input-label.active::after {  
+  font-size: var(--font-size-tiny);
+  padding-left: 3px;
+  transform: translateY(0%);
+}
+
+.input-label > input {  
+  font-size: var(--font-size-medium);
+  transform: translateY(60%);
+  padding-left: 6px;
 }
 /*#endregion*/
 /** Button **/
@@ -225,10 +333,23 @@ button:not(.not-default-active):active:after {
   transition: 0s
 }
 
-.btn__label {
+.btn_label {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  z-index: 5;
+}
+/*#endregion*/
+/** Button with Label and Icon **/
+/*#region*/
+button.label-icon {
+  justify-content: space-between;
+  display: inline-flex;
+  flex-direction: row;
+}
+button.label-icon > .btn_label,
+button.label-icon > .icon {
+  margin: auto
 }
 /*#endregion*/
 /** Toggle **/
@@ -237,7 +358,9 @@ button:not(.not-default-active):active:after {
   position: relative;
   display: inline-flex;
   height: clamp(24px,2.8vmin,2.8vmin);
-  aspect-ratio: 2/1;
+  aspect-ratio: 2/1;  
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .toggle input[type=checkbox] { 
@@ -254,9 +377,10 @@ button:not(.not-default-active):active:after {
   right: 0;
   bottom: 0;
   background-color: transparent;
-  border: var(--color-text) 1px solid;
   transition: .4s;
   border-radius: 999px;
+  /* border: var(--color-text) 1px solid; */
+  outline: var(--color-accent) solid 1px;
 }
 
 .toggle-slider:before {
@@ -278,14 +402,18 @@ input:checked + .toggle-slider {
 input:checked + .toggle-slider:before {
   transform: translateX(125%);
 }
+input:checked + .toggle-slider.var:before {
+  transform: translateX(125%);
+  background-color: var(--color-text);
+}
 
 /*#endregion*/
 /** Toggle Theme JS **/
 /*#region*/
-.theme-selector:not(.theme_light) .icon::after {
+:root.dark .theme-selector > .icon::after {
   content: "dark_mode";
 }
-.theme-selector.theme_light .icon::after {
+:root.light .theme-selector > .icon::after {
   content: "light_mode";
 }
 
@@ -538,11 +666,78 @@ input:checked + .toggle-slider:before {
 }
 
 /*#endregion*/
-/** **/
+/** Scrim  (for NavDrawer && Dialogs) **/
 /*#region*/
+.scrim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  display: none;
+  background: linear-gradient(225deg, #000, #222);
+}
+
+.scrim.active {
+  display: block;
+  animation: meow-scrim-in 0.7s forwards;
+}
+
+@keyframes meow-scrim-in {
+  from { opacity: 0; display: none;}
+  to { opacity: 0.4; display: block;}
+}
 /*#endregion*/
-/** **/
+/** Dialog **/
 /*#region*/
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 195;
+  display: none;
+}
+.dialog.active {
+  display: flex;
+}
+.dialog .scrim {
+  z-index: 190;
+}
+.dialog-container {
+  background-color: var(--color-bg-alt);
+  width: fit-content;
+  margin: auto;
+  padding: 1vmin 3vmin;
+  border: var(--color-accent) 1px outset;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  z-index: 195;
+  min-width: 300px;
+}
+.dialog-header {  
+  margin: 1vmin;
+}
+.dialog-title {
+  color: var(--color-text-alt);
+  font-size: var(--font-size-big);
+}
+.dialog-body {  
+  margin: 1vmin;
+}
+.dialog-message {
+  white-space: pre-line;
+  line-height: 1.5;
+}
+.dialog-footer {
+  margin: 1vmin;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+}
 /*#endregion*/
 /** **/
 /*#region*/

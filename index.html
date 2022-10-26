@@ -12,7 +12,11 @@
 		<!-- Frameworks -->
 		<!-- null -->
 		<!-- Meowsoft CSS -->
-		<script>if (localStorage.getItem('theme') == 'light') { document.documentElement.classList.add('theme_light');}
+		<script>
+			if (localStorage.getItem("theme") != null) { document.documentElement.classList.add(localStorage.getItem("theme"));}
+			else { document.documentElement.classList.add("AbyssalPaws");} // AbyssalPaws || FluffySands || VoidTail
+			if (localStorage.getItem("anim") != null) { document.documentElement.classList.add(localStorage.getItem("anim"));}
+			else { document.documentElement.classList.add("vannkatt");} // Water Cat 
 		</script>
         <link rel="stylesheet" type="text/css" href="./resources/css/components.css">
         <link rel="stylesheet" type="text/css" href="./resources/css/anim.css">
@@ -89,7 +93,7 @@
 			<div class="nav-tab-container" data-nav-value="header">
 				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
-						<h2>News</h2>
+						<h1>News</h1>
 						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
 					<div class="contents-lower-panel">

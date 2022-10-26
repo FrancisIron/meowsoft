@@ -2,7 +2,7 @@
 	<head>
 		<title>Meowsoft</title>
 		<meta charset="UTF-8">
-		<meta name="color-scheme" content="dark light">
+		<!-- <meta name="color-scheme" content="dark"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,11 @@
 		<!-- Frameworks -->
 		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 		<!-- Meowsoft CSS -->
-		<script>if (localStorage.getItem("theme") == "light") { document.documentElement.classList.add("theme_light");}
+		<script>
+			if (localStorage.getItem("theme") != null) { document.documentElement.classList.add(localStorage.getItem("theme"));}
+			else { document.documentElement.classList.add("AbyssalPaws");} // AbyssalPaws || FluffySands || VoidTail
+			if (localStorage.getItem("anim") != null) { document.documentElement.classList.add(localStorage.getItem("anim"));}
+			else { document.documentElement.classList.add("vannkatt");} // Water Cat 
 		</script>
         <link rel="stylesheet" type="text/css" href="./resources/css/components.css">
         <link rel="stylesheet" type="text/css" href="./resources/css/anim.css">
@@ -29,17 +33,15 @@
         <div class="background-image background-clip"></div>
 		<div class="body">
 			<div class="top-panel">
-				<button class="nav-button animated not-default-active" data-nav-value="header" data-nav-tab="home">
-						<span class="anim-active-ripple"></span>
+				<button class="nav-button animated" data-nav-value="header" data-nav-tab="home">
 						<span class="btn__label">Meowsoft</span>
 				</button>
 				<div class="nav-bar" data-nav-value="header">
 					<span class="nav-selected"></span>
-					<button class="nav-button animated not-default-active" data-nav-tab="about">
-							<span class="anim-active-ripple"></span>
+					<button class="nav-button animated" data-nav-tab="about">
 							<span class="btn__label">About</span>
 					</button>
-					<button class="nav-button animated not-default-active" data-nav-tab="projects">
+					<button class="nav-button animated" data-nav-tab="projects">
 							<span class="anim-active-edge"></span>
 							<span class="btn__label">Projects</span>
 					</button>
@@ -48,12 +50,10 @@
 							<span class="btn__label">Contact</span>
 					</button>
 					<button class="theme-selector animated">
-							<span class="anim-hov-grad"></span>
 						<span class="material-symbols-outlined icon"></span>
 					</button>
 					<div class="nav-drawer" style="display: flex;">
 						<button class="nav-drawer-toggle animated">
-							<span class="anim-hov-grad"></span>
 							<span class="material-symbols-outlined icon"></span>
 						</button>
 						<div class="nav-drawer-scrim"></div>
@@ -61,11 +61,9 @@
 							<div class="nav-drawer-title">
 								<div class="nav-drawer-buttons">
 									<button class="theme-selector animated">
-											<span class="anim-hov-grad"></span>
 										<span class="material-symbols-outlined icon"></span>
 									</button>
 									<button class="nav-drawer-toggle animated">
-										<span class="anim-hov-grad"></span>
 										<span class="material-symbols-outlined icon"></span>
 									</button>
 								</div>
@@ -77,35 +75,38 @@
 							</div>
 							<div class="nav-drawer-items">
 								<span>Other Themes</span>
-								<button onclick="updateTheme(0);">
+								<button class="animated" onclick="toggleAnim();">
+									<span class="btn__label">Toggle Animation Set</span>
+								</button>
+								<button class="animated" onclick="updateTheme(0);">
 									<span class="btn__label">Sample Theme A</span>
 								</button>
-								<button onclick="updateTheme(1);">
+								<button class="animated" onclick="updateTheme(1);">
 									<span class="btn__label">Sample Theme B</span>
 								</button>
-								<button onclick="updateTheme(2);">
+								<button class="animated" onclick="updateTheme(2);">
 									<span class="btn__label">Sample Theme C</span>
 								</button>
-								<button onclick="updateTheme(3);">
+								<button class="animated" onclick="updateTheme(3);">
 									<span class="btn__label">Sample Theme D</span>
 								</button>
-								<button onclick="updateTheme(4);">
+								<button class="animated" onclick="updateTheme(4);">
 									<span class="btn__label">Sample Theme E</span>
 								</button>
 								<div class="divider"></div>
 								<span>Nav Options</span>
-								<button onclick="toggleNavMode();">
+								<button class="animated" onclick="toggleNavMode();">
 									<span class="btn__label">Toggle Nav Drawer Mode</span>
 								</button>
-								<button onclick="toggleNavHeader();">
+								<button class="animated" onclick="toggleNavHeader();">
 									<span class="btn__label">Toggle Nav Drawer Header</span>
 								</button>
 								<div class="divider"></div>
 								<span>Sample Miau Section</span>
-								<button>
+								<button class="animated" >
 									<span class="btn__label">Sample Meow Button</span>
 								</button>
-								<button>
+								<button class="animated" >
 									<span class="btn__label">Sample Meow Button</span>
 								</button>
 							</div>
@@ -116,7 +117,7 @@
 			<div class="nav-tab-container" data-nav-value="header">
 				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
-						<h2>News</h2>
+						<h1>News</h1>
 						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
 					<div class="contents-lower-panel">
@@ -127,16 +128,6 @@
 					<div class="message">
 						<h1>About us</h1>
 						<p>Content Here...</p>
-						<input placeholder="Default input" autocomplete="off">
-						<input value="work in progress.." autocomplete="off">
-						<label class="toggle">
-							<input type="checkbox" autocomplete="off">
-							<span class="toggle-slider"></span>
-						</label>
-						<label class="toggle">
-							<input type="checkbox" autocomplete="off" checked>
-							<span class="toggle-slider"></span>
-						</label>
 					</div>
 					<div class="contents-lower-panel">
 						<h1>Site under construction</h1>
@@ -144,13 +135,44 @@
 				</header>
 				<header id="projects" class="nav-tab-contents" data-nav-tab="projects">
 					<div class="message">
-						<h1>Projects</h1>
-						<p>Content Here...</p>
-						<button>
-							<span class="btn__label">default (hover / click)</span>
-						</button>
-						<button class="">
-							<span class="anim-active-ripple"></span>
+						<!-- <h1>Projects</h1>
+						<p>Content Here...</p> -->
+						<div class="column">
+							<div class="row">
+								<label class="input-label w100" data-label="Input with Label">
+									<input autocomplete="off">
+								</label>
+							</div>
+							<div class="row">
+								<label class="input-label active" data-label="Input with Label">
+									<input value="Nyan Nyan Sample" autocomplete="off">
+								</label>
+								<label class="toggle">
+									<input type="checkbox" autocomplete="off">
+									<span class="toggle-slider"></span>
+								</label>
+								<label class="toggle">
+									<input type="checkbox" autocomplete="off" checked>
+									<span class="toggle-slider var"></span>
+								</label>
+							</div>
+							<div class="row">
+								<button class="animated">
+									<span class="btn_label">default button</span>
+								</button>
+								<button class="animated label-icon">
+									<span class="btn_label">button with icon</span>
+									<span class="material-symbols-outlined">backspace</span>
+								</button>
+								<button class="animated">
+									<span class="material-symbols-outlined">settings</span>
+								</button>
+							</div>
+							<div class="row">
+								
+							</div>
+						</div>
+						<!-- <button class="animated">
 							<span class="btn__label">default / default + ripple</span>
 						</button>
 						<button class="animated not-default-hover">
@@ -176,41 +198,16 @@
 						<button class="animated">
 							<span class="anim-active-droplet"></span>
 							<span class="btn__label">default / default + droplet</span>
-						</button>
+						</button> -->
 					</div>
 					<div class="contents-lower-panel">
 						<h1>Site under construction</h1>
 					</div>
 				</header>
-				<header id="contact" class="nav-tab-contents">
+				<header id="contact" class="nav-tab-contents" data-nav-tab="contact">
 					<div class="message">
 						<h1>Contact</h1>
 						<p>Content Here...</p>
-						<button>
-							<span class="btn__label">Meowsoft default button</span>
-						</button>
-						<button class="animated">
-							<span class="anim-hov-grad"></span>
-							<span class="btn__label">default gradient button</span>
-						</button>
-						<button class="animated">
-							<span class="anim-hov-edge"></span>
-							<span class="btn__label">default edge button</span>
-						</button>
-						<button class="animated notdefault">
-							<span class="anim-hov-edge"></span>
-							<span class="btn__label">Meowsoft edge button</span>
-						</button>
-						<button class="animated notdefault">
-							<span class="anim-hov-grad"></span>
-							<span class="anim-active-droplet"></span>
-							<span class="btn__label">gradient droplet button</span>
-						</button>
-						<button class="animated notdefault">
-							<span class="anim-hov-edge"></span>
-							<span class="anim-active-droplet"></span>
-							<span class="btn__label">edge droplet button</span>
-						</button>
 					</div>
 					<div class="contents-lower-panel">
 						<h1>Site under construction</h1>
@@ -232,6 +229,26 @@
 				<span id="clock" class="bottom-panel-text">00:00</span>
 				<span id="C-Meowsoft" class="bottom-panel-text">© 2018~2022 Meowsoft</span>
 			</footer>
+		</div>
+		<div>
+			<!-- Dialogs -->
+			<div class="dialog" data-dialog-type="simple">
+				<div class="scrim active"></div>
+				<div class="dialog-container">
+					<div class="dialog-header">
+						<span class="dialog-title">Message</span>
+					</div>
+					<div class="dialog-body">
+						<span class="dialog-message">Nyan Nyan</span>
+					</div>
+					<div class="dialog-footer">
+						<button class="animated label-icon">
+							<span class="btn_label">NyanButton</span>
+							<span class="material-symbols-outlined">backspace</span>
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div>
 			<!-- Service Worker -->

@@ -42,3 +42,7 @@ function toggleNavMode(){
 function toggleNavHeader(){
       $(".nav-drawer-contents").toggleClass("no-header");
 }
+
+function toggleAnim() {
+      OpenDialog("simple","Work in Progress\nCurrent Theme: Vannkatt");
+}
