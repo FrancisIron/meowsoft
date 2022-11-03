@@ -31,6 +31,7 @@ input {
     left:0;
     right:0;
     bottom:0;
+    pointer-events: none;
 }
 
 .intro-div span{
@@ -98,7 +99,7 @@ input {
     height: calc(var(--font-size-medium) * 2 + 10px);
 }
 
-.logo {  
+/* .logo {  
     display: inline-block;
     padding: 8px 16px;
     overflow: hidden;
@@ -107,6 +108,13 @@ input {
     white-space: nowrap;
     margin: auto 10px;
     color: inherit;
+} */
+
+.logo {  
+    /* padding: 8px 16px; */
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto 10px;
 }
 
 .bottom-panel {
