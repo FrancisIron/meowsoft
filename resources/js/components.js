@@ -34,22 +34,32 @@ $(document).ready(function(){
     //* Navigation Bar
     //#region
     $("body").on("click", ".nav-button", function(e) {
-        let parent = $(this).parent(); 
+        let navbar = $(this).parent(); 
+        let button = $(this);
         let selected;
 
-        if (!parent.hasClass("nav-bar")){
+        if (!navbar.hasClass("nav-bar")){
             let navValue = $(this).attr("data-nav-value");
-            selected = $(".nav-bar[data-nav-value="+navValue+"]").find(".nav-selected");
-            selected.animate({left: 0, width: 0, opacity: 0}, 300);
-            return;
+            let navTab = $(this).attr("data-nav-tab");
+            navbar = $(".nav-bar[data-nav-value="+navValue+"]");
+
+            if (!navbar.length > 0) { return; }
+            
+            button = navbar.find(".nav-button[data-nav-tab="+navTab+"]")
+
+            if (!button.length > 0){
+                selected = navbar.find(".nav-selected");
+                selected.animate({left: 0, width: 0, opacity: 0}, 300);
+                return;
+            }
         }
         
-        var posX = $(this).offset().left;
-        var posY = $(this).offset().top;
-        var btnWidth = $(this).outerWidth();
+        var posX = button.offset().left;
+        var posY = button.offset().top;
+        var btnWidth = button.outerWidth();
 
-        selected = parent.find(".nav-selected");
-        posY += $(this).outerHeight() - selected.outerHeight();
+        selected = navbar.find(".nav-selected");
+        posY += button.outerHeight() - selected.outerHeight();
 
         selected.animate({top: posY, left: posX, width: btnWidth, opacity: 1}, 300);
     });
