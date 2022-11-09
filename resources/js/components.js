@@ -83,9 +83,8 @@ $(document).ready(function(){
             $(this).parent().removeClass("active"); 
         }
     }); 
-    //* Dialog
     //#endregion
-    //* Dialog
+    //* Dialog.Scrim
     //#region
     $("body").on("click", ".dialog .scrim", function (e) {
         $(".dialog").removeClass("active");
@@ -97,19 +96,37 @@ $(document).ready(function(){
 
 
 //* Dialog
-//#endregion
-function CreateDialog(){
-
-}
-function OpenDialog(type, data){
-    switch (type){
-        case "simple":
-            $(".dialog[data-dialog-type="+type+"] .dialog-message").text(data);
-            break;
-    }
-    $(".dialog[data-dialog-type="+type+"]").addClass("active");
-}
 //#region
+const Dialog = {
+    OpenDialog(type, title, data){
+        let dialog;
+        switch (type){
+            case "simple":
+                dialog = Dialog.CreateSimpleDialog(title, data);
+                break;
+        }
+
+        //$(".dialog[data-dialog-type="+type+"] .dialog-message").text(data);
+        //$(".dialog[data-dialog-type="+type+"]").addClass("active");
+        dialog.addClass("active");
+    },
+    CreateSimpleDialog(title, data){
+        let dialog = $("<div/>", {"class":"dialog"}).appendTo("body");
+            $("<div/>", {"class":"scrim active","click":function(){dialog.remove()}}).appendTo(dialog);
+        let container = $("<div/>", {"class":"dialog-container"}).appendTo(dialog);
+            let header = $("<div/>", {"class":"dialog-header"}).appendTo(container);
+                $("<span/>", {"class":"dialog-title",text:title}).appendTo(header);
+            let body = $("<div/>", {"class":"dialog-body"}).appendTo(container);
+                $("<span/>",{"class":"dialog-message",text:data}).appendTo(body);
+            let footer = $("<div/>", {"class":"dialog-footer"}).appendTo(container);
+                $("<button/>", {"class":"animated","click":function(){dialog.remove()}})
+                    .append($("<span/>", {"class":"btn_label",text:"Ok"}))
+                    .appendTo(footer);
+
+        return dialog;
+    }
+}
+//#endregion
 
 
 // $("body").on("input blur paste change keyup keydown", ".input-label.var > input", function () {

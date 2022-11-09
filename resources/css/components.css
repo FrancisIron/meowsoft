@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: row;
   margin: 10px;
+  justify-content: space-between;
 }
 .row > * {
   margin: 0 5px;
@@ -18,6 +19,7 @@
 /*#region*/
 /* https://paletton.com/ */
 :root {
+  --font-size-massive: clamp(30px,5vmin,5vmin);
   --font-size-extra: clamp(21px,3.4vmin,3.4vmin);
   --font-size-bigger: clamp(19px,2.9vmin,2.9vmin);
   --font-size-big: clamp(24px,2.6vmin,2.6vmin);
@@ -159,7 +161,7 @@
 }
 
 /* Fluffy Sands */
-:root.light {
+:root.sands {
   --color-text-alt: #BF6921;
   --color-text: #864712;
   --color-text-focus: var(--color-bg-alt);
@@ -173,6 +175,23 @@
   --color-droplet: #68bee0;
   --color-gradient-a: var(--color-bg-focus);
   --color-gradient-b: #CA6842;
+}
+
+/* Snow Whiskers */
+:root.light {
+  --color-text-alt: #a23b3f;
+  --color-text: #888;
+  --color-text-focus: var(--color-bg-alt);
+  --color-bg: #EDEDED;
+  --color-bg-alt: #483636;
+  --color-bg-hover: var(--color-text);
+  --color-bg-focus: #A84F4F;
+  --color-accent: var(--color-text);
+  --brightness: 1.2;
+  color-scheme: light;
+  --color-droplet: #68bee0;
+  --color-gradient-a: var(--color-bg-focus);
+  --color-gradient-b: #8C3F3F;
 }
 
 /* Void Tail */
@@ -206,8 +225,20 @@
 /*#endregion*/
 /** Standard Clases **/
 /*#region*/
+#clock, #c-meowsoft, #c-meowsoft a {   
+  text-decoration: none;
+  color: var(--color-text);
+  margin: auto 25px;
+  font-size: var(--font-size-tiny);
+  /* text-align: end; */
+}
+
 .full-size { width: 100%; height: 100%;}
 .w100 { width: 100%; }
+.w50 { width: 50%; }
+.font-massive {font-size: var(--font-size-massive);}
+.font-extra {font-size: var(--font-size-extra);}
+.font-medium {font-size: var(--font-size-medium);}
 /*#endregion*/
 /** Standard Elements **/
 /*#region*/
@@ -218,6 +249,8 @@ body {
   margin: 0;
   overflow: hidden;
   font-size: 16px;
+  height: 100vh;
+  width: 100vw;
 }
 h1, h2, h3 {
   font-family: var(--font-family-display);
@@ -274,6 +307,7 @@ input {
   padding-left: 6px;
   transform: translateY(35%);
   pointer-events: none;
+  color: var(--color-text-alt);
 }
 .input-label.active::after {  
   font-size: var(--font-size-tiny);
@@ -447,7 +481,7 @@ input:checked + .toggle-slider.var:before {
   opacity: 0;
   position: absolute;
   width: 10vw;
-  top: 35px;
+  bottom: 35px;
   left: 0;
   background-color: var(--color-accent);
   pointer-events: none;
@@ -531,6 +565,8 @@ input:checked + .toggle-slider.var:before {
   z-index: 99;
   opacity: 0;
   border-left: var(--color-accent) 1px inset;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-drawer-contents.active {
@@ -603,7 +639,7 @@ input:checked + .toggle-slider.var:before {
   height: clamp(150px, 20vh, 20vh);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 0 25px;
   background-color: var(--color-bg);
   border-top: 1px var(--color-accent) inset;
@@ -614,6 +650,7 @@ input:checked + .toggle-slider.var:before {
   display: flex;
   flex-direction: column;
   text-align: start;
+  flex-grow: 1;
 }
 
 .nav-drawer-items > button, .nav-drawer-items > span {
@@ -628,6 +665,14 @@ input:checked + .toggle-slider.var:before {
 
 .nav-drawer-items > span {
   color:var(--color-text-alt);
+}
+
+.nav-drawer-items > .filler {
+  flex-grow: 1;
+}
+
+.nav-drawer-items > :last-child {
+  margin-bottom: 10px;
 }
 
 .divider {  
