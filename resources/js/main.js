@@ -8,8 +8,8 @@ function updateClock(){
 }
 
 function updateTheme(value){
-      $("html").removeClass("light dark");
-      $(".theme-selector").removeClass("light dark");
+      $("html").removeClass("abyssal-paws fluffy-sands");
+      $(".theme-selector").removeClass("abyssal-paws fluffy-sands");
       $("html").removeClass("theme_new_blue");
       $("html").removeClass("theme_new_darkblue");
       $("html").removeClass("theme_new_deepblue");

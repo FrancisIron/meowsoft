@@ -1,9 +1,3 @@
-input {
-    display: block;
-    width: 100%;
-    background-color: transparent;
-}
-
 /* New CSS */
 
 .background-image {
@@ -82,17 +76,6 @@ input {
     overflow: hidden;
 }
 
-.top-panel {
-    background-color: var(--color-bg-alt);
-    letter-spacing: 2;
-    width: 100%;
-    /* overflow: hidden; */
-    display: flex;
-    justify-content: space-between;
-    min-height: 45px;
-    height: calc(var(--font-size-medium) * 2 + 10px);
-}
-
 /* .logo {  
     display: inline-block;
     padding: 8px 16px;
@@ -109,14 +92,6 @@ input {
     text-decoration: none;
     cursor: pointer;
     margin: auto 10px;
-}
-
-.bottom-panel {
-    background-color: var(--color-bg-alt);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    min-height: 45px;
 }
 
 .contents-clip {
@@ -201,10 +176,6 @@ input {
 
     .contents-lower-panel h1 {
         margin: 0 25px;
-    }
-
-    .bottom-panel-text {
-        margin: auto 25px;
     }
 
     @keyframes bg-image {

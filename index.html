@@ -15,126 +15,157 @@
 		<!-- Meowsoft CSS -->
 		<script>
 			if (localStorage.getItem("theme") != null) { document.documentElement.classList.add(localStorage.getItem("theme"));}
-			else { document.documentElement.classList.add("AbyssalPaws");} // AbyssalPaws || FluffySands || VoidTail
+			else { document.documentElement.classList.add("abyssal-paws");}
 			if (localStorage.getItem("anim") != null) { document.documentElement.classList.add(localStorage.getItem("anim"));}
-			else { document.documentElement.classList.add("vannkatt");} // Water Cat 
+			else { document.documentElement.classList.add("vannkatt");}
 		</script>
-        <link rel="stylesheet" type="text/css" href="./resources/css/components.css">
-        <link rel="stylesheet" type="text/css" href="./resources/css/anim.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-intro-v221115.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-components-v221115.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-animation-v221115.min.css">
         <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
-        <link rel="icon" type="image/x-icon" href="./resources/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://cdn.meowsoft.net/resources/favicon.ico">
 	</head>
 	<body onload="updateClock(); setInterval('updateClock()', 1000 );">
-		<div class="intro-div fade-out-anim">
-			<div class="background-clip-image background-clip-anim"></div>
-			<span class="fade-in-anim">Meowsoft</span>
+		<div class="intro-div intro-fade-out-anim">
+			<div class="intro-background-clip-image intro-background-clip-anim"></div>
+			<span class="intro-fade-in-anim">Meowsoft</span>
 		</div>
 		<div class="background-image background-clip"></div>
 		<div class="body">
-			<div class="top-panel">
+			<div class="header">
 				<button class="nav-button animated logo" data-nav-value="header" data-nav-tab="home">
 						<span class="btn_label">Meowsoft</span>
 				</button>
 				<div class="nav-bar" data-nav-value="header">
-					<span class="nav-selected"></span>
-					<!-- <button class="nav-button animated" data-nav-tab="about">
-						<span class="btn_label">About</span>
+					<span class="nav-selected M_hidden"></span>
+					<!-- <button class="nav-button animated M_hidden" data-nav-tab="about">
+							<span class="btn_label">About</span>
 					</button>
-					<button class="nav-button animated" data-nav-tab="projects">
+					<button class="nav-button animated M_hidden" data-nav-tab="projects">
 							<span class="btn_label">Projects</span>
 					</button>
-					<button class="nav-button animated" data-nav-tab="contact">
+					<button class="nav-button animated M_hidden" data-nav-tab="contact">
 							<span class="btn_label">Contact</span>
 					</button> -->
-					<button class="theme-selector animated">
+					<button class="theme-selector animated M_hidden">
 						<span class="material-symbols-outlined icon"></span>
 					</button>
-					<div class="nav-drawer" style="display: none;">
-						<button class="nav-drawer-toggle animated">
-							<span class="material-symbols-outlined icon"></span>
-						</button>
-						<div class="nav-drawer-scrim"></div>
-						<div class="nav-drawer-contents inactive anim-drawer-edge">
-							<div class="nav-drawer-title">
-								<div class="nav-drawer-buttons">
-									<button class="theme-selector animated">
-										<span class="material-symbols-outlined icon"></span>
-									</button>
-									<button class="nav-drawer-toggle animated">
-										<span class="material-symbols-outlined icon"></span>
-									</button>
-								</div>
-							</div>
-							<div class="nav-drawer-header">
-								<div>
-									Nyan Nav Header
-								</div>
-							</div>
+					<div class="nav-drawer D_hidden" style="display: flex;">
+                        <button class="nav-drawer-toggle animated">
+                            <span class="material-symbols-outlined icon"></span>
+                        </button>
+                        <div class="nav-drawer-scrim"></div>
+                        <div class="nav-drawer-contents inactive anim-drawer-edge">
+                            <div class="nav-drawer-title">
+                                <div class="nav-drawer-buttons">
+                                    <button class="theme-selector animated">
+                                        <span class="material-symbols-outlined icon"></span>
+                                    </button>
+                                    <button class="nav-drawer-toggle animated">
+                                        <span class="material-symbols-outlined icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- <div class="nav-drawer-header">
+                                <span class="font-color-alt">NavDrawer</span><span>Sample</span>
+                            </div> -->
 							<div class="nav-drawer-items">
-								<span>Sample Miau Section</span>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
+								<!-- <span>Navigation</span>
+								<button class="nav-button animated" data-nav-tab="about">
+									<span class="btn_label">About</span>
 								</button>
-								<button>
-									<span class="btn__label">Sample Meow Button</span>
+								<button class="nav-button animated" data-nav-tab="projects">
+										<span class="btn_label">Projects</span>
 								</button>
+								<button class="nav-button animated" data-nav-tab="contact">
+										<span class="btn_label">Contact</span>
+								</button> -->
+								<!-- <div class="divider"></div> -->
+                                <span class="filler"></span>
 							</div>
-						</div>
-					</div>
+                        </div>
+                    </div>
 				</div>
 			</div>
-			<div class="nav-tab-container" data-nav-value="header">
+			<div class="main nav-tab-container" data-nav-value="header">
 				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
-						<h1>News</h1>
+						<h1>Info</h1>
 						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
-					<div class="contents-lower-panel">
-						<h1>Site under construction</h1>
-					</div>
 				</header>
-				<!-- <header id="about" class="nav-tab-contents" data-nav-tab="about">
+				<header id="about" class="nav-tab-contents" data-nav-tab="about">
 					<div class="message">
-						<h1>About us</h1>
-						<p>Content Here...</p>
-					</div>
-					<div class="contents-lower-panel">
-						<h1>Site under construction</h1>
+						<h1>Info</h1>
+						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
 				</header>
 				<header id="projects" class="nav-tab-contents" data-nav-tab="projects">
 					<div class="message">
-						<h1>Projects</h1>
-						<p>Content Here...</p>
-					<div class="contents-lower-panel">
-						<h1>Site under construction</h1>
+						<h1>Info</h1>
+						<p>Our cats are rebuilding this site, we'll be back soon.</p>
+				</header>
+				<header id="contact" class="nav-tab-contents" data-nav-tab="contact">
+					<div class="message">
+						<h1>Info</h1>
+						<p>Our cats are rebuilding this site, we'll be back soon.</p>
 					</div>
 				</header>
-				<header id="contact" class="nav-tab-contents">
-					<div class="message">
-						<h1>Contact</h1>
-						<p>Content Here...</p>
-					</div>
-					<div class="contents-lower-panel">
-						<h1>Site under construction</h1>
-					</div>
-				</header> -->
+				<div class="contents-lower-panel">
+					<h1>Site under construction</h1>
+				</div>
 			</div>
-			<footer class="bottom-panel">
+			<footer class="footer">
 				<span id="clock">00:00</span>
-				<span id="c-meowsoft">© 2018~2022 Meowsoft</span>
+				<span id="c-meowsoft"><a  href="https://meowsoft.net">© 2022 Meowsoft All rights reserved.</a></span>
 			</footer>
 		</div>
 		<div>
+            <!-- Tooltip -->
+            <span class="tooltip"></span>
+            <!-- Context Menu -->
+			<!-- Sample -->
+            <span class="context-menu" data-context-menu="null">
+				<button class="context-button label-icon">
+					<span class="material-symbols-outlined">icon</span>
+					<span class="btn_label">label</span>
+				</button>
+				<button class="context-button label-icon">
+					<span class="material-symbols-outlined">icon</span>
+					<span class="btn_label">label</span>
+				</button>
+            </span>
+            <!-- Dialog -->
+			<div class="dialog" data-dialog-type="simple">
+				<div class="scrim active"></div>
+				<div class="dialog-container">
+					<div class="dialog-header">
+						<span class="dialog-title">Message</span>
+					</div>
+					<div class="dialog-body">
+						<span class="dialog-message">Nyan Nyan</span>
+					</div>
+					<div class="dialog-footer">
+						<button class="animated label-icon">
+							<span class="btn_label">NyanButton</span>
+							<span class="material-symbols-outlined">backspace</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
 			<!-- Service Worker -->
-			<script>if (navigator && navigator.serviceWorker) { navigator.serviceWorker.register('sw.js');}</script>
+			<script>
+				if (navigator && navigator.serviceWorker) { navigator.serviceWorker.register('sw.js');}
+			</script>
 			<!-- Frameworks -->
-			<script src="./resources/js/jquery-3.3.1.min.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/jquery-3.3.1.min.js"></script>
 			<!-- Meowsoft JS -->
-			<script src="./resources/js/components.js"></script>
-			<script src="./resources/js/anim.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/meowsoft-components-live.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/meowsoft-animations-live.js"></script>
 			<script src="./resources/js/main.js"></script>
 		</div>
 	</body>
 </html>
-<!-- © 2022 Meowsoft -->
+<!-- © 2022 Meowsoft All rights reserved. -->

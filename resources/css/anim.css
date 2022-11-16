@@ -8,6 +8,7 @@
 */
 /*? Meow ~ Animated **/
 .animated {
+  position: relative;
   overflow: hidden;
 }
 /*? Old ~ Require Update **/
@@ -197,7 +198,7 @@
   z-index: -50;
   filter: blur(100px);
   opacity: 0.1;
-  background-image: linear-gradient(-45deg, transparent, transparent, white, transparent, transparent);
+  background-image: linear-gradient(-45deg, transparent, transparent, var(--color-backlight), transparent, transparent);
   animation: vannkatt-background 60s ease infinite;
 }
 

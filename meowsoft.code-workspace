@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../meowsoft.cdn"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "meowsoft"
+	}
+}

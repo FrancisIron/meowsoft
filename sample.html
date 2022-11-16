@@ -3,17 +3,15 @@
 	<head>
 		<title>Meowsoft</title>
 		<meta charset="UTF-8">
-		<!-- <meta name="color-scheme" content="dark"> -->
+		<meta name="color-scheme" content="dark light">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap">
-		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"> -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 		<!-- Frameworks -->
-		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+		<!-- none -->
 		<!-- Meowsoft CSS -->
 		<script>
 			if (localStorage.getItem("theme") != null) { document.documentElement.classList.add(localStorage.getItem("theme"));}
@@ -21,19 +19,20 @@
 			if (localStorage.getItem("anim") != null) { document.documentElement.classList.add(localStorage.getItem("anim"));}
 			else { document.documentElement.classList.add("vannkatt");} // Water Cat 
 		</script>
-        <link rel="stylesheet" type="text/css" href="./resources/css/components.css">
-        <link rel="stylesheet" type="text/css" href="./resources/css/anim.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-intro-v221115.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-components-live.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.meowsoft.net/resources/css/meowsoft-animation-live.css">
         <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
-        <link rel="icon" type="image/x-icon" href="./resources/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="https://cdn.meowsoft.net/resources/favicon.ico">
 	</head>
 	<body onload="updateClock(); setInterval('updateClock()', 1000 );">
-        <div class="intro-div fade-out-anim">
-            <div class="background-clip-image background-clip-anim"></div>
-            <span class="fade-in-anim">Meowsoft</span>
-        </div>
+        <div class="intro-div intro-fade-out-anim">
+			<div class="intro-background-clip-image intro-background-clip-anim"></div>
+			<span class="intro-fade-in-anim">Meowsoft</span>
+		</div>
         <div class="background-image background-clip"></div>
 		<div class="body">
-			<div class="top-panel">
+			<div class="header">
 				<button class="nav-button animated logo" data-nav-value="header" data-nav-tab="home">
 						<span class="btn_label">Meowsoft</span>
 				</button>
@@ -51,27 +50,25 @@
 					<button class="theme-selector animated">
 						<span class="material-symbols-outlined icon"></span>
 					</button>
-					<div class="nav-drawer" style="display: flex;">
-						<button class="nav-drawer-toggle animated">
-							<span class="material-symbols-outlined icon"></span>
-						</button>
-						<div class="nav-drawer-scrim"></div>
-						<div class="nav-drawer-contents inactive anim-drawer-edge">
-							<div class="nav-drawer-title">
-								<div class="nav-drawer-buttons">
-									<button class="theme-selector animated">
-										<span class="material-symbols-outlined icon"></span>
-									</button>
-									<button class="nav-drawer-toggle animated">
-										<span class="material-symbols-outlined icon"></span>
-									</button>
-								</div>
-							</div>
-							<div class="nav-drawer-header">
-								<div>
-									Nyan Nav Header
-								</div>
-							</div>
+					<div class="nav-drawer D_hidden" style="display: flex;">
+                        <button class="nav-drawer-toggle animated">
+                            <span class="material-symbols-outlined icon"></span>
+                        </button>
+                        <div class="nav-drawer-scrim"></div>
+                        <div class="nav-drawer-contents inactive anim-drawer-edge">
+                            <div class="nav-drawer-title">
+                                <div class="nav-drawer-buttons">
+                                    <button class="theme-selector animated">
+                                        <span class="material-symbols-outlined icon"></span>
+                                    </button>
+                                    <button class="nav-drawer-toggle animated">
+                                        <span class="material-symbols-outlined icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="nav-drawer-header">
+                                <span class="font-color-alt">NavDrawer</span><span>Sample</span>
+                            </div>
 							<div class="nav-drawer-items">
 								<span>Other Themes</span>
 								<button class="animated" onclick="toggleAnim();">
@@ -108,12 +105,13 @@
 								<button class="animated" >
 									<span class="btn__label">Sample Meow Button</span>
 								</button>
+                                <span class="filler"></span>
 							</div>
-						</div>
-					</div>
+                        </div>
+                    </div>
 				</div>
 			</div>
-			<div class="nav-tab-container" data-nav-value="header">
+			<div class="main nav-tab-container" data-nav-value="header">
 				<header id="home" class="nav-tab-contents active" data-nav-tab="home">
 					<div class="message">
 						<h1>News</h1>
@@ -215,13 +213,27 @@
 					<h1>Site under construction</h1>
 				</div>
 			</div>
-			<footer class="bottom-panel">
+			<footer class="footer">
 				<span id="clock">00:00</span>
-				<span id="c-meowsoft">© 2018~2022 Meowsoft</span>
+				<span id="c-meowsoft"><a  href="https://meowsoft.net">© 2022 Meowsoft All rights reserved.</a></span>
 			</footer>
 		</div>
 		<div>
-			<!-- Dialogs -->
+            <!-- Tooltip -->
+            <span class="tooltip"></span>
+            <!-- Context Menu -->
+			<!-- Sample -->
+            <span class="context-menu" data-context-menu="null">
+				<button class="context-button label-icon">
+					<span class="material-symbols-outlined">icon</span>
+					<span class="btn_label">label</span>
+				</button>
+				<button class="context-button label-icon">
+					<span class="material-symbols-outlined">icon</span>
+					<span class="btn_label">label</span>
+				</button>
+            </span>
+            <!-- Dialog -->
 			<div class="dialog" data-dialog-type="simple">
 				<div class="scrim active"></div>
 				<div class="dialog-container">
@@ -242,14 +254,16 @@
 		</div>
 		<div>
 			<!-- Service Worker -->
-			<script>if (navigator && navigator.serviceWorker) { navigator.serviceWorker.register('sw.js');}</script>
+			<script>
+				if (navigator && navigator.serviceWorker) { navigator.serviceWorker.register('sw.js');}
+			</script>
 			<!-- Frameworks -->
-			<script src="./resources/js/jquery-3.3.1.min.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/jquery-3.3.1.min.js"></script>
 			<!-- Meowsoft JS -->
-			<script src="./resources/js/components.js"></script>
-			<script src="./resources/js/anim.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/meowsoft-components-live.js"></script>
+			<script src="https://cdn.meowsoft.net/resources/js/meowsoft-animations-live.js"></script>
 			<script src="./resources/js/main.js"></script>
 		</div>
 	</body>
 </html>
-<!-- © 2022 Meowsoft -->
+<!-- © 2022 Meowsoft All rights reserved. -->
