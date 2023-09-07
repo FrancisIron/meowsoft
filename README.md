@@ -4,4 +4,4 @@ Meowsoft source code
 
 Alive since 2018
 
-[© 2018~2022 Meowsoft](https://meowsoft.net)
+[© 2018~2023 Meowsoft](https://meowsoft.net)
